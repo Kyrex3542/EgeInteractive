@@ -15,6 +15,6 @@ public class Enemy : MonoBehaviour
     {
         //transform.position=Vector2.MoveTowards(startPos, stopPos, speed*Time.deltaTime);
 
-        transform.Translate(Vector2.right * 1f, Space.World);
+        transform.Translate(Vector2.right * speed * Time.deltaTime, Space.World);
     }
 }
