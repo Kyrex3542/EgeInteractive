@@ -144,7 +144,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -29.63328, y: 18.617748, z: -0.6920867}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4459193480930709575}
@@ -165,8 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHead: {fileID: 5863555808839901429}
   towerBase: {fileID: 3376826569321754589}
-  currentTarget: {fileID: 0}
-  deneyen: 15
+  target: {fileID: 0}
 --- !u!58 &6190976592381002348
 CircleCollider2D:
   m_ObjectHideFlags: 0
