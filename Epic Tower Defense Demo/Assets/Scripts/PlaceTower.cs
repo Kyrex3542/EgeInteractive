@@ -3,46 +3,69 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class PlaceTower : MonoBehaviour
 {
     [SerializeField] private Transform[] cantTouchThis;
+    [SerializeField] private GameObject sliderTowerMenu;
 
-    [SerializeField] private Tilemap tileMapLevel1;
-    [SerializeField] private Tilemap tileMapLevel1Shadow;
+    [SerializeField] private MapLoader mapLoader;
+    [SerializeField] private Tilemap activeMap;
+    [SerializeField] private Tilemap activeMapShadow;
     [SerializeField] private GameObject tower;
+    private Vector3 cellCenterWorlPos=default;
+
+    [Header("Tower Prefabs")]
+    [SerializeField] private GameObject bowTower;
+    [SerializeField] private GameObject rocketTower;
     private List<Vector3Int> busyTiles;
     private bool canPlaceTower=false;
+    private Vector3Int selectedCellPosition;
     void Start()
     {
+        activeMap = mapLoader.activeMap;
+        activeMapShadow = mapLoader.activeMapShadow;
         busyTiles=new List<Vector3Int>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetMouseButtonDown(0))
         {
             if (CanPlaceTower())
             {
-                Instantiate(tower, GetSelectTile(), Quaternion.identity);
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                  ShowSliderTowerMenu();
+                }
+                
             }
 
         }
 
     }
+    private void ShowSliderTowerMenu()
+    {
+        sliderTowerMenu.SetActive(true);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 10;
+        sliderTowerMenu.transform.position = mousePos;
+
+        selectedCellPosition = activeMap.WorldToCell(mousePos);
+        cellCenterWorlPos = activeMap.GetCellCenterWorld(selectedCellPosition);
+
+    }
     private Vector3 GetSelectTile()
     {
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int cellPosition = tileMapLevel1.WorldToCell(mouseWorldPos);
-        Vector3 cellCenterWorlPos = tileMapLevel1.GetCellCenterWorld(cellPosition);
-        TileBase tile = tileMapLevel1.GetTile(cellPosition);
-        Debug.Log(tile);
+        
         if (canPlaceTower)
         {
-            busyTiles.Add(cellPosition);
+            busyTiles.Add(selectedCellPosition);
         }
        // TileBase selectedTile=tilemap.GetTile(cellPosition);
         return cellCenterWorlPos;
@@ -50,8 +73,8 @@ public class PlaceTower : MonoBehaviour
     private bool CanPlaceTower()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int cellPosition = tileMapLevel1.WorldToCell(mouseWorldPos);
-        TileBase tileShadow = tileMapLevel1Shadow.GetTile(cellPosition);
+        Vector3Int cellPosition = activeMap.WorldToCell(mouseWorldPos);
+        TileBase tileShadow = activeMapShadow.GetTile(cellPosition);
 
         foreach (Vector3Int busyTile in busyTiles)
         {
@@ -68,11 +91,19 @@ public class PlaceTower : MonoBehaviour
         }
             if (tileShadow.name == "normal_7")
         {
-            Debug.Log(tileShadow.name);
             canPlaceTower = false;
         }
         return canPlaceTower;
     }
+    public void PlaceBowTower()
+    {
+        Instantiate(bowTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
+    public void PlaceRocketTower()
+    {
+        Instantiate(rocketTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
 
-    
 }
