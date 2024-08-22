@@ -6,6 +6,16 @@ public class SpawnerScript : MonoBehaviour
 {
     public GameObject EnemyPrefab;
     [SerializeField] private Transform[] paths;
+    [SerializeField] private MapLoader mapLoader;
+    private GameObject pathsParent;
+    private void Start()
+    {
+        pathsParent = mapLoader.GetPathsParent();
+        for (int i = 0; i < pathsParent.transform.childCount; i++)
+        {
+            paths[i]=pathsParent.transform.GetChild(i);
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
