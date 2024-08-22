@@ -44,12 +44,12 @@ public class PathFinder : MonoBehaviour
     }
     public float GetRemainingDistanceToBase()
     {
-        if (target == null) return 100;
-        totalDistanceToBase = Vector2.Distance(transform.position, target.position);
-        while (pathNumber < path.Length)
+        int pathCounter = pathIndex;
+        totalDistanceToBase = Vector2.Distance(transform.position, path[pathCounter].position);
+        while (pathCounter < path.Length-1)
         {
-          totalDistanceToBase +=  Vector2.Distance(path[pathNumber].position, path[pathNumber].position);
-            pathNumber++;
+          totalDistanceToBase +=  Vector2.Distance(path[pathCounter].position, path[pathCounter+1].position);
+            pathCounter++;
         }
         return totalDistanceToBase;
     }

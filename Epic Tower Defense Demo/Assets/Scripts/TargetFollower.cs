@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -10,13 +11,11 @@ public class Tower : MonoBehaviour
     private List<GameObject> targets = new List<GameObject>();
     public float towerrotationSpeed = 15f;
 
-    private float lastKnownClosestEnemy=Mathf.Infinity;
-    private float closestEnemy;
+
     private void LookAt()
     {
         if (targets.Count > 0)
         {
-            FindClosestEnemy();
 
             float targetAngle = Mathf.Atan2(currentTarget.transform.position.y - transform.position.y, currentTarget.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
             towerHead.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(towerHead.transform.eulerAngles.z, targetAngle -90, towerrotationSpeed * Time.deltaTime)));
@@ -24,6 +23,9 @@ public class Tower : MonoBehaviour
     }
     private void Update()
     {
+
+        FindClosestEnemy();
+        if (targets.Count <= 0) return;
         LookAt();
     }
 
@@ -43,16 +45,18 @@ public class Tower : MonoBehaviour
     private void FindClosestEnemy()
     {
         if (targets.Count <= 0) return;
-        lastKnownClosestEnemy = Mathf.Infinity;
+        GameObject targetGameObject = null;
+        float closestDistance = Mathf.Infinity;
         foreach (GameObject target in targets)
         {
-            PathFinder pathFinder = target.GetComponent<PathFinder>();
-            closestEnemy= pathFinder.GetRemainingDistanceToBase();
-            if (closestEnemy < lastKnownClosestEnemy)
+            if (target == null) continue;
+            float remainingDistance= target.GetComponent<PathFinder>().GetRemainingDistanceToBase();
+            if (remainingDistance < closestDistance)
             {
-                currentTarget= target;
-                lastKnownClosestEnemy = closestEnemy;
+                closestDistance = remainingDistance;
+                targetGameObject = target;
             }
         }
+        currentTarget = targetGameObject;
     }
 }
