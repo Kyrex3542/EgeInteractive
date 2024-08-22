@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1239605446796701680}
   - component: {fileID: 8596519321409570635}
   m_Layer: 0
-  m_Name: Tilemap Level1 Shadow
+  m_Name: STilemap Level1 Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
