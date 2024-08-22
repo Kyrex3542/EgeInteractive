@@ -3,30 +3,47 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class TargetFollower : MonoBehaviour
 {
     [SerializeField] private GameObject towerHead;
-    [SerializeField] private GameObject towerBase;
-    [SerializeField] private GameObject currentTarget;
+    [SerializeField] public GameObject currentTarget;
     private List<GameObject> targets = new List<GameObject>();
     public float towerrotationSpeed = 15f;
+
+
 
 
     private void LookAt()
     {
         if (targets.Count > 0)
         {
-
-            float targetAngle = Mathf.Atan2(currentTarget.transform.position.y - transform.position.y, currentTarget.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+            float targetAngle = LookAngle();
             towerHead.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(towerHead.transform.eulerAngles.z, targetAngle -90, towerrotationSpeed * Time.deltaTime)));
         }
+    }
+    public float LookAngle()
+    {
+        float targetAngle = Mathf.Atan2(currentTarget.transform.position.y - transform.position.y, currentTarget.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+
+        return targetAngle;
     }
     private void Update()
     {
 
         FindClosestEnemy();
-        if (targets.Count <= 0) return;
+        if (!TargetInRange()) return;
         LookAt();
+    }
+    public bool TargetInRange()
+    {
+        if(targets.Count <= 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,4 +76,5 @@ public class Tower : MonoBehaviour
         }
         currentTarget = targetGameObject;
     }
+
 }

@@ -2849,6 +2849,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeMap: {fileID: 0}
   activeMapShadow: {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
+  spawnPoint: {fileID: 0}
+  targetPoint: {fileID: 0}
   tileMaps:
   - {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
   - {fileID: 270071462049022468, guid: 48d39973e9d46f447893c8e84cf047d8, type: 3}
@@ -2857,10 +2859,20 @@ MonoBehaviour:
   - {fileID: 1239605446796701680, guid: b83cc39047b6f0c429240717da7d41b9, type: 3}
   - {fileID: 475506184248392428, guid: fdf00d835f498d648847d654a291342a, type: 3}
   - {fileID: 5954000644612106003, guid: 7707d74d203b8b34fa5378fca368c414, type: 3}
-  tileMapGrid: {fileID: 1920672275}
-  mapNumber: 0
   pathsParentList:
   - {fileID: 4294966545442958142, guid: bcd82653c5f0e7649b24f9da1a436bab, type: 3}
+  - {fileID: 6588419265587776342, guid: 81cd6c2eed040df49a85c819f3a971d1, type: 3}
+  - {fileID: 794881193114613400, guid: c75afd235aad4834ebab41cea55b43ab, type: 3}
+  spawnPoints:
+  - {fileID: 7998651717285874752, guid: a435c6be8d117364cb337a6431a054ec, type: 3}
+  - {fileID: 7855740153547168635, guid: 47babc0f72efcce49b1f057872a0da5a, type: 3}
+  - {fileID: 9209740602962069755, guid: 416cd7ee4a5dfb341a7ff57d2df54f12, type: 3}
+  targetPoints:
+  - {fileID: 3567337285957585293, guid: 0812048e710fc3140a818f883c564fd5, type: 3}
+  - {fileID: 3115128578566816284, guid: c6ed01304d6a6cd4893c609c35339a68, type: 3}
+  - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
+  tileMapGrid: {fileID: 1920672275}
+  mapNumber: 1
   pathsParent: {fileID: 0}
 --- !u!1 &8716502267934656842
 GameObject:

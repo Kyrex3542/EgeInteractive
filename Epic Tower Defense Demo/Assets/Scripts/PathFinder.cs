@@ -12,7 +12,6 @@ public class PathFinder : MonoBehaviour
     private int pathIndex = 0;
     [SerializeField] private float RotationSpeed = 15f;
 
-    private int pathNumber=0;
     private float totalDistanceToBase;
     private void Start()
     {
@@ -32,8 +31,11 @@ public class PathFinder : MonoBehaviour
     {
        if (Vector2.Distance(transform.position, target.position) <= 0.01f)
         {
-            pathIndex++;
-            target = path[pathIndex];
+            
+                target = path[pathIndex];
+                pathIndex++;
+            
+
         }
         else
         {
