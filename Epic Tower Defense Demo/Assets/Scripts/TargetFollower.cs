@@ -67,7 +67,7 @@ public class TargetFollower : MonoBehaviour
         foreach (GameObject target in targets)
         {
             if (target == null) continue;
-            float remainingDistance= target.GetComponent<PathFinder>().GetRemainingDistanceToBase();
+            float remainingDistance = target.GetComponent<PathFinder>().GetRemainingDistanceToBase();
             if (remainingDistance < closestDistance)
             {
                 closestDistance = remainingDistance;

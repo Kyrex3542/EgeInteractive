@@ -29,7 +29,7 @@ public class SpawnerScript : MonoBehaviour
             PathFinder pathFinder = gameObject.GetComponent<PathFinder>();
             if (paths.Length > 0)
             {
-                pathFinder.path=new Transform[paths.Length] ;
+                pathFinder.path=new Transform[paths.Length];
                 for (int i = 0; i < paths.Length ; i++)
                 {
                     pathFinder.path[i] = paths[i];

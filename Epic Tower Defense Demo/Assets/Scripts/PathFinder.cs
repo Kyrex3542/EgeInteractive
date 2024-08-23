@@ -29,13 +29,10 @@ public class PathFinder : MonoBehaviour
 
     private void MoveToTarget()
     {
-       if (Vector2.Distance(transform.position, target.position) <= 0.01f)
+       if (Vector2.Distance(transform.position, target.position) <= 0.001f)
         {
-            
-                target = path[pathIndex];
-                pathIndex++;
-            
-
+            pathIndex++;
+            target = path[pathIndex];
         }
         else
         {
@@ -48,9 +45,9 @@ public class PathFinder : MonoBehaviour
     {
         int pathCounter = pathIndex;
         totalDistanceToBase = Vector2.Distance(transform.position, path[pathCounter].position);
-        while (pathCounter < path.Length-1)
+        while (pathCounter < path.Length - 1)
         {
-          totalDistanceToBase +=  Vector2.Distance(path[pathCounter].position, path[pathCounter+1].position);
+          totalDistanceToBase +=  Vector2.Distance(path[pathCounter].position, path[pathCounter + 1].position);
             pathCounter++;
         }
         return totalDistanceToBase;
