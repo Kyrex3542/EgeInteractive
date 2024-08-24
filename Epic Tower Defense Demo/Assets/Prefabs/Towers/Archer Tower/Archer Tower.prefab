@@ -155,7 +155,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   firePoint: {fileID: 941130891267411756}
   projectile: {fileID: 7652807281318402311, guid: e8ca3118b2c8c7942a3ef62d15b412b2, type: 3}
-  projectilePushForce: 50
+  projectilePushForce: 30
   damage: 5
   range: 3
   fireRate: 10

@@ -31,11 +31,8 @@ public class PathFinder : MonoBehaviour
     {
        if (Vector2.Distance(transform.position, target.position) <= 0.01f)
         {
-            
-                target = path[pathIndex];
-                pathIndex++;
-            
-
+            pathIndex++;
+            target = path[pathIndex];
         }
         else
         {

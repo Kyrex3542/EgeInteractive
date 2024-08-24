@@ -20,6 +20,7 @@ public class PlaceTower : MonoBehaviour
     [Header("Tower Prefabs")]
     [SerializeField] private GameObject bowTower;
     [SerializeField] private GameObject rocketTower;
+    [SerializeField] private GameObject minigunTower;
     private List<Vector3Int> busyTiles;
     private bool canPlaceTower=false;
     private Vector3Int selectedCellPosition;
@@ -103,6 +104,11 @@ public class PlaceTower : MonoBehaviour
     public void PlaceRocketTower()
     {
         Instantiate(rocketTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
+    public void PlaceMinigunTower()
+    {
+        Instantiate(minigunTower, GetSelectTile(), Quaternion.identity);
         sliderTowerMenu.SetActive(false);
     }
 
