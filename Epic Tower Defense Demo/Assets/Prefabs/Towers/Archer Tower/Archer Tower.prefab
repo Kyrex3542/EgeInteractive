@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1963584705
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -1990749266, guid: 1eeb86c8dee782b4d97c3f27c87ad1d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,6 +156,7 @@ MonoBehaviour:
   firePoint: {fileID: 941130891267411756}
   projectile: {fileID: 7652807281318402311, guid: e8ca3118b2c8c7942a3ef62d15b412b2, type: 3}
   projectilePushForce: 30
+  circleCollider2D: {fileID: 659112710883006079}
   damage: 5
   range: 3
   fireRate: 10
@@ -360,8 +361,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1963584705
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 1351697095, guid: 1eeb86c8dee782b4d97c3f27c87ad1d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

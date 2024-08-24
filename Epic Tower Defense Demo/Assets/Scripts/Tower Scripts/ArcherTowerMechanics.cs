@@ -10,6 +10,7 @@ public class ArcherTowerMechanics : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectilePushForce;
+    [SerializeField] private CircleCollider2D circleCollider2D;
 
     [Header("Weapon Properties")]
     [SerializeField] private float damage;
@@ -21,9 +22,11 @@ public class ArcherTowerMechanics : MonoBehaviour
     private void Start()
     {
         fireRateTimerMax = 1 / fireRate;
+        circleCollider2D.radius = range;
     }
     private void Update()
     {
+        fireRateTimer -=Time.deltaTime;
         currentTarget = targetFollower.currentTarget;
         if (currentTarget != null&&targetFollower.TargetInRange())
         {
@@ -33,7 +36,6 @@ public class ArcherTowerMechanics : MonoBehaviour
 
     private void Fire()
     {
-        fireRateTimer -=Time.deltaTime;
         if (fireRateTimer < 0)
         {
             //Fire mechanic
