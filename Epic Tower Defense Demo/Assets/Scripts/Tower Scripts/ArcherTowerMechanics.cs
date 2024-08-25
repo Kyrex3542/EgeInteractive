@@ -40,7 +40,7 @@ public class ArcherTowerMechanics : MonoBehaviour
         {
             GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
-            projectileBehavior.moveSpeed = 30;
+            projectileBehavior.moveSpeed = projectilePushForce;
             projectileBehavior.target = currentTarget.transform;
             /* Vector2 forceDir = firePoint.transform.up;
 
