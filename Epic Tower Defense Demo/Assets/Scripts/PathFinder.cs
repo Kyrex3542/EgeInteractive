@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
+    [SerializeField] private Transform Enemy;
     public Transform[] path;
     public Transform target;
     [SerializeField] private float moveSpeed;
@@ -15,7 +16,7 @@ public class PathFinder : MonoBehaviour
     private float totalDistanceToBase;
     private void Start()
     {
-      
+
     }
     void Update()
     {
@@ -29,7 +30,7 @@ public class PathFinder : MonoBehaviour
 
     private void MoveToTarget()
     {
-       if (Vector2.Distance(transform.position, target.position) <= 0.001f)
+        if (Vector2.Distance(transform.position, target.position) <= 0.001f)
         {
             pathIndex++;
             target = path[pathIndex];
@@ -38,7 +39,7 @@ public class PathFinder : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             float targetAngle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, RotationSpeed * Time.deltaTime)));
+           Enemy.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(Enemy.eulerAngles.z, targetAngle + 90f, RotationSpeed * Time.deltaTime)));
         }
     }
     public float GetRemainingDistanceToBase()
@@ -47,7 +48,7 @@ public class PathFinder : MonoBehaviour
         totalDistanceToBase = Vector2.Distance(transform.position, path[pathCounter].position);
         while (pathCounter < path.Length - 1)
         {
-          totalDistanceToBase +=  Vector2.Distance(path[pathCounter].position, path[pathCounter + 1].position);
+            totalDistanceToBase += Vector2.Distance(path[pathCounter].position, path[pathCounter + 1].position);
             pathCounter++;
         }
         return totalDistanceToBase;
