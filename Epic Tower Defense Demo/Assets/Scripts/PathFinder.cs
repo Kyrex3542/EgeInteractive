@@ -39,7 +39,7 @@ public class PathFinder : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             float targetAngle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-           Enemy.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(Enemy.eulerAngles.z, targetAngle + 90f, RotationSpeed * Time.deltaTime)));
+            Enemy.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(Enemy.eulerAngles.z, targetAngle + 90f, RotationSpeed * Time.deltaTime)));
         }
     }
     public float GetRemainingDistanceToBase()
