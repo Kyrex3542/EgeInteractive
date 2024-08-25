@@ -8,20 +8,23 @@ public class HealthManager : MonoBehaviour
     public Image HealthBar;
     public float HealthAmount = 100f;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            TakeDamage(20);
-        }
         if (HealthAmount <= 0)
-            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         HealthAmount -= damage;
         HealthBar.fillAmount = HealthAmount / 100f;
     }
+
+   /* private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ammo"))
+        {
+            TakeDamage(5);
+        }
+    }*/
 }
