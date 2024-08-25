@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14747b94b8a4f1f4eb26443169f6e935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 137210665718976030, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
+  EnemyPrefab: {fileID: 8202814966781123438, guid: 405eaf68625708f4ab669d2b68c82ec8, type: 3}
+  spawnPoint: {fileID: 0}
+  targetPoint: {fileID: 0}
+  paths: []
+  mapLoader: {fileID: 0}
