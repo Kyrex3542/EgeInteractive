@@ -16,7 +16,7 @@ public class MinigunTowerMechanics : MonoBehaviour
     [Header("Weapon Properties")]
     [SerializeField] private float damage;
     [SerializeField] private float range;
-    [SerializeField] private float fireRate;
+    [SerializeField, Tooltip("Round Per Second")] private float fireRate;
     private bool fireOtherBarrel=false;
 
     private float fireRateTimerMax = 5;
@@ -54,8 +54,7 @@ public class MinigunTowerMechanics : MonoBehaviour
             }
             if (createdProjectile == null) return;
             Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
-            float targetAngle = targetFollower.LookAngle();
-            Vector2 forceDir = new Vector2(Mathf.Cos(targetAngle * Mathf.Deg2Rad), Mathf.Sin(targetAngle * Mathf.Deg2Rad));
+            Vector2 forceDir = firePoint.transform.up;
             rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);
 
             fireRateTimer = fireRateTimerMax;

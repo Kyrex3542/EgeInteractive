@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SniperTowerMechanics : MonoBehaviour
+public class RailgunTowerMechanics : MonoBehaviour
 {
     [SerializeField] private TargetFollower targetFollower;
 
@@ -17,7 +17,7 @@ public class SniperTowerMechanics : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField, Tooltip("Round Per Second")] private float fireRate;
 
-    private float fireRateTimerMax = 5;
+    private float fireRateTimerMax;
     private float fireRateTimer = 0;
     private void Start()
     {
@@ -30,6 +30,7 @@ public class SniperTowerMechanics : MonoBehaviour
         currentTarget = targetFollower.currentTarget;
         if (currentTarget != null && targetFollower.TargetInRange())
         {
+            Debug.Log("1");
             Fire();
         }
     }
@@ -38,7 +39,7 @@ public class SniperTowerMechanics : MonoBehaviour
     {
         if (fireRateTimer < 0)
         {
-             GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
+            GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
             Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
 
             Vector2 forceDir = firePoint.transform.up;

@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHead: {fileID: 4221666881986288712}
   currentTarget: {fileID: 0}
-  towerrotationSpeed: 15
+  towerrotationSpeed: 30
 --- !u!114 &-375543426053987580
 MonoBehaviour:
   m_ObjectHideFlags: 0

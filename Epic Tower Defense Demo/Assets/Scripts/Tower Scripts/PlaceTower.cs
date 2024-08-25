@@ -23,6 +23,8 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject rocketTower;
     [SerializeField] private GameObject minigunTower;
     [SerializeField] private GameObject sniperTower;
+    [SerializeField] private GameObject shotgunTower;
+    [SerializeField] private GameObject railgunTower;
     private List<Vector3Int> busyTiles;
     private bool canPlaceTower=false;
     private Vector3Int selectedCellPosition;
@@ -117,9 +119,20 @@ public class PlaceTower : MonoBehaviour
     {
         Instantiate(cannonTower, GetSelectTile(), Quaternion.identity);
         sliderTowerMenu.SetActive(false);
-    }public void PlaceSniperTower()
+    }
+    public void PlaceSniperTower()
     {
         Instantiate(sniperTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
+    public void PlaceShotgunTower()
+    {
+        Instantiate(shotgunTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
+    public void PlaceRailgunTower()
+    {
+        Instantiate(railgunTower, GetSelectTile(), Quaternion.identity);
         sliderTowerMenu.SetActive(false);
     }
 

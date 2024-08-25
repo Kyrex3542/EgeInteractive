@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHead: {fileID: 3153477168233684841}
   currentTarget: {fileID: 0}
-  towerrotationSpeed: 15
+  towerrotationSpeed: 30
 --- !u!58 &1876334206123139279
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   firePoint: {fileID: 4993449091411990856}
   projectile: {fileID: 8989647062671271452, guid: 471d236fd02265148bc857fcff14c0c0, type: 3}
-  projectilePushForce: 50
+  projectilePushForce: 30
   circleCollider2D: {fileID: 1876334206123139279}
   damage: 50
   range: 10

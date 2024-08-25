@@ -15,7 +15,7 @@ public class ArcherTowerMechanics : MonoBehaviour
     [Header("Weapon Properties")]
     [SerializeField] private float damage;
     [SerializeField] private float range;
-    [SerializeField] private float fireRate;
+    [SerializeField, Tooltip("Round Per Second")] private float fireRate;
 
     private float fireRateTimerMax=5;
     private float fireRateTimer=0;
@@ -38,11 +38,11 @@ public class ArcherTowerMechanics : MonoBehaviour
     {
         if (fireRateTimer < 0)
         {
-            //Fire mechanic
-            GameObject createdProjectile =Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
-            Rigidbody2D rigidbody2D= createdProjectile.GetComponent<Rigidbody2D>();
-            float targetAngle = targetFollower.LookAngle();
-            Vector2 forceDir = new Vector2(Mathf.Cos(targetAngle * Mathf.Deg2Rad), Mathf.Sin(targetAngle * Mathf.Deg2Rad));
+            GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
+            Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
+
+            Vector2 forceDir = firePoint.transform.up;
+
             rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);
 
             fireRateTimer = fireRateTimerMax;
