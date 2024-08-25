@@ -11,7 +11,7 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         if (HealthAmount <= 0)
-            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
     }
 
     public void TakeDamage(float damage)
@@ -20,11 +20,11 @@ public class HealthManager : MonoBehaviour
         HealthBar.fillAmount = HealthAmount / 100f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ammo"))
         {
             TakeDamage(5);
         }
-    }
+    }*/
 }

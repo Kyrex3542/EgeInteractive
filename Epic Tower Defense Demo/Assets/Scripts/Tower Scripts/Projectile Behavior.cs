@@ -19,7 +19,11 @@ public class ProjectileBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<HealthManager>().TakeDamage(damage);
+        if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager manager))
+        {
+            manager.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
-   
+
 }
