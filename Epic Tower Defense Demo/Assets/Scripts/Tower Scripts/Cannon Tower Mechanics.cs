@@ -16,6 +16,7 @@ public class CannonTowerMechanics : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField, Tooltip("Round Per Second")] private float fireRate;
+    [SerializeField] private float projectileMoveSpeed;
 
     private float fireRateTimerMax = 5;
     private float fireRateTimer = 0;
@@ -39,11 +40,12 @@ public class CannonTowerMechanics : MonoBehaviour
         if (fireRateTimer < 0)
         {
             GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
-            Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
-
-            Vector2 forceDir = firePoint.transform.up;
-
-            rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);
+            ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
+            projectileBehavior.moveSpeed = 30;
+            projectileBehavior.target = currentTarget.transform;
+            /*Vector2 forceDir = firePoint.transform.up;
+            
+            rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);*/
 
             fireRateTimer = fireRateTimerMax;
         }

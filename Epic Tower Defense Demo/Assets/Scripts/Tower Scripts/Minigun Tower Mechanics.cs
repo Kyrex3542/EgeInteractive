@@ -53,9 +53,9 @@ public class MinigunTowerMechanics : MonoBehaviour
                 fireOtherBarrel = !fireOtherBarrel;
             }
             if (createdProjectile == null) return;
-            Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
-            Vector2 forceDir = firePoint.transform.up;
-            rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);
+            ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
+            projectileBehavior.moveSpeed = 30;
+            projectileBehavior.target = currentTarget.transform;
 
             fireRateTimer = fireRateTimerMax;
         }

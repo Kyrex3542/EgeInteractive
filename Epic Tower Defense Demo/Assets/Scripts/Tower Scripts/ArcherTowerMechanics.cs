@@ -39,11 +39,12 @@ public class ArcherTowerMechanics : MonoBehaviour
         if (fireRateTimer < 0)
         {
             GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
-            Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
+            ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
+            projectileBehavior.moveSpeed = 30;
+            projectileBehavior.target = currentTarget.transform;
+            /* Vector2 forceDir = firePoint.transform.up;
 
-            Vector2 forceDir = firePoint.transform.up;
-
-            rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);
+             rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);*/
 
             fireRateTimer = fireRateTimerMax;
         }

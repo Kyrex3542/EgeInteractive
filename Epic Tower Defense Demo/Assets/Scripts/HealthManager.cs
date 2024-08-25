@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
             Destroy(transform.parent.gameObject);
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         HealthAmount -= damage;
         HealthBar.fillAmount = HealthAmount / 100f;

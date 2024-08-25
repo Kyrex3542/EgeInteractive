@@ -42,14 +42,12 @@ public class ShotgunTowerMechanics : MonoBehaviour
             //Fire mechanic
             foreach (Transform firePoint in firePoints)
             { 
-            GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
-            Rigidbody2D rigidbody2D = createdProjectile.GetComponent<Rigidbody2D>();
+                GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
+                ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
+                projectileBehavior.moveSpeed = 30;
+                projectileBehavior.target = currentTarget.transform;
 
-            Vector2 forceDir = firePoint.transform.up;
-
-            rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);
-
-            fireRateTimer = fireRateTimerMax;
+                fireRateTimer = fireRateTimerMax;
             }
         }
     }
