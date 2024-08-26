@@ -2621,7 +2621,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.01100655}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 987276881}
@@ -3481,7 +3481,7 @@ MonoBehaviour:
   - {fileID: 3115128578566816284, guid: c6ed01304d6a6cd4893c609c35339a68, type: 3}
   - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
   tileMapGrid: {fileID: 1920672275}
-  mapNumber: 1
+  mapNumber: 0
   pathsParent: {fileID: 0}
 --- !u!1 &8716502267934656842
 GameObject:
