@@ -169,7 +169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -231391875, guid: df3903295dd46214d91cf99c0a7f25a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -231391875, guid: df3903295dd46214d91cf99c0a7f25a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -352,8 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 7655761677928957418}
+  HealthBarBackward: {fileID: 0}
+  HealthBarBoarder: {fileID: 0}
   HealthAmount: 100
-  EnemyCollider: {fileID: 0}
 --- !u!1 &8202814966781123438
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,8 +484,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 7655761677928957418}
+  HealthBarBackward: {fileID: 6645742386880555417}
+  HealthBarBoarder: {fileID: 678107859832077755}
   HealthAmount: 100
-  EnemyCollider: {fileID: 0}
 --- !u!1 &8591841758725142060
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,5 +576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 7655761677928957418}
+  HealthBarBackward: {fileID: 0}
+  HealthBarBoarder: {fileID: 0}
   HealthAmount: 100
-  EnemyCollider: {fileID: 1940235212510755297}

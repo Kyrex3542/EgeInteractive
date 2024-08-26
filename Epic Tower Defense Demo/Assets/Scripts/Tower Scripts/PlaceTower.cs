@@ -58,12 +58,11 @@ public class PlaceTower : MonoBehaviour
     {
         sliderTowerMenu.SetActive(true);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 10;
+        mousePos.z = 100;
         sliderTowerMenu.transform.position = mousePos;
 
         selectedCellPosition = activeMap.WorldToCell(mousePos);
         cellCenterWorlPos = activeMap.GetCellCenterWorld(selectedCellPosition);
-
     }
     private Vector3 GetSelectTile()
     {

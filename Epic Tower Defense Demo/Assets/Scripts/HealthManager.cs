@@ -19,12 +19,4 @@ public class HealthManager : MonoBehaviour
         HealthAmount -= damage;
         HealthBar.fillAmount = HealthAmount / 100f;
     }
-
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ammo"))
-        {
-            TakeDamage(5);
-        }
-    }*/
 }
