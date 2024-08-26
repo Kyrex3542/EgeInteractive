@@ -12,6 +12,7 @@ public class SceneChanger : MonoBehaviour
     public GameObject Market;
     public GameObject Madalyalar;
     public GameObject Credits;
+    public AudioSource butonsesi;
 
     public void Mainmenu()
     {
@@ -87,5 +88,9 @@ public class SceneChanger : MonoBehaviour
     public void Game()
     {
         SceneManager.LoadScene("GamePlay");
+    }
+    public void buttonSound()
+    {
+        butonsesi.Play();
     }
 }
