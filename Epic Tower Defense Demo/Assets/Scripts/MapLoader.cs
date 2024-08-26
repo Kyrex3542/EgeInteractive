@@ -22,6 +22,7 @@ public class MapLoader : MonoBehaviour
     [SerializeField] private GameObject pathsParent;
     private void Awake()
     {
+        mapNumber= Player.Instance.mapNumber;
         SetMapVariables();
     }
     public GameObject GetPathsParent()

@@ -84,10 +84,21 @@ public class SceneChanger : MonoBehaviour
         Madalyalar.SetActive(false);
         Credits.SetActive(true);
     }
-   
-    public void Game()
+
+    public void LevelOne()
     {
         SceneManager.LoadScene("GamePlay");
+        Player.Instance.mapNumber = 0;
+    }
+    public void LevelTwo()
+    {
+        SceneManager.LoadScene("GamePlay");
+        Player.Instance.mapNumber = 1;
+    }
+    public void LevelThree()
+    {
+        SceneManager.LoadScene("GamePlay");
+        Player.Instance.mapNumber = 2;
     }
     public void buttonSound()
     {
