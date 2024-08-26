@@ -10,8 +10,11 @@ public class SpawnerScript : MonoBehaviour
     [SerializeField] private Transform[] paths;
     [SerializeField] private MapLoader mapLoader;
     private GameObject pathsParent;
+    [SerializeField] float spawnTimerMax;
+    private float spawnTimer;
     private void Start()
     {
+        spawnTimer = spawnTimerMax;
         pathsParent = mapLoader.GetPathsParent();
         paths=new Transform[pathsParent.transform.childCount];
         for (int i = 0; i < pathsParent.transform.childCount; i++)
@@ -23,7 +26,8 @@ public class SpawnerScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        spawnTimer -= Time.deltaTime;
+        if (spawnTimer < 0)
         {
             GameObject gameObject = Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
             PathFinder pathFinder = gameObject.GetComponent<PathFinder>();
@@ -36,6 +40,7 @@ public class SpawnerScript : MonoBehaviour
                 }
                 pathFinder.target = paths[0];
             }
+            spawnTimer = spawnTimerMax;
         }
     }
 }
