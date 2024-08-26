@@ -15,7 +15,7 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private Tilemap activeMap;
     [SerializeField] private Tilemap activeMapShadow;
     [SerializeField] private GameObject tower;
-    private Vector3 cellCenterWorlPos=default;
+    private Vector3 cellCenterWorlPos = default;
 
     [Header("Tower Prefabs")]
     [SerializeField] private GameObject bowTower;
@@ -26,14 +26,14 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject shotgunTower;
     [SerializeField] private GameObject railgunTower;
     private List<Vector3Int> busyTiles;
-    private bool canPlaceTower=false;
+    private bool canPlaceTower = false;
     private Vector3Int selectedCellPosition;
     void Start()
     {
         activeMap = mapLoader.activeMap;
         activeMapShadow = mapLoader.activeMapShadow;
-        busyTiles=new List<Vector3Int>();
-        
+        busyTiles = new List<Vector3Int>();
+
     }
 
     // Update is called once per frame
@@ -46,9 +46,9 @@ public class PlaceTower : MonoBehaviour
             {
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
-                  ShowSliderTowerMenu();
+                    ShowSliderTowerMenu();
                 }
-                
+
             }
 
         }
@@ -67,12 +67,12 @@ public class PlaceTower : MonoBehaviour
     }
     private Vector3 GetSelectTile()
     {
-        
-        if (canPlaceTower)
+
+        if (canPlaceTower || !canPlaceTower)
         {
             busyTiles.Add(selectedCellPosition);
         }
-       // TileBase selectedTile=tilemap.GetTile(cellPosition);
+        // TileBase selectedTile=tilemap.GetTile(cellPosition);
         return cellCenterWorlPos;
     }
     private bool CanPlaceTower()
@@ -83,7 +83,7 @@ public class PlaceTower : MonoBehaviour
 
         foreach (Vector3Int busyTile in busyTiles)
         {
-            if(busyTile == cellPosition)
+            if (busyTile == cellPosition)
             {
                 canPlaceTower = false;
                 return canPlaceTower;
@@ -94,7 +94,7 @@ public class PlaceTower : MonoBehaviour
             canPlaceTower = true;
             return canPlaceTower;
         }
-            if (tileShadow.name == "normal_7")
+        if (tileShadow.name == "normal_7")
         {
             canPlaceTower = false;
         }
