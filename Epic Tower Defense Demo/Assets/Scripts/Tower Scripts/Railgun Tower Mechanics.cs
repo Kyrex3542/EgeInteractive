@@ -30,7 +30,6 @@ public class RailgunTowerMechanics : MonoBehaviour
         currentTarget = targetFollower.currentTarget;
         if (currentTarget != null && targetFollower.TargetInRange())
         {
-            Debug.Log("1");
             Fire();
         }
     }
