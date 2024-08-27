@@ -11,7 +11,10 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         if (HealthAmount <= 0)
+        {
             Destroy(gameObject);
+            Player.Instance.GainGold(5);
+        }
     }
 
     public void TakeDamage(float damage)

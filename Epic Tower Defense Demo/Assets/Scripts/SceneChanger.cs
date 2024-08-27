@@ -88,17 +88,20 @@ public class SceneChanger : MonoBehaviour
     public void LevelOne()
     {
         SceneManager.LoadScene("GamePlay");
-        Player.Instance.mapNumber = 0;
+        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 0);
+        PlayerPrefs.Save();
     }
     public void LevelTwo()
     {
         SceneManager.LoadScene("GamePlay");
-        Player.Instance.mapNumber = 1;
+        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 1);
+        PlayerPrefs.Save();
     }
     public void LevelThree()
     {
         SceneManager.LoadScene("GamePlay");
-        Player.Instance.mapNumber = 2;
+        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 2);
+        PlayerPrefs.Save();
     }
     public void buttonSound()
     {
