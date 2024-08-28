@@ -163,4 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   moveSpeed: 30
-  damage: 20
+  damage: 100

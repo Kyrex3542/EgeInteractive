@@ -137,7 +137,7 @@ MonoBehaviour:
   targetFollower: {fileID: 4903270731077903677}
   circleCollider2D: {fileID: 8682917343818924195}
   stunDuration: 2
-  range: 5
+  range: 1.5
   stunRate: 0.2
 --- !u!114 &4903270731077903677
 MonoBehaviour:
@@ -154,3 +154,4 @@ MonoBehaviour:
   towerHead: {fileID: 0}
   currentTarget: {fileID: 0}
   towerrotationSpeed: 15
+  canTurnToEnemy: 1
