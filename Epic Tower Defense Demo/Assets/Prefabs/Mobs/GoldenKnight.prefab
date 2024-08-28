@@ -466,7 +466,7 @@ MonoBehaviour:
   Enemy: {fileID: 6424091476480713374}
   path: []
   target: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 20
   RotationSpeed: 15
 --- !u!58 &8105655391958937019
 CircleCollider2D:

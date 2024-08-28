@@ -10,21 +10,13 @@ public class PathFinder : MonoBehaviour
     public Transform[] path;
     public Transform target;
     [SerializeField] private float moveSpeed;
-     private float tempMoveSpeed;
-     private float normalMoveSpeed;
     private int pathIndex = 0;
     [SerializeField] private float RotationSpeed = 15f;
 
     private float totalDistanceToBase;
-    float timer;
-    private void Start()
-    {
-        normalMoveSpeed = moveSpeed;
-    }
+
     void Update()
     {
-
-        Timer();
         if (target != null)
         {
             MoveToTarget();
@@ -47,17 +39,6 @@ public class PathFinder : MonoBehaviour
             Enemy.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(Enemy.eulerAngles.z, targetAngle + 90f, RotationSpeed * Time.deltaTime)));
         }
     }
-    private void Timer()
-    {
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime;
-        }
-        else
-        {
-            BackToNormal();
-        }
-    }
     public float GetRemainingDistanceToBase()
     {
         int pathCounter = pathIndex;
@@ -68,14 +49,5 @@ public class PathFinder : MonoBehaviour
             pathCounter++;
         }
         return totalDistanceToBase;
-    }
-    public void StunMe(float stunTime,float stopSpeed)
-    {
-        moveSpeed = stopSpeed;
-        timer = stunTime;
-    }
-    private void BackToNormal()
-    {
-        moveSpeed = normalMoveSpeed;
     }
 }
