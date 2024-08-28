@@ -9,13 +9,14 @@ public class TargetFollower : MonoBehaviour
     [SerializeField] public GameObject currentTarget;
     private List<GameObject> targets = new List<GameObject>();
     public float towerrotationSpeed = 15f;
+    public bool canTurnToEnemy = true;
 
 
 
 
     private void LookAt()
     {
-        if (targets.Count > 0)
+        if (targets.Count > 0&&canTurnToEnemy)
         {
             float targetAngle = LookAngle();
             towerHead.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(towerHead.transform.eulerAngles.z, targetAngle -90, towerrotationSpeed * Time.deltaTime)));
@@ -44,6 +45,10 @@ public class TargetFollower : MonoBehaviour
         {
             return true;
         }
+    }
+    public List<GameObject> Targets()
+    {
+        return targets;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
