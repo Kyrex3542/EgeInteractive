@@ -8,13 +8,47 @@ public class ProjectileBehavior : MonoBehaviour
     public float moveSpeed;
     public float damage;
 
-
+    public enum Type
+    {
+        railgun,//Düþmana çarptýðýnda delip geçecek
+        rocket,//çarptýðýnda belirli bir alana hasar vuracak
+        tesla,//leveline göre belirli sayýda düþmana sekecek
+        poison,//Tüm haritaya sürekli hasar  verecek
+        bone,//Zýrha iki kat vuracak
+        bulldozer,//Tüm haritaya hasar verecek
+        sniper//Gidilen mesafeye baðlý damage artacak
+    }
+    public Type type;
     private void Update()
     {
         if (target != null)
             MoveToTarget();
         else
             Destroy(gameObject);
+        switch (type)
+        {
+            case Type.railgun:
+                Debug.Log("Railgun");
+                break;
+            case Type.rocket:
+                Debug.Log("Rocket");
+                break;
+            case Type.tesla:
+
+                break;
+            case Type.poison:
+
+                break;
+            case Type.bone:
+
+                break;
+            case Type.bulldozer:
+
+                break;
+            case Type.sniper:
+
+                break;
+        }
 
     }
     private void MoveToTarget()
@@ -31,5 +65,4 @@ public class ProjectileBehavior : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

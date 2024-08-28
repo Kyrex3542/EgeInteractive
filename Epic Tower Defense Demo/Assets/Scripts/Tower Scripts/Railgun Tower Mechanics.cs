@@ -42,6 +42,7 @@ public class RailgunTowerMechanics : MonoBehaviour
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
             projectileBehavior.moveSpeed = 30;
             projectileBehavior.target = currentTarget.transform;
+            projectileBehavior.type= ProjectileBehavior.Type.railgun;
 
             fireRateTimer = fireRateTimerMax;
         }

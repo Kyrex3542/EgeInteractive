@@ -31,10 +31,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7976212598982761757}
-  - {fileID: 2076000008389983667}
-  - {fileID: 8459091490926880414}
-  - {fileID: 3786288639336944749}
-  - {fileID: 3801745103495040014}
   m_Father: {fileID: 3351718736299449613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1606216204318430661
@@ -89,37 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &894148810119422608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2076000008389983667}
-  m_Layer: 0
-  m_Name: Fire Point 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2076000008389983667
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894148810119422608}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 0.408, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4964048430196683427}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15}
 --- !u!1 &4775419808755640865
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +171,7 @@ MonoBehaviour:
   towerHead: {fileID: 889289292863169672}
   currentTarget: {fileID: 0}
   towerrotationSpeed: 30
+  canTurnToEnemy: 1
 --- !u!212 &2423723308119195278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -274,47 +240,16 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   firePoints:
   - {fileID: 7976212598982761757}
-  - {fileID: 2076000008389983667}
-  - {fileID: 8459091490926880414}
-  - {fileID: 3786288639336944749}
-  - {fileID: 3801745103495040014}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   projectile: {fileID: 2821548977761423493, guid: 9689644dd3045794586d3d776987f46b, type: 3}
   projectilePushForce: 30
   circleCollider2D: {fileID: 6274706844871179008}
   damage: 10
   range: 3
   fireRate: 5
---- !u!1 &6191214175128698007
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3786288639336944749}
-  m_Layer: 0
-  m_Name: Fire Point 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3786288639336944749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6191214175128698007}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 0.408, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4964048430196683427}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
 --- !u!1 &6615796592875069965
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,65 +281,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4964048430196683427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7230489512255975647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8459091490926880414}
-  m_Layer: 0
-  m_Name: Fire Point 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8459091490926880414
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7230489512255975647}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: 0.408, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4964048430196683427}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30}
---- !u!1 &9027455541830152647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3801745103495040014}
-  m_Layer: 0
-  m_Name: Fire Point 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3801745103495040014
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9027455541830152647}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0.408, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4964048430196683427}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
