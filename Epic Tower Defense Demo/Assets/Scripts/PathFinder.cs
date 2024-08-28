@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,13 +11,21 @@ public class PathFinder : MonoBehaviour
     public Transform[] path;
     public Transform target;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float normalMoveSpeed;
+    [SerializeField] private float modifiedMoveSpeed;
+    private float timerMax;
+    private float timer;
     private int pathIndex = 0;
     [SerializeField] private float RotationSpeed = 15f;
 
     private float totalDistanceToBase;
-
+    private void Start()
+    {
+        normalMoveSpeed = moveSpeed;
+    }
     void Update()
     {
+        Timer();
         if (target != null)
         {
             MoveToTarget();
@@ -49,5 +58,25 @@ public class PathFinder : MonoBehaviour
             pathCounter++;
         }
         return totalDistanceToBase;
+    }
+    public void StunMe(float stunTime, float stopSpeed)
+    {
+        moveSpeed = stopSpeed;
+        timer = stunTime;
+    }
+    private void BackToNormal()
+    {
+        moveSpeed = normalMoveSpeed;
+    }
+    private void Timer()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            BackToNormal();
+        }
     }
 }

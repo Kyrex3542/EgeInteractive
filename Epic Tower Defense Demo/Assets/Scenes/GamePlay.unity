@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 427257347}
   - component: {fileID: 427257346}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Blacksmith Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -665,7 +665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427257347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3315538121174746422}
+        m_TargetAssemblyTypeName: PlaceTower, Assembly-CSharp
+        m_MethodName: PlaceBlacksmithTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &427257347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,8 +698,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1928832972, guid: 9f55194f743f1f942819c9bb4e3f6e5b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -925,7 +937,7 @@ GameObject:
   - component: {fileID: 658370125}
   - component: {fileID: 658370124}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: Stun Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +1005,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658370125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3315538121174746422}
+        m_TargetAssemblyTypeName: PlaceTower, Assembly-CSharp
+        m_MethodName: PlaceStunTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658370125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,8 +1038,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -254037355, guid: e2a5667e0f5a14b41954c7e45ab05b15, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3524,6 +3548,8 @@ MonoBehaviour:
   sniperTower: {fileID: 8009779535448186442, guid: 608fda8dca02fc24c9b0db3df7818e7f, type: 3}
   shotgunTower: {fileID: 4775419808755640865, guid: 0b427f0565ebbca4aa7323a1ebb1130f, type: 3}
   railgunTower: {fileID: 7872765151655576344, guid: 96fa893b8cbac884bbce0b8fbdbd8f86, type: 3}
+  blacksmithTower: {fileID: 3551244517478997924, guid: e9229c0058962a4489e08005e3b445bd, type: 3}
+  stunTower: {fileID: 4020389039123940361, guid: fd0c38325d68e2e4497db4a01ae54674, type: 3}
 --- !u!4 &3386993117964065748
 Transform:
   m_ObjectHideFlags: 0
@@ -3611,7 +3637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 8716502267934656844}
-  mapNumber: 0
 --- !u!114 &8716502267934656844
 MonoBehaviour:
   m_ObjectHideFlags: 0
