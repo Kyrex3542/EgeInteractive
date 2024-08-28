@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnerScript : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
     public Transform spawnPoint;
     public Transform targetPoint;
+    [SerializeField] private GameObject[] EnemyPrefabArray;
     [SerializeField] private Transform[] paths;
     [SerializeField] private MapLoader mapLoader;
     private GameObject pathsParent;
@@ -29,7 +29,8 @@ public class SpawnerScript : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer < 0)
         {
-            GameObject gameObject = Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+            int randomIndex = Random.Range(0, EnemyPrefabArray.Length);
+            GameObject gameObject = Instantiate(EnemyPrefabArray[randomIndex], spawnPoint.position, Quaternion.identity);
             PathFinder pathFinder = gameObject.GetComponent<PathFinder>();
             if (paths.Length > 0)
             {

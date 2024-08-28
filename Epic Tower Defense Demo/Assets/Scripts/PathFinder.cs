@@ -14,10 +14,7 @@ public class PathFinder : MonoBehaviour
     [SerializeField] private float RotationSpeed = 15f;
 
     private float totalDistanceToBase;
-    private void Start()
-    {
 
-    }
     void Update()
     {
         if (target != null)

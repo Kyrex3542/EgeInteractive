@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7906544426019243988}
-  - component: {fileID: 2622774877770036302}
   - component: {fileID: 6005191442675221013}
   - component: {fileID: 6309443519764890760}
+  - component: {fileID: 2622774877770036302}
   - component: {fileID: 3099703747017534653}
   m_Layer: 0
   m_Name: KnightBoss
@@ -37,23 +37,6 @@ Transform:
   - {fileID: 8047000704978346567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2622774877770036302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107410880852535472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b9fdc72c83ed1043a645bfd468c077f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 8047000704978346567}
-  path: []
-  target: {fileID: 0}
-  moveSpeed: 5
-  RotationSpeed: 15
 --- !u!58 &6005191442675221013
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,6 +99,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &2622774877770036302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107410880852535472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9fdc72c83ed1043a645bfd468c077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 8047000704978346567}
+  path: []
+  target: {fileID: 0}
+  moveSpeed: 5
+  RotationSpeed: 15
 --- !u!114 &3099703747017534653
 MonoBehaviour:
   m_ObjectHideFlags: 0
