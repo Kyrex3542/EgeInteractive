@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 9140873078357314797}
   - component: {fileID: 5479595460070846853}
   m_Layer: 0
-  m_Name: ArcherBoss
+  m_Name: CavalryBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
