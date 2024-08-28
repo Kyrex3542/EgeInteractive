@@ -9,13 +9,14 @@ public class HealthManager : MonoBehaviour
     public Image ShieldBar;
     public float HealthAmount = 100f;
     public float ShieldAmount = 100f;
+    public int GoldReward = 0;
 
     void Update()
     {
         if (HealthAmount <= 0)
         {
             Destroy(gameObject);
-            Player.Instance.GainGold(5);
+            Player.Instance.GainGold(GoldReward);
         }
     }
 

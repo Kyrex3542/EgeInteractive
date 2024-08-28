@@ -154,3 +154,4 @@ MonoBehaviour:
   towerHead: {fileID: 0}
   currentTarget: {fileID: 0}
   towerrotationSpeed: 15
+  canTurnToEnemy: 1
