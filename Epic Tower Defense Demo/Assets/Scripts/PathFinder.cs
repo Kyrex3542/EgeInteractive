@@ -11,12 +11,12 @@ public class PathFinder : MonoBehaviour
     public Transform[] path;
     public Transform target;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float normalMoveSpeed;
-    [SerializeField] private float modifiedMoveSpeed;
+    private float normalMoveSpeed;
+    private float modifiedMoveSpeed;
     private float timerMax;
     private float timer;
     private int pathIndex = 0;
-    [SerializeField] private float RotationSpeed = 15f;
+    private float RotationSpeed = 15f;
 
     private float totalDistanceToBase;
     private void Start()
