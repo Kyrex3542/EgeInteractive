@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        PlayerPrefs.SetInt(GOLDPLAYERPREFS, 0);
+        PlayerPrefs.Save();
     }
     
     public void GainGold(int amount)

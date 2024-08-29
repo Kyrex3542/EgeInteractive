@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 8127275069610875987}
   - component: {fileID: 8676793742317139899}
   m_Layer: 0
-  m_Name: DarkWizard
+  m_Name: Assassin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,7 +362,6 @@ MonoBehaviour:
   path: []
   target: {fileID: 0}
   moveSpeed: 5
-  RotationSpeed: 15
 --- !u!58 &1774298810699689487
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -439,8 +438,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 5562565762585732582}
   ShieldBar: {fileID: 7025440197271102334}
-  HealthAmount: 100
+  HealthAmount: 50
   ShieldAmount: 100
+  GoldReward: 25
 --- !u!1 &6908494525714452807
 GameObject:
   m_ObjectHideFlags: 0

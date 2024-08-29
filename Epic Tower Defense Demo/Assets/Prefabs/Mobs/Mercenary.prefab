@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 6152800442852371110}
   - component: {fileID: 1665580673052350673}
   m_Layer: 0
-  m_Name: Barbarian
+  m_Name: Mercenary
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,8 +127,7 @@ MonoBehaviour:
   Enemy: {fileID: 187029624465342893}
   path: []
   target: {fileID: 0}
-  moveSpeed: 5
-  RotationSpeed: 15
+  moveSpeed: 3
 --- !u!58 &1013167421165282442
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,8 +204,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 3129125090614206433}
   ShieldBar: {fileID: 4220951588326328019}
-  HealthAmount: 100
-  ShieldAmount: 100
+  HealthAmount: 50
+  ShieldAmount: 70
+  GoldReward: 25
 --- !u!1 &5626686859535825043
 GameObject:
   m_ObjectHideFlags: 0

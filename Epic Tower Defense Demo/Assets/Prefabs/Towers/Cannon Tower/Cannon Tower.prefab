@@ -223,6 +223,7 @@ MonoBehaviour:
   towerHead: {fileID: 289328515449164346}
   currentTarget: {fileID: 0}
   towerrotationSpeed: 30
+  canTurnToEnemy: 1
 --- !u!114 &7919581646564022117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,9 +242,10 @@ MonoBehaviour:
   projectile: {fileID: 3511362214777071635, guid: f8065b392f50a38408eba8f9d29560a4, type: 3}
   projectilePushForce: 30
   circleCollider2D: {fileID: 5410013152297501774}
-  damage: 15
+  damage: 25
   range: 3
-  fireRate: 10
+  fireRate: 1
+  projectileMoveSpeed: 0
 --- !u!1 &8254684849048280637
 GameObject:
   m_ObjectHideFlags: 0

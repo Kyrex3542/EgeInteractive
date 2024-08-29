@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -54816784, guid: 5fa96bfe12bcc384797804ad1f44ff9a, type: 3}
+  m_Sprite: {fileID: -83522053, guid: 5fa96bfe12bcc384797804ad1f44ff9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8742978005438152783}
   - component: {fileID: 6802092985475894499}
   m_Layer: 0
-  m_Name: Villager
+  m_Name: PROAssassin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   Enemy: {fileID: 6688661560309629990}
   path: []
   target: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 5
 --- !u!58 &8766901760457195551
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,11 +213,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 4283320369311310427}
   ShieldBar: {fileID: 5084912896479407576}
-  maxHealth: 10
-  maxShield: 10
-  HealthAmount: 10
-  ShieldAmount: 1
-  GoldReward: 5
+  HealthAmount: 100
+  ShieldAmount: 100
+  GoldReward: 0
 --- !u!1001 &5945549492002708145
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -52,8 +52,7 @@ MonoBehaviour:
   Enemy: {fileID: 8449966738992040245}
   path: []
   target: {fileID: 0}
-  moveSpeed: 5
-  RotationSpeed: 15
+  moveSpeed: 3
 --- !u!58 &7882665354750056637
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -130,8 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 3440743507270400761}
   ShieldBar: {fileID: 5935653622277649786}
-  HealthAmount: 100
-  ShieldAmount: 100
+  HealthAmount: 30
+  ShieldAmount: 0
+  GoldReward: 10
 --- !u!1 &739011473742242262
 GameObject:
   m_ObjectHideFlags: 0

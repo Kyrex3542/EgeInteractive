@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3028751444355513415}
   - component: {fileID: 1862786222679218709}
   m_Layer: 0
-  m_Name: Enemy_Wizard
+  m_Name: Mage
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,8 +136,7 @@ MonoBehaviour:
   Enemy: {fileID: 8516945030288059633}
   path: []
   target: {fileID: 0}
-  moveSpeed: 5
-  RotationSpeed: 15
+  moveSpeed: 2
 --- !u!58 &1940235212510755297
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,7 +214,8 @@ MonoBehaviour:
   HealthBar: {fileID: 7655761677928957418}
   ShieldBar: {fileID: 1720074715718666857}
   HealthAmount: 100
-  ShieldAmount: 100
+  ShieldAmount: 0
+  GoldReward: 30
 --- !u!1001 &273882035908295936
 PrefabInstance:
   m_ObjectHideFlags: 0

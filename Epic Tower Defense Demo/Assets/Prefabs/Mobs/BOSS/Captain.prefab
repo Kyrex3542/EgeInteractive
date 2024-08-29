@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2622774877770036302}
   - component: {fileID: 3099703747017534653}
   m_Layer: 0
-  m_Name: KnightBoss
+  m_Name: Captain
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
