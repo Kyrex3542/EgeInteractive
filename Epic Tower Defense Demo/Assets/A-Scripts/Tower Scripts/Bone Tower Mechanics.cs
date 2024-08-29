@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketTowerMechanics : MonoBehaviour
+public class BoneTowerMechanics : MonoBehaviour
 {
     [SerializeField] private TargetFollower targetFollower;
 
@@ -17,7 +17,7 @@ public class RocketTowerMechanics : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField, Tooltip("Round Per Second")] private float fireRate;
 
-    private float fireRateTimerMax;
+    private float fireRateTimerMax = 5;
     private float fireRateTimer = 0;
     private void Start()
     {
@@ -40,10 +40,12 @@ public class RocketTowerMechanics : MonoBehaviour
         {
             GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
-            projectileBehavior.moveSpeed = 30;
-            projectileBehavior.target = currentTarget.transform;
+            projectileBehavior.moveSpeed = projectilePushForce;
             projectileBehavior.damage = damage;
-            projectileBehavior.type = ProjectileBehavior.Type.rocket;
+            projectileBehavior.target = currentTarget.transform;
+            projectileBehavior.type = ProjectileBehavior.Type.bone;
+          
+
             fireRateTimer = fireRateTimerMax;
         }
     }
