@@ -1,9 +1,8 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoisonTowerMechanics : MonoBehaviour
+public class BuldozerTowerMechanics : MonoBehaviour
 {
     [SerializeField] private TargetFollower targetFollower;
 
@@ -43,7 +42,6 @@ public class PoisonTowerMechanics : MonoBehaviour
                 {
                     healthManager.TakeDamage(damage);
                 }
-                
             }
             fireRateTimer = fireRateTimerMax;
         }

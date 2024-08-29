@@ -64,6 +64,11 @@ public class PathFinder : MonoBehaviour
         moveSpeed = stopSpeed;
         timer = stunTime;
     }
+    public void SlowMe(float slowTime, float slowPercentage)
+    {
+        moveSpeed = moveSpeed* slowPercentage;
+        timer = slowTime;
+    }
     private void BackToNormal()
     {
         moveSpeed = normalMoveSpeed;

@@ -31,6 +31,8 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject teslaTower;
     [SerializeField] private GameObject poisonTower;
     [SerializeField] private GameObject boneTower;
+    [SerializeField] private GameObject buldozerTower;
+    [SerializeField] private GameObject freezeTower;
     private List<Vector3Int> busyTiles;
     private bool canPlaceTower = false;
     private Vector3Int selectedCellPosition;
@@ -176,6 +178,16 @@ public class PlaceTower : MonoBehaviour
     public void PlaceBoneTower()
     {
         Instantiate(boneTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
+    public void PlaceBuldozerTower()
+    {
+        Instantiate(buldozerTower, GetSelectTile(), Quaternion.identity);
+        sliderTowerMenu.SetActive(false);
+    }
+    public void PlaceFreezeTower()
+    {
+        Instantiate(freezeTower, GetSelectTile(), Quaternion.identity);
         sliderTowerMenu.SetActive(false);
     }
 
