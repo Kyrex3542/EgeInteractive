@@ -41,6 +41,7 @@ public class SniperTowerMechanics : MonoBehaviour
              GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
             projectileBehavior.moveSpeed = 30;
+            projectileBehavior.damage = damage;
             projectileBehavior.target = currentTarget.transform;
 
             fireRateTimer = fireRateTimerMax;

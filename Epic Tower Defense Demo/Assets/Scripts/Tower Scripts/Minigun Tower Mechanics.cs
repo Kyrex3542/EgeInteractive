@@ -55,6 +55,7 @@ public class MinigunTowerMechanics : MonoBehaviour
             if (createdProjectile == null) return;
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
             projectileBehavior.moveSpeed = 30;
+            projectileBehavior.damage = damage;
             projectileBehavior.target = currentTarget.transform;
 
             fireRateTimer = fireRateTimerMax;

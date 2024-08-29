@@ -43,7 +43,8 @@ public class RocketTowerMechanics : MonoBehaviour
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
             projectileBehavior.moveSpeed = 30;
             projectileBehavior.target = currentTarget.transform;
-
+            projectileBehavior.damage = damage;
+            projectileBehavior.type = ProjectileBehavior.Type.rocket;
             fireRateTimer = fireRateTimerMax;
         }
     }

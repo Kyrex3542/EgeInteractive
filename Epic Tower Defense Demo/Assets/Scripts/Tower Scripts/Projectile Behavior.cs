@@ -7,62 +7,155 @@ public class ProjectileBehavior : MonoBehaviour
     public Transform target;
     public float moveSpeed;
     public float damage;
+    public float rocketAreaOfEffectRadius;
+    public float teslaChainRange;
+    public int teslaMaxChain;
+    public float boneDamageMultiplier = 2f; // For bone type projectile
+    public float distanceDamageMultiplier = 0.1f; // Damage increase per unit distance for sniper
+    private Vector2 firstDir;
+    private bool hasHitEnemy = false;
 
+    private Vector3 firstPos; // For sniper damage calculation
     public enum Type
     {
-        railgun,//Düþmana çarptýðýnda delip geçecek
-        rocket,//çarptýðýnda belirli bir alana hasar vuracak
-        tesla,//leveline göre belirli sayýda düþmana sekecek
-        poison,//Tüm haritaya sürekli hasar  verecek
-        bone,//Zýrha iki kat vuracak
-        bulldozer,//Tüm haritaya hasar verecek
-        sniper//Gidilen mesafeye baðlý damage artacak
+        None,
+        railgun,    //Düþmana çarptýðýnda delip geçecek
+        rocket,     //çarptýðýnda belirli bir alana hasar vuracak
+        tesla,      //leveline göre belirli sayýda düþmana sekecek
+        bone,       //Zýrha iki kat vuracak
+        sniper      //Gidilen mesafeye baðlý damage artacak
     }
     public Type type;
+    private void Start()
+    {
+        firstPos = transform.position;
+
+    }
     private void Update()
     {
-        if (target != null)
-            MoveToTarget();
-        else
-            Destroy(gameObject);
-        switch (type)
+        if (target != null || (type == Type.railgun && hasHitEnemy))
         {
-            case Type.railgun:
-                Debug.Log("Railgun");
-                break;
-            case Type.rocket:
-                Debug.Log("Rocket");
-                break;
-            case Type.tesla:
-
-                break;
-            case Type.poison:
-
-                break;
-            case Type.bone:
-
-                break;
-            case Type.bulldozer:
-
-                break;
-            case Type.sniper:
-
-                break;
+            MoveToTarget();
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
     }
     private void MoveToTarget()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-        float targetAngle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle + -90f));
+        if (type == Type.railgun && hasHitEnemy)
+        {
+            transform.position += (Vector3)firstDir * moveSpeed * Time.deltaTime;
+
+        }
+        else if (target != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            float targetAngle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle + -90f));
+            if (type == Type.railgun)
+            {
+                firstDir = (target.position - transform.position).normalized;
+            }
+        }
+        else
+        {
+            if (type != Type.railgun)
+            {
+                Destroy(gameObject);
+            }
+        }
+       
     }
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
         {
-            healthManager.TakeDamage(damage);
-            Destroy(gameObject);
+            switch (type)
+            {
+                case Type.railgun:
+                    healthManager.TakeDamage(damage);
+                    hasHitEnemy = true;
+                    break;
+                case Type.rocket:
+                    Explode();
+                    break;
+                case Type.tesla:
+                    ChainLightning(collision.transform);
+                    break;
+                case Type.bone:
+                    BoneDamage(collision.transform);
+                    break;
+                case Type.sniper:
+                    float traveledDistance=Vector2.Distance(firstPos,transform.position);
+                    healthManager.TakeDamage(damage + (traveledDistance * distanceDamageMultiplier));
+                    break;
+                case Type.None:
+                    healthManager.TakeDamage(damage);
+                    Destroy(gameObject);
+                    break;
+            }
+
+
+
+
+
         }
+    }
+    private void BoneDamage(Transform target)
+    {
+       if(target.TryGetComponent<HealthManager>(out HealthManager healthManager))
+        {
+            if(healthManager.ShieldAmount > 0)
+            {
+                healthManager.TakeDamage(damage * boneDamageMultiplier);
+            }
+            else
+            {
+                healthManager.TakeDamage(damage);
+                
+            }
+        }
+                Destroy(gameObject);
+    }
+    private void Explode()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, rocketAreaOfEffectRadius);
+        foreach (Collider2D hit in colliders)
+        {
+            if (hit.TryGetComponent<HealthManager>(out HealthManager healthManager))
+            {
+                healthManager.TakeDamage(damage);
+            }
+        }
+        Destroy(gameObject);
+    }
+    private void ChainLightning(Transform firstTarget)
+    {
+        List<Transform> hitTargets = new List<Transform>();
+        hitTargets.Add(firstTarget);
+        int currentChains = 0;
+        while (currentChains < teslaMaxChain)
+        {
+            Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(firstTarget.position, teslaChainRange);
+            foreach (Collider2D hit2d in collider2Ds)
+            {
+                if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager)&&!hitTargets.Contains(hit2d.transform))
+                { 
+                    healthManager.TakeDamage(damage);
+                    hitTargets.Add(hit2d.transform);
+                    firstTarget = hit2d.transform;
+                    currentChains++;
+                    break;
+                }
+            }
+            if (hitTargets.Count <= 0 || currentChains >= teslaMaxChain) break;
+        }
+        Destroy(gameObject);
     }
 }
