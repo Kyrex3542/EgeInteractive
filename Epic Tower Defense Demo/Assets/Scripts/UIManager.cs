@@ -9,14 +9,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private GameObject settingsMenu;
 
-    private void Start()
+    public void Start()
     {
         settingsMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }
     public void UpdateGoldUI()
     {
-       goldText.text= PlayerPrefs.GetInt(Player.GOLDPLAYERPREFS, 0).ToString()+" Gold";
+       goldText.text= PlayerPrefs.GetInt(Player.GOLDPLAYERPREFS, 0).ToString();
       
     }
     public void OpenSettingsMenu()
