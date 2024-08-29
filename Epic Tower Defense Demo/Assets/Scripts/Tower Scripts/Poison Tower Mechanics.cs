@@ -1,15 +1,13 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketTowerMechanics : MonoBehaviour
+public class PoisonTowerMechanics : MonoBehaviour
 {
     [SerializeField] private TargetFollower targetFollower;
 
     [SerializeField] private GameObject currentTarget;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject projectile;
-    [SerializeField] private float projectilePushForce;
     [SerializeField] private CircleCollider2D circleCollider2D;
 
     [Header("Weapon Properties")]
@@ -17,7 +15,7 @@ public class RocketTowerMechanics : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField, Tooltip("Round Per Second")] private float fireRate;
 
-    private float fireRateTimerMax;
+    private float fireRateTimerMax = 5;
     private float fireRateTimer = 0;
     private void Start()
     {
@@ -38,13 +36,14 @@ public class RocketTowerMechanics : MonoBehaviour
     {
         if (fireRateTimer < 0)
         {
-            GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
-            ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
-            projectileBehavior.moveSpeed = 30;
-            projectileBehavior.target = currentTarget.transform;
-            projectileBehavior.damage = damage;
-            projectileBehavior.type = ProjectileBehavior.Type.rocket;
-            fireRateTimer = fireRateTimerMax;
+            List<GameObject> targets = targetFollower.Targets();
+            foreach (GameObject target in targets)
+            {
+                if (target.TryGetComponent<HealthManager>(out HealthManager healthManager))
+                {
+                    healthManager.TakeDamage(damage);
+                }
+            }
         }
     }
 }

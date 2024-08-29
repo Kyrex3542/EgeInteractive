@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,11 +19,11 @@ public class ProjectileBehavior : MonoBehaviour
     public enum Type
     {
         None,
-        railgun,    //Düþmana çarptýðýnda delip geçecek
-        rocket,     //çarptýðýnda belirli bir alana hasar vuracak
-        tesla,      //leveline göre belirli sayýda düþmana sekecek
-        bone,       //Zýrha iki kat vuracak
-        sniper      //Gidilen mesafeye baðlý damage artacak
+        railgun,    //DÃ¼Ã¾mana Ã§arptÃ½Ã°Ã½nda delip geÃ§ecek
+        rocket,     //Ã§arptÃ½Ã°Ã½nda belirli bir alana hasar vuracak
+        tesla,      //leveline gÃ¶re belirli sayÃ½da dÃ¼Ã¾mana sekecek
+        bone,       //ZÃ½rha iki kat vuracak
+        sniper      //Gidilen mesafeye baÃ°lÃ½ damage artacak
     }
     public Type type;
     private void Start()
@@ -67,7 +67,7 @@ public class ProjectileBehavior : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-       
+
     }
 
 
@@ -87,12 +87,14 @@ public class ProjectileBehavior : MonoBehaviour
                     break;
                 case Type.tesla:
                     ChainLightning(collision.transform);
+                    Debug.Log("1");
+
                     break;
                 case Type.bone:
                     BoneDamage(collision.transform);
                     break;
                 case Type.sniper:
-                    float traveledDistance=Vector2.Distance(firstPos,transform.position);
+                    float traveledDistance = Vector2.Distance(firstPos, transform.position);
                     healthManager.TakeDamage(damage + (traveledDistance * distanceDamageMultiplier));
                     break;
                 case Type.None:
@@ -109,19 +111,19 @@ public class ProjectileBehavior : MonoBehaviour
     }
     private void BoneDamage(Transform target)
     {
-       if(target.TryGetComponent<HealthManager>(out HealthManager healthManager))
+        if (target.TryGetComponent<HealthManager>(out HealthManager healthManager))
         {
-            if(healthManager.ShieldAmount > 0)
+            if (healthManager.ShieldAmount > 0)
             {
                 healthManager.TakeDamage(damage * boneDamageMultiplier);
             }
             else
             {
                 healthManager.TakeDamage(damage);
-                
+
             }
         }
-                Destroy(gameObject);
+        Destroy(gameObject);
     }
     private void Explode()
     {
@@ -137,25 +139,30 @@ public class ProjectileBehavior : MonoBehaviour
     }
     private void ChainLightning(Transform firstTarget)
     {
+        //YapÄ±m aÅŸamasÄ±nda
         List<Transform> hitTargets = new List<Transform>();
         hitTargets.Add(firstTarget);
         int currentChains = 0;
         while (currentChains < teslaMaxChain)
         {
+
             Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(firstTarget.position, teslaChainRange);
+            bool chainFound = false;
             foreach (Collider2D hit2d in collider2Ds)
             {
-                if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager)&&!hitTargets.Contains(hit2d.transform))
-                { 
+
+                if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager) && !hitTargets.Contains(hit2d.transform))
+                {
+                    Debug.Log("q");
                     healthManager.TakeDamage(damage);
                     hitTargets.Add(hit2d.transform);
                     firstTarget = hit2d.transform;
                     currentChains++;
+                    chainFound = true;
                     break;
                 }
             }
-            if (hitTargets.Count <= 0 || currentChains >= teslaMaxChain) break;
+            if (!chainFound) break;
         }
-        Destroy(gameObject);
     }
 }

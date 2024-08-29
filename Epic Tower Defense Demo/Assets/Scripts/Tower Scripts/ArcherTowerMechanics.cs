@@ -43,10 +43,6 @@ public class ArcherTowerMechanics : MonoBehaviour
             projectileBehavior.moveSpeed = projectilePushForce;
             projectileBehavior.damage = damage;
             projectileBehavior.target = currentTarget.transform;
-            /* Vector2 forceDir = firePoint.transform.up;
-
-             rigidbody2D.AddForce(forceDir * projectilePushForce, ForceMode2D.Impulse);*/
-
             fireRateTimer = fireRateTimerMax;
         }
     }
