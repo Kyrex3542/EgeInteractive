@@ -103,6 +103,7 @@ public class SceneChanger : MonoBehaviour
         PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 2);
         PlayerPrefs.Save();
     }
+    
     public void buttonSound()
     {
         butonsesi.Play();

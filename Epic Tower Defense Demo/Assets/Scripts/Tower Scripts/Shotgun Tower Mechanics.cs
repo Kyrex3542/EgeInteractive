@@ -7,7 +7,7 @@ public class ShotgunTowerMechanics : MonoBehaviour
     [SerializeField] private TargetFollower targetFollower;
 
     [SerializeField] private GameObject currentTarget;
-    [SerializeField] private Transform[] firePoints;
+    [SerializeField] private Transform firePoint;
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectilePushForce;
@@ -40,15 +40,15 @@ public class ShotgunTowerMechanics : MonoBehaviour
         if (fireRateTimer < 0)
         {
             //Fire mechanic
-            foreach (Transform firePoint in firePoints)
-            { 
+            
                 GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
                 ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
                 projectileBehavior.moveSpeed = 30;
                 projectileBehavior.target = currentTarget.transform;
+                projectileBehavior.damage = damage;
 
                 fireRateTimer = fireRateTimerMax;
-            }
+            
         }
     }
 }

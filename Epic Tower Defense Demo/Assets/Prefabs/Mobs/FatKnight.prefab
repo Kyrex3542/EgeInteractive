@@ -128,7 +128,6 @@ MonoBehaviour:
   path: []
   target: {fileID: 0}
   moveSpeed: 5
-  RotationSpeed: 15
 --- !u!58 &6266341053380183081
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -207,6 +206,7 @@ MonoBehaviour:
   ShieldBar: {fileID: 7714076493155806964}
   HealthAmount: 100
   ShieldAmount: 100
+  GoldReward: 421
 --- !u!1 &5213083876021037407
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,6 +42,7 @@ public class CannonTowerMechanics : MonoBehaviour
             GameObject createdProjectile = Instantiate(projectile, firePoint.position, firePoint.transform.rotation);
             ProjectileBehavior projectileBehavior = createdProjectile.GetComponent<ProjectileBehavior>();
             projectileBehavior.moveSpeed = 30;
+            projectileBehavior.damage = damage;
             projectileBehavior.target = currentTarget.transform;
             /*Vector2 forceDir = firePoint.transform.up;
             
