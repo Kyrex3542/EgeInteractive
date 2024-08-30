@@ -6210,7 +6210,7 @@ MonoBehaviour:
   activeMap: {fileID: 0}
   activeMapShadow: {fileID: 0}
   tower: {fileID: 4101675498614280942, guid: cdee75eaa2078c5428dbc7655c73d659, type: 3}
-  archerTower: {fileID: 0}
+  archerTower: {fileID: 1789975573193599388, guid: 1b494c55a7b29a5479ad89a5befd0d3a, type: 3}
   cannonTower: {fileID: 1004734304526420822, guid: 1ca4efe45120544439fccb8517ac5b9b, type: 3}
   rocketTower: {fileID: 4242855533510078343, guid: 1de4ad2ea11c0db47be9d0664333db80, type: 3}
   minigunTower: {fileID: 7873643585315567802, guid: fe6a903ecf069ad4f9b9de60b91546d1, type: 3}

@@ -164,9 +164,9 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 30
   damage: 20
-  rocketAreaOfEffectRadius: 10
+  rocketAreaOfEffectRadius: 2.5
   teslaChainRange: 0
   teslaMaxChain: 0
   boneDamageMultiplier: 2
   distanceDamageMultiplier: 0.1
-  type: 1
+  type: 2

@@ -244,7 +244,7 @@ MonoBehaviour:
   projectilePushForce: 30
   circleCollider2D: {fileID: 5410013152297501774}
   damage: 25
-  range: 3
+  range: 5
   fireRate: 1
   projectileMoveSpeed: 0
 --- !u!114 &-947428234212987058
