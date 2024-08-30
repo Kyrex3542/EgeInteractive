@@ -214,7 +214,7 @@ MonoBehaviour:
   HealthBar: {fileID: 4283320369311310427}
   ShieldBar: {fileID: 5084912896479407576}
   maxHealth: 10
-  maxShield: 10
+  maxShield: 1
   HealthAmount: 10
   ShieldAmount: 1
   GoldReward: 5
