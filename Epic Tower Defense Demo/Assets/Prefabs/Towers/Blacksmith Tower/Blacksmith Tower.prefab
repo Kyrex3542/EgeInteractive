@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3591635022393127516}
   - component: {fileID: 9031148005932248050}
   - component: {fileID: 769329883807772783}
+  - component: {fileID: 3118814713135140164}
   m_Layer: 0
   m_Name: Blacksmith Tower
   m_TagString: Untagged
@@ -99,3 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyAmount: 5
   makeMoneyRate: 1
+--- !u!114 &3118814713135140164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551244517478997924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0

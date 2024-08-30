@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
@@ -10,15 +10,16 @@ public class PlaceTower : MonoBehaviour
 {
     [SerializeField] private Transform[] cantTouchThis;
     [SerializeField] private GameObject sliderTowerMenu;
+    [SerializeField]private UIManager uiManager;
 
     [SerializeField] private MapLoader mapLoader;
-    [SerializeField] private Tilemap activeMap;
+    [SerializeField] public Tilemap activeMap;
     [SerializeField] private Tilemap activeMapShadow;
     [SerializeField] private GameObject tower;
     private Vector3 cellCenterWorlPos = default;
 
     [Header("Tower Prefabs")]
-    [SerializeField] private GameObject bowTower;
+    [SerializeField] private GameObject archerTower;
     [SerializeField] private GameObject cannonTower;
     [SerializeField] private GameObject rocketTower;
     [SerializeField] private GameObject minigunTower;
@@ -33,14 +34,13 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject boneTower;
     [SerializeField] private GameObject buldozerTower;
     [SerializeField] private GameObject freezeTower;
-    private List<Vector3Int> busyTiles;
-    private bool canPlaceTower = false;
+    private List<TowerData> busyTiles;
     private Vector3Int selectedCellPosition;
     void Start()
     {
         activeMap = mapLoader.activeMap;
         activeMapShadow = mapLoader.activeMapShadow;
-        busyTiles = new List<Vector3Int>();
+        busyTiles = new List<TowerData>();
 
     }
 
@@ -82,113 +82,110 @@ public class PlaceTower : MonoBehaviour
     }
     private Vector3 GetSelectTile()
     {
-
-        if (canPlaceTower || !canPlaceTower)
-        {
-            busyTiles.Add(selectedCellPosition);
-        }
-        // TileBase selectedTile=tilemap.GetTile(cellPosition);
         return cellCenterWorlPos;
     }
+    
     private bool CanPlaceTower()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int cellPosition = activeMap.WorldToCell(mouseWorldPos);
         TileBase tileShadow = activeMapShadow.GetTile(cellPosition);
 
-        foreach (Vector3Int busyTile in busyTiles)
+        foreach (TowerData busyTile in busyTiles)
         {
-            if (busyTile == cellPosition)
+            if (busyTile.Position == cellPosition)
             {
-                canPlaceTower = false;
-                return canPlaceTower;
+                return false;
             }
         }
         if (tileShadow == null)
         {
-            canPlaceTower = true;
-            return canPlaceTower;
+            return true;
         }
         if (tileShadow.name == "normal_7")
         {
-            canPlaceTower = false;
+            return false;
         }
-        return canPlaceTower;
+        return false;
     }
-    public void PlaceBowTower()
+
+    #region PlaceTower
+    public void PlaceArcherTower()
     {
-        Instantiate(bowTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(archerTower);
     }
     public void PlaceRocketTower()
     {
-        Instantiate(rocketTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(rocketTower);
     }
     public void PlaceMinigunTower()
     {
-        Instantiate(minigunTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(minigunTower);
     }
     public void PlaceCannonTower()
     {
-        Instantiate(cannonTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(cannonTower);
     }
     public void PlaceSniperTower()
     {
-        Instantiate(sniperTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(sniperTower);
     }
     public void PlaceShotgunTower()
     {
-        Instantiate(shotgunTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(shotgunTower);
     }
     public void PlaceRailgunTower()
     {
-        Instantiate(railgunTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(railgunTower);
     }
     public void PlaceBlacksmithTower()
     {
-        Instantiate(blacksmithTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(blacksmithTower);
     }
     public void PlaceStunTower()
     {
-        Instantiate(stunTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(stunTower);
     }
     public void PlaceHellTower()
     {
-        Instantiate(hellTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(hellTower);
     }
     public void PlaceTeslaTower()
     {
-        Instantiate(teslaTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(teslaTower);
     }
     public void PlacePoisonTower()
     {
-        Instantiate(poisonTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(poisonTower);
     }
     public void PlaceBoneTower()
     {
-        Instantiate(boneTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(boneTower);
     }
     public void PlaceBuldozerTower()
     {
-        Instantiate(buldozerTower, GetSelectTile(), Quaternion.identity);
-        sliderTowerMenu.SetActive(false);
+        PlaceTowerAtPosition(buldozerTower);
     }
     public void PlaceFreezeTower()
     {
-        Instantiate(freezeTower, GetSelectTile(), Quaternion.identity);
+        PlaceTowerAtPosition(freezeTower);
+    }
+    #endregion
+    private void PlaceTowerAtPosition(GameObject towerPrefab)
+    {
+        GameObject createdTower= Instantiate(towerPrefab, GetSelectTile(), Quaternion.identity);
+        busyTiles.Add(new TowerData(selectedCellPosition, createdTower));
         sliderTowerMenu.SetActive(false);
     }
-
+    public List<TowerData> GetBusyTileData()
+    {
+        return busyTiles;
+    }
+    public void RemoveTower(TowerData removeTowerData,int sellValue)
+    {
+        busyTiles.Remove(removeTowerData);
+        Destroy(removeTowerData.TowerPrefab);
+        uiManager.Hide_InteractionMenu();
+        //Oyuncu parasını sell value kadar arttır
+    }
 }

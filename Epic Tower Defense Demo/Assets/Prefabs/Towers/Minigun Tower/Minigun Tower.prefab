@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: -7448534897335150828}
   - component: {fileID: 6179709025624332612}
   - component: {fileID: 5894114624368433582}
+  - component: {fileID: -6403072628400481528}
   m_Layer: 0
   m_Name: Minigun Tower
   m_TagString: Untagged
@@ -251,6 +252,7 @@ MonoBehaviour:
   towerHead: {fileID: 61788212427761234}
   currentTarget: {fileID: 0}
   towerrotationSpeed: 30
+  canTurnToEnemy: 1
 --- !u!114 &6179709025624332612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +310,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &-6403072628400481528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873643585315567802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0

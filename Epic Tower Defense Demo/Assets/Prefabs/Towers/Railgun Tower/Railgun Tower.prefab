@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7244385498243197438}
   - component: {fileID: 296289945166152258}
   - component: {fileID: 672061187302827483}
+  - component: {fileID: 5286015398532854585}
   m_Layer: 0
   m_Name: Railgun Tower
   m_TagString: Untagged
@@ -276,3 +277,17 @@ MonoBehaviour:
   damage: 120
   range: 5
   fireRate: 1
+--- !u!114 &5286015398532854585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872765151655576344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0

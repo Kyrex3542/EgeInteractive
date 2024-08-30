@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 8623566369582148132}
   - component: {fileID: 1603429341502220542}
   - component: {fileID: -3474959915931601552}
+  - component: {fileID: -6476310756981642504}
   m_Layer: 0
   m_Name: Freeze Tower
   m_TagString: Untagged
@@ -273,3 +274,17 @@ MonoBehaviour:
   slowPercentage: 0.743
   range: 5
   stunRate: 0.1
+--- !u!114 &-6476310756981642504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897867235498745478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0

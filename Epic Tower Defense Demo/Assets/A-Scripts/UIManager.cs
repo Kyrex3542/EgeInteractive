@@ -8,7 +8,9 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private GameObject settingsMenu;
-
+    [SerializeField] private GameObject interactionMenu;
+    [SerializeField] private TextMeshProUGUI upgradeCost;
+    [SerializeField] private TextMeshProUGUI sellValue;
     public void Start()
     {
         settingsMenu.SetActive(false);
@@ -16,8 +18,8 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateGoldUI()
     {
-       goldText.text= PlayerPrefs.GetInt(Player.GOLDPLAYERPREFS, 0).ToString();
-      
+        goldText.text = PlayerPrefs.GetInt(Player.GOLDPLAYERPREFS, 0).ToString();
+
     }
     public void OpenSettingsMenu()
     {
@@ -32,5 +34,15 @@ public class UIManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+    public void Show_InteractionMenu(int upgradeCost, int sellValue)
+    {
+        this.upgradeCost.text = "Upgrade: " + upgradeCost.ToString();
+        this.sellValue.text = "Sell: " + sellValue.ToString();
+        interactionMenu.SetActive(true);
+    }
+    public void Hide_InteractionMenu()
+    {
+        interactionMenu.SetActive(false);
     }
 }

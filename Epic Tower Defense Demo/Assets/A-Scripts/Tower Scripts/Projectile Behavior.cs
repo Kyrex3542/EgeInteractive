@@ -87,8 +87,6 @@ public class ProjectileBehavior : MonoBehaviour
                     break;
                 case Type.tesla:
                     ChainLightning(collision.transform);
-                    Debug.Log("1");
-
                     break;
                 case Type.bone:
                     BoneDamage(collision.transform);
@@ -102,11 +100,6 @@ public class ProjectileBehavior : MonoBehaviour
                     Destroy(gameObject);
                     break;
             }
-
-
-
-
-
         }
     }
     private void BoneDamage(Transform target)
@@ -120,7 +113,6 @@ public class ProjectileBehavior : MonoBehaviour
             else
             {
                 healthManager.TakeDamage(damage);
-
             }
         }
         Destroy(gameObject);
@@ -153,7 +145,6 @@ public class ProjectileBehavior : MonoBehaviour
 
                 if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager) && !hitTargets.Contains(hit2d.transform))
                 {
-                    Debug.Log("q");
                     healthManager.TakeDamage(damage);
                     hitTargets.Add(hit2d.transform);
                     firstTarget = hit2d.transform;

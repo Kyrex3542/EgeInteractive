@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7795026532911147253}
   - component: {fileID: 7756434411476254829}
   - component: {fileID: 7065657502376170096}
+  - component: {fileID: 89501961044453278}
   m_Layer: 0
   m_Name: Buldozer Tower
   m_TagString: Untagged
@@ -156,3 +157,17 @@ MonoBehaviour:
   damage: 100
   range: 33
   fireRate: 1
+--- !u!114 &89501961044453278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312691593005940632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0

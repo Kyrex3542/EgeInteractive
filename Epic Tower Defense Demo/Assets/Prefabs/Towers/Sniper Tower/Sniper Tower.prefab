@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 1325550864087377090}
   - component: {fileID: 1876334206123139279}
   - component: {fileID: 1244838696175132195}
+  - component: {fileID: 6965150972876641823}
   m_Layer: 0
   m_Name: Sniper Tower
   m_TagString: Untagged
@@ -247,6 +248,7 @@ MonoBehaviour:
   towerHead: {fileID: 3153477168233684841}
   currentTarget: {fileID: 0}
   towerrotationSpeed: 30
+  canTurnToEnemy: 1
 --- !u!58 &1876334206123139279
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -303,3 +305,17 @@ MonoBehaviour:
   damage: 50
   range: 10
   fireRate: 1
+--- !u!114 &6965150972876641823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009779535448186442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0
