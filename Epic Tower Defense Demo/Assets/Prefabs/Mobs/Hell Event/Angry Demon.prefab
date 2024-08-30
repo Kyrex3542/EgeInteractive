@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -54816784, guid: 5fa96bfe12bcc384797804ad1f44ff9a, type: 3}
+  m_Sprite: {fileID: 1522983002, guid: 86c84d3946ca99f47b08c436a829f40c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8742978005438152783}
   - component: {fileID: 6802092985475894499}
   m_Layer: 0
-  m_Name: Villager
+  m_Name: Angry Demon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
