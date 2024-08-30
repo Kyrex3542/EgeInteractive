@@ -438,6 +438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 5562565762585732582}
   ShieldBar: {fileID: 7025440197271102334}
+  maxHealth: 50
+  maxShield: 100
   HealthAmount: 50
   ShieldAmount: 100
   GoldReward: 25

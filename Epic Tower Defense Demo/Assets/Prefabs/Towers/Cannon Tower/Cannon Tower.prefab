@@ -243,7 +243,7 @@ MonoBehaviour:
   projectile: {fileID: 3511362214777071635, guid: f8065b392f50a38408eba8f9d29560a4, type: 3}
   projectilePushForce: 30
   circleCollider2D: {fileID: 5410013152297501774}
-  damage: 25
+  damage: 5
   range: 5
   fireRate: 1
   projectileMoveSpeed: 0
