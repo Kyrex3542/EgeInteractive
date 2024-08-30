@@ -36,6 +36,7 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject freezeTower;
     private List<TowerData> busyTiles;
     private Vector3Int selectedCellPosition;
+    private bool isMenusActive = false;
     void Start()
     {
         activeMap = mapLoader.activeMap;
@@ -43,8 +44,6 @@ public class PlaceTower : MonoBehaviour
         busyTiles = new List<TowerData>();
 
     }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -54,7 +53,19 @@ public class PlaceTower : MonoBehaviour
             {
                 if (!IsPointerOverUIObject())
                 {
-                    ShowSliderTowerMenu();
+                    if (!isMenusActive) 
+                    {
+                        ShowSliderTowerMenu();
+                        uiManager.Hide_InteractionMenu();
+                        isMenusActive = true;
+                    }
+                    else
+                    {
+                        uiManager.Hide_InteractionMenu();
+                        sliderTowerMenu.SetActive(false);
+                        isMenusActive=false;
+                    }
+                    
                 }
 
             }
