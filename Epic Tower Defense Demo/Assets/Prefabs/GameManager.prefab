@@ -47,11 +47,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantTouchThis: []
   sliderTowerMenu: {fileID: 0}
+  uiManager: {fileID: 0}
+  mapLoader: {fileID: 0}
   activeMap: {fileID: 0}
   activeMapShadow: {fileID: 0}
   tower: {fileID: 4101675498614280942, guid: cdee75eaa2078c5428dbc7655c73d659, type: 3}
-  bowTower: {fileID: 1789975573193599388, guid: 1b494c55a7b29a5479ad89a5befd0d3a, type: 3}
+  archerTower: {fileID: 0}
+  cannonTower: {fileID: 0}
   rocketTower: {fileID: 4242855533510078343, guid: 1de4ad2ea11c0db47be9d0664333db80, type: 3}
+  minigunTower: {fileID: 0}
+  sniperTower: {fileID: 0}
+  shotgunTower: {fileID: 0}
+  railgunTower: {fileID: 0}
+  blacksmithTower: {fileID: 0}
+  stunTower: {fileID: 0}
+  hellTower: {fileID: 0}
+  teslaTower: {fileID: 0}
+  poisonTower: {fileID: 0}
+  boneTower: {fileID: 0}
+  buldozerTower: {fileID: 0}
+  freezeTower: {fileID: 0}
 --- !u!114 &3684866436036280917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +81,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeMap: {fileID: 0}
   activeMapShadow: {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
+  spawnPoint: {fileID: 0}
+  targetPoint: {fileID: 0}
   tileMaps:
   - {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
   - {fileID: 270071462049022468, guid: 48d39973e9d46f447893c8e84cf047d8, type: 3}
   - {fileID: 2923219903688358895, guid: ab15212ad20a07846ab604752fa9479b, type: 3}
   tileMapShadows:
   - {fileID: 1239605446796701680, guid: b83cc39047b6f0c429240717da7d41b9, type: 3}
+  pathsParentList: []
+  spawnPoints:
+  - {fileID: 6145289214054279762, guid: 07cd89870538de24f92e3b73cf395343, type: 3}
+  targetPoints: []
+  tileMapGrid: {fileID: 0}
   mapNumber: 0
+  pathsParent: {fileID: 0}

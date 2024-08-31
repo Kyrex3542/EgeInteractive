@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3265468364880319870}
   - component: {fileID: 1653121300540951056}
+  - component: {fileID: 3100355094173227048}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -65,4 +66,33 @@ MonoBehaviour:
   - {fileID: 3088539538918769626, guid: 512db805e403bb34aa64ef6d46ced7a2, type: 3}
   paths: []
   mapLoader: {fileID: 0}
-  spawnTimerMax: 0
+--- !u!114 &3100355094173227048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681526636770457505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487720ef4e0997a4388ce1f8d06097d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnerScriptCaller: {fileID: 0}
+  WaveSettingsList:
+  - WaveNumber: 1
+    TotalEnemyNumber: 50
+    EnemyPrefabs:
+    - {fileID: 1239556052444139117, guid: d7110686f67410847bf250c29f88df9f, type: 3}
+    - {fileID: 4259972682430136894, guid: d9b3d97b958b96043a808ae3b6339590, type: 3}
+    - {fileID: 431599521780586191, guid: b58ed947cdbdda7479fb340ee0fdd2d5, type: 3}
+    NumberOfMobs: 14000000120000000c000000
+    FirstAppearNumberOfEnemy: 00000000050000000a000000
+    SpawnRateTimes:
+    - 1
+    - 2
+    - 3
+    SpawnDelayTimes:
+    - 1
+    - 2
+    - 3

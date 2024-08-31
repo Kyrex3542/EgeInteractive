@@ -465,6 +465,38 @@ PrefabInstance:
       propertyPath: EnemyPrefabArray.Array.data[7]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].TotalEnemyNumber
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].EnemyPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].EnemyPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].NumberOfMobs.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].NumberOfMobs.Array.data[1]
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].NumberOfMobs.Array.data[2]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3265468364880319870, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.6
