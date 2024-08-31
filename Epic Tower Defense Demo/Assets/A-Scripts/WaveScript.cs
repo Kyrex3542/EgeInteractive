@@ -35,14 +35,12 @@ public class WaveScript : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(MobCounter);
         if (WaveCounter <= WaveSettingsList.Count)
         {
             WaveCaller();
         }
         else
         {
-            Debug.Log("Dalga Boyu Bitti!");
             Destroy(gameObject);
         }
     }
@@ -56,7 +54,6 @@ public class WaveScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Dalga Boyu deðiþti!");
             WaveCounter++;
             MobCounter = 0;
         }
@@ -64,9 +61,7 @@ public class WaveScript : MonoBehaviour
 
     private void MobIsAvaiable(WaveSettings waveSettings)
     {
-        int numEnemyTypes = Mathf.Min(Mathf.Min(waveSettings.EnemyPrefabs.Length, waveSettings.NumberOfMobs.Length),
-        Mathf.Min(waveSettings.FirstAppearNumberOfEnemy.Length,
-        Mathf.Min(waveSettings.SpawnDelayTimes.Length, waveSettings.SpawnRateTimes.Length)));
+        int numEnemyTypes = waveSettings.EnemyPrefabs.Length;
 
         for (int i = 0; i < numEnemyTypes; i++)
         {
