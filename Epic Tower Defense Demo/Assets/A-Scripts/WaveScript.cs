@@ -11,6 +11,7 @@ public class WaveScript : MonoBehaviour
     private int WaveCounter = 1;
     private int MobCounter = 0;
     private float SpawnTimer;
+    private int MobCountHolder;
     public SpawnerScript SpawnerScriptCaller;
 
     [Header("Wave Settings")]
@@ -70,9 +71,9 @@ public class WaveScript : MonoBehaviour
                 waveSettings.SpawnDelayTimes[i] -= Time.deltaTime;
                 if (waveSettings.SpawnDelayTimes[i] <= 0)
                 {
-                    MobCounter++;
-                    SpawnerScriptCaller.Spawner(waveSettings.EnemyPrefabs[i]);
-                    waveSettings.NumberOfMobs[i]--;
+                    MobCountHolder = SpawnerScriptCaller.Spawner(waveSettings.EnemyPrefabs[i]);
+                    MobCounter += MobCountHolder;
+                    waveSettings.NumberOfMobs[i] -= MobCountHolder;
                     waveSettings.SpawnDelayTimes[i] = waveSettings.SpawnRateTimes[i];
                 }
             }

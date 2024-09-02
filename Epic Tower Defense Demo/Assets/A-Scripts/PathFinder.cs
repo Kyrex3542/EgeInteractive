@@ -32,8 +32,6 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-
-
     private void MoveToTarget()
     {
         if (Vector2.Distance(transform.position, target.position) <= 0.001f)
@@ -48,6 +46,7 @@ public class PathFinder : MonoBehaviour
             Enemy.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(Enemy.eulerAngles.z, targetAngle + 90f, RotationSpeed * Time.deltaTime)));
         }
     }
+
     public float GetRemainingDistanceToBase()
     {
         int pathCounter = pathIndex;
@@ -59,20 +58,24 @@ public class PathFinder : MonoBehaviour
         }
         return totalDistanceToBase;
     }
+
     public void StunMe(float stunTime, float stopSpeed)
     {
         moveSpeed = stopSpeed;
         timer = stunTime;
     }
+
     public void SlowMe(float slowTime, float slowPercentage)
     {
-        moveSpeed = moveSpeed* slowPercentage;
+        moveSpeed = moveSpeed * slowPercentage;
         timer = slowTime;
     }
+
     private void BackToNormal()
     {
         moveSpeed = normalMoveSpeed;
     }
+
     private void Timer()
     {
         if (timer > 0)

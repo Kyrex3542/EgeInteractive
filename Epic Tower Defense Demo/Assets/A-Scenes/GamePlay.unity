@@ -430,6 +430,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: spawnPoint.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EnemyPrefabArray.Array.size
       value: 1
       objectReference: {fileID: 0}
