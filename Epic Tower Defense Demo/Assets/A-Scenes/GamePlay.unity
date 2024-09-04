@@ -402,6 +402,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4741937028999866999}
     - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: spawnTimerMax
       value: 1
       objectReference: {fileID: 0}
@@ -432,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: spawnPoint.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: spawnPoint.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EnemyPrefabArray.Array.size
@@ -469,6 +477,10 @@ PrefabInstance:
       propertyPath: EnemyPrefabArray.Array.data[7]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: SpawnerScriptCaller
+      value: 
+      objectReference: {fileID: 712866338}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: WaveSettingsList.Array.data[0].TotalEnemyNumber
       value: 500
@@ -1988,6 +2000,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658370122}
   m_CullTransparentMesh: 1
+--- !u!114 &712866338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1653121300540951056, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+  m_PrefabInstance: {fileID: 62345452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14747b94b8a4f1f4eb26443169f6e935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &723114982
 GameObject:
   m_ObjectHideFlags: 0

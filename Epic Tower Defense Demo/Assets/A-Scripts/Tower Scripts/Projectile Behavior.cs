@@ -132,6 +132,7 @@ public class ProjectileBehavior : MonoBehaviour
     private void ChainLightning(Transform firstTarget)
     {
         //Yapım aşamasında
+        Hit(firstTarget.gameObject, damage);
         List<Transform> hitTargets = new List<Transform>();
         hitTargets.Add(firstTarget);
         int currentChains = 0;
@@ -142,18 +143,31 @@ public class ProjectileBehavior : MonoBehaviour
             bool chainFound = false;
             foreach (Collider2D hit2d in collider2Ds)
             {
-
-                if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager) && !hitTargets.Contains(hit2d.transform))
-                {
-                    healthManager.TakeDamage(damage);
-                    hitTargets.Add(hit2d.transform);
-                    firstTarget = hit2d.transform;
-                    currentChains++;
-                    chainFound = true;
-                    break;
-                }
+                
+                    if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager) && !hitTargets.Contains(hit2d.transform))
+                    {
+                    target = hit2d.transform;
+                    if (Vector2.Distance(transform.position, target.position) < 0.01f)
+                    {
+                        healthManager.TakeDamage(damage);
+                        hitTargets.Add(hit2d.transform);
+                        firstTarget = hit2d.transform;
+                        currentChains++;
+                        chainFound = true;
+                        break;
+                    }
+                    }
+                
             }
             if (!chainFound) break;
+        }
+        if (currentChains >= teslaMaxChain || target == null) Destroy(gameObject);
+    }
+    private void Hit(GameObject gameObject,float _damage)
+    {
+        if (gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
+        {
+            healthManager.TakeDamage(_damage);
         }
     }
 }
