@@ -238,6 +238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFollower: {fileID: 3884265603477595107}
   currentTarget: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectile: {fileID: 0}
+  projectilePushForce: 0
   circleCollider2D: {fileID: 2755266306378283937}
   damage: 10
   range: 100
@@ -256,3 +259,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: -379272847337985790}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0

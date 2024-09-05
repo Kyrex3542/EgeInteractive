@@ -260,6 +260,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 4748769699705352962}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0
 --- !u!1 &6362839222712225295
 GameObject:
   m_ObjectHideFlags: 0

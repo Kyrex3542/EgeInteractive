@@ -16,9 +16,9 @@ public class UIManager : MonoBehaviour
         settingsMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }
-    public void UpdateGoldUI()
+    public void UpdateGoldUI(int goldAmount)
     {
-        goldText.text = PlayerPrefs.GetInt(Player.GOLDPLAYERPREFS, 0).ToString();
+        goldText.text = goldAmount.ToString();
 
     }
     public void OpenSettingsMenu()

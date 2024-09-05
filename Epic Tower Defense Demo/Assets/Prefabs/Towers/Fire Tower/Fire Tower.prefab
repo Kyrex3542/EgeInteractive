@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 8444093923815969650}
   - component: {fileID: 7032764859016997395}
   - component: {fileID: 4916316603471205969}
-  - component: {fileID: 1999981412855509862}
   - component: {fileID: 8598941173696711359}
+  - component: {fileID: 1999981412855509862}
   m_Layer: 0
   m_Name: Fire Tower
   m_TagString: Untagged
@@ -171,20 +171,6 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   towerrotationSpeed: 30
   canTurnToEnemy: 1
---- !u!114 &1999981412855509862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959746917217772483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sellValue: 0
-  upgradeValue: 0
 --- !u!114 &8598941173696711359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +192,30 @@ MonoBehaviour:
   damage: 1
   range: 4
   fireRate: 1
+--- !u!114 &1999981412855509862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959746917217772483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0
+  tower: {fileID: 8598941173696711359}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0
 --- !u!1 &2048246140178283563
 GameObject:
   m_ObjectHideFlags: 0

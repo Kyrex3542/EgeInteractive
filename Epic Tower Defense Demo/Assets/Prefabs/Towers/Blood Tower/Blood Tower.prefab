@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3998148002250067777}
   - component: {fileID: 8751667849021709171}
   - component: {fileID: 53823968149067852}
-  - component: {fileID: 8871693299425906202}
   - component: {fileID: -3011263981789276039}
+  - component: {fileID: 8871693299425906202}
   m_Layer: 0
   m_Name: Blood Tower
   m_TagString: Untagged
@@ -140,20 +140,6 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   towerrotationSpeed: 30
   canTurnToEnemy: 1
---- !u!114 &8871693299425906202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013015985125052418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sellValue: 0
-  upgradeValue: 0
 --- !u!114 &-3011263981789276039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +161,30 @@ MonoBehaviour:
   damage: 3
   range: 3
   fireRate: 1
+--- !u!114 &8871693299425906202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013015985125052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellValue: 0
+  upgradeValue: 0
+  tower: {fileID: -3011263981789276039}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0
 --- !u!1 &2381949667599034269
 GameObject:
   m_ObjectHideFlags: 0

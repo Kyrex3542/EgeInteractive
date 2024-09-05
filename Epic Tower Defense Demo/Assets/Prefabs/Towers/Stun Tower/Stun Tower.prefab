@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3850274457689446477}
   - component: {fileID: 6279199798557073171}
   - component: {fileID: 8682917343818924195}
-  - component: {fileID: 153913482428072559}
   - component: {fileID: 4903270731077903677}
+  - component: {fileID: 153913482428072559}
   - component: {fileID: 8052103344308930078}
   m_Layer: 0
   m_Name: Stun Tower
@@ -123,23 +123,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
---- !u!114 &153913482428072559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4020389039123940361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 869216f5185ece34cbf668bbd83f5786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFollower: {fileID: 4903270731077903677}
-  circleCollider2D: {fileID: 8682917343818924195}
-  stunDuration: 2
-  range: 1.5
-  stunRate: 0.2
 --- !u!114 &4903270731077903677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +139,28 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   towerrotationSpeed: 15
   canTurnToEnemy: 0
+--- !u!114 &153913482428072559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020389039123940361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869216f5185ece34cbf668bbd83f5786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFollower: {fileID: 4903270731077903677}
+  currentTarget: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectile: {fileID: 0}
+  projectilePushForce: 0
+  circleCollider2D: {fileID: 8682917343818924195}
+  damage: 0
+  range: 1.5
+  fireRate: 0
+  stunDuration: 2
 --- !u!114 &8052103344308930078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +175,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 153913482428072559}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0

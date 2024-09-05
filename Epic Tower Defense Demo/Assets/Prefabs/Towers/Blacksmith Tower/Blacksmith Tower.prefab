@@ -98,8 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b38fc97e602fc94a91448e9a8867a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyAmount: 5
-  makeMoneyRate: 1
+  targetFollower: {fileID: 0}
+  currentTarget: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectile: {fileID: 0}
+  projectilePushForce: 0
+  circleCollider2D: {fileID: 0}
+  damage: 5
+  range: 3
+  fireRate: 1
 --- !u!114 &3118814713135140164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +121,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 769329883807772783}
+  damage2: 10
+  range2: 0
+  fireRate2: 2
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 15
+  range3: 3
+  fireRate3: 0
+  sellValue3: 0

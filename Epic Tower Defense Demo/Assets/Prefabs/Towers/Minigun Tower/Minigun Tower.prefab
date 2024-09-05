@@ -158,9 +158,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7029898326513118312}
   - component: {fileID: 7280755576218764588}
+  - component: {fileID: 5894114624368433582}
   - component: {fileID: -7448534897335150828}
   - component: {fileID: 6179709025624332612}
-  - component: {fileID: 5894114624368433582}
   - component: {fileID: -6403072628400481528}
   m_Layer: 0
   m_Name: Minigun Tower
@@ -237,44 +237,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7448534897335150828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7873643585315567802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5606b80eb8840174596dcccb7158cdbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerHead: {fileID: 61788212427761234}
-  currentTarget: {fileID: 0}
-  towerrotationSpeed: 30
-  canTurnToEnemy: 1
---- !u!114 &6179709025624332612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7873643585315567802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eaf233615e44fc4db3cfd54d2910ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFollower: {fileID: -7448534897335150828}
-  currentTarget: {fileID: 0}
-  firePoint: {fileID: 210308456590194032}
-  firePoint2: {fileID: 2000818713056519749}
-  projectile: {fileID: 1397303621466161759, guid: 161a2830c30c77041af47a88130edcbe, type: 3}
-  projectilePushForce: 25
-  circleCollider2D: {fileID: 5894114624368433582}
-  damage: 2
-  range: 5
-  fireRate: 30
 --- !u!58 &5894114624368433582
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -310,6 +272,44 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &-7448534897335150828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873643585315567802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5606b80eb8840174596dcccb7158cdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerHead: {fileID: 61788212427761234}
+  currentTarget: {fileID: 0}
+  towerrotationSpeed: 30
+  canTurnToEnemy: 1
+--- !u!114 &6179709025624332612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873643585315567802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eaf233615e44fc4db3cfd54d2910ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFollower: {fileID: -7448534897335150828}
+  currentTarget: {fileID: 0}
+  firePoint: {fileID: 210308456590194032}
+  projectile: {fileID: 1397303621466161759, guid: 161a2830c30c77041af47a88130edcbe, type: 3}
+  projectilePushForce: 25
+  circleCollider2D: {fileID: 5894114624368433582}
+  damage: 2
+  range: 5
+  fireRate: 30
+  firePoint2: {fileID: 2000818713056519749}
 --- !u!114 &-6403072628400481528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +324,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 6179709025624332612}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0

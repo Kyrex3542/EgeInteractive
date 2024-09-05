@@ -6,22 +6,34 @@ public class Player : MonoBehaviour
 {
    public static Player Instance { get; set; }
     public const string MAPNUMBERPLAYERPREFS = "MapNumber";
-    public const string GOLDPLAYERPREFS = "Gold";
+    public const string DIAMONDPLAYERPREFS = "Gold";
     [SerializeField] private UIManager manager;
+    private int playerGold = 0;
     
 
 
     private void Awake()
     {
-        Instance = this;
-        PlayerPrefs.SetInt(GOLDPLAYERPREFS, 0);
-        PlayerPrefs.Save();
+        Instance = this;   
     }
     
     public void GainGold(int amount)
     {
-        PlayerPrefs.SetInt(GOLDPLAYERPREFS, PlayerPrefs.GetInt(GOLDPLAYERPREFS,0)+amount);
+        playerGold += amount;
+        manager.UpdateGoldUI(playerGold);
+    }
+    public void GainDiamond(int amount)
+    {
+        PlayerPrefs.SetInt(DIAMONDPLAYERPREFS, PlayerPrefs.GetInt(DIAMONDPLAYERPREFS,0)+amount);
         PlayerPrefs.Save();
-        manager.UpdateGoldUI();
+    }
+    public int GetPlayerCurrentGold()
+    {
+        return playerGold;
+    }
+    public void SpendGold(int amount)
+    {
+        playerGold -= amount;
+        manager.UpdateGoldUI(playerGold);
     }
 }

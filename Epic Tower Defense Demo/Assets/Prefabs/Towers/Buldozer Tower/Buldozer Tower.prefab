@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1352417928480020194}
   - component: {fileID: 8978050700468221951}
-  - component: {fileID: 7795026532911147253}
   - component: {fileID: 7756434411476254829}
+  - component: {fileID: 7795026532911147253}
   - component: {fileID: 7065657502376170096}
   - component: {fileID: 89501961044453278}
   m_Layer: 0
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7795026532911147253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7312691593005940632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5606b80eb8840174596dcccb7158cdbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerHead: {fileID: 0}
-  currentTarget: {fileID: 0}
-  towerrotationSpeed: 15
-  canTurnToEnemy: 0
 --- !u!58 &7756434411476254829
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,6 +123,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7795026532911147253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312691593005940632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5606b80eb8840174596dcccb7158cdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerHead: {fileID: 0}
+  currentTarget: {fileID: 0}
+  towerrotationSpeed: 15
+  canTurnToEnemy: 0
 --- !u!114 &7065657502376170096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFollower: {fileID: 7795026532911147253}
   currentTarget: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectile: {fileID: 0}
+  projectilePushForce: 0
   circleCollider2D: {fileID: 7756434411476254829}
   damage: 100
   range: 33
@@ -171,3 +174,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 7065657502376170096}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0

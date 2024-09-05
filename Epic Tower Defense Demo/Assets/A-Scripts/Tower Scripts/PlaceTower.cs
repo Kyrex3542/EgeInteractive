@@ -34,6 +34,9 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject boneTower;
     [SerializeField] private GameObject buldozerTower;
     [SerializeField] private GameObject freezeTower;
+    [SerializeField] private GameObject alienTower;
+    [SerializeField] private GameObject fireTower;
+    [SerializeField] private GameObject bloodTower;
     private List<TowerData> busyTiles;
     private Vector3Int selectedCellPosition;
     private bool isMenusActive = false;
@@ -181,6 +184,18 @@ public class PlaceTower : MonoBehaviour
     {
         PlaceTowerAtPosition(freezeTower);
     }
+    public void PlaceAlienTower()
+    {
+        PlaceTowerAtPosition(alienTower);
+    }
+    public void PlaceBloodTower()
+    {
+        PlaceTowerAtPosition(bloodTower);
+    }
+    public void PlaceFireTower()
+    {
+        PlaceTowerAtPosition(fireTower);
+    }
     #endregion
     private void PlaceTowerAtPosition(GameObject towerPrefab)
     {
@@ -194,9 +209,16 @@ public class PlaceTower : MonoBehaviour
     }
     public void RemoveTower(TowerData removeTowerData,int sellValue)
     {
+        Player.Instance.GainGold(sellValue);
         busyTiles.Remove(removeTowerData);
         Destroy(removeTowerData.TowerPrefab);
         uiManager.Hide_InteractionMenu();
-        //Oyuncu parasını sell value kadar arttır
+    }
+    public void UpgradeTower(TowerData towerData)
+    {
+        if (towerData.TowerPrefab.TryGetComponent<InteractWithTower>(out InteractWithTower towerMechanics))
+        {
+            towerMechanics.UpgradeTower();
+        }
     }
 }

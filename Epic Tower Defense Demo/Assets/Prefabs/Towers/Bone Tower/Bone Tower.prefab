@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 3746239965419191793}
   - component: {fileID: 4126617723392650747}
   - component: {fileID: 2667323721644370494}
-  - component: {fileID: 1311809604560459733}
   - component: {fileID: 5037674546177474759}
+  - component: {fileID: 1311809604560459733}
   - component: {fileID: -7585712586677848428}
   m_Layer: 0
   m_Name: Bone Tower
@@ -155,6 +155,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5037674546177474759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725074244122290048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5606b80eb8840174596dcccb7158cdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerHead: {fileID: 9153968837376578829}
+  currentTarget: {fileID: 0}
+  towerrotationSpeed: 15
+  canTurnToEnemy: 1
 --- !u!114 &1311809604560459733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,22 +192,6 @@ MonoBehaviour:
   damage: 0
   range: 0
   fireRate: 0
---- !u!114 &5037674546177474759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4725074244122290048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5606b80eb8840174596dcccb7158cdbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerHead: {fileID: 9153968837376578829}
-  currentTarget: {fileID: 0}
-  towerrotationSpeed: 15
-  canTurnToEnemy: 1
 --- !u!114 &-7585712586677848428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +206,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 1311809604560459733}
+  damage2: 0
+  range2: 0
+  fireRate2: 0
+  sellValue2: 0
+  upgradeValue2: 0
+  damage3: 0
+  range3: 0
+  fireRate3: 0
+  sellValue3: 0
 --- !u!1 &9153968837376578829
 GameObject:
   m_ObjectHideFlags: 0

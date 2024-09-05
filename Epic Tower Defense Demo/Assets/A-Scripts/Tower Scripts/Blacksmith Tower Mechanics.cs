@@ -2,32 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlacksmithTowerMechanics : MonoBehaviour
+public class BlacksmithTowerMechanics : TowerMechanics 
 {
 
-    [Header("Properties")]
-    [SerializeField] private int moneyAmount=5;
-    [SerializeField, Tooltip("Make Money Per Second")] private float makeMoneyRate;
-
-    private float makeMoneyRateTimerMax;
-    private float makeMoneyRateTimer = 0;
-    private void Start()
+    protected override void PerformAction()
     {
-        makeMoneyRateTimerMax = 1 / makeMoneyRate;
-    }
-    private void Update()
-    {
-        makeMoneyRateTimer -= Time.deltaTime;
-        if (makeMoneyRateTimer < 0) 
-        {
-            MakeMoney();
-            makeMoneyRateTimer = makeMoneyRateTimerMax;
-        }
+        MakeMoney();
     }
 
     private void MakeMoney()
     {
-       Player.Instance.GainGold(moneyAmount);
+        Player.Instance.GainGold((int)damage);
+        fireRateTimer = fireRateTimerMax; 
     }
-    
+
+    protected override void Start()
+    {
+        fireRateTimerMax = 1 / fireRate;
+        fireRateTimer = fireRateTimerMax;
+    }
+
+    protected override void Update()
+    {
+        fireRateTimer -= Time.deltaTime;
+
+        if (fireRateTimer <= 0)
+        {
+            PerformAction();
+        }
+    }
+
+    public override void Upgrade(float newDamage, float newRange, float newFireRate)
+    {
+        damage = newDamage;
+        fireRate = newFireRate;
+
+        fireRateTimerMax = 1 / fireRate;
+        Debug.Log("Successful Upgrade");
+        Debug.Log("Money Gain: " + damage + " Money Gain Rate: " + fireRate);
+    }
+
 }

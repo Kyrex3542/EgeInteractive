@@ -3,35 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoisonTowerMechanics : MonoBehaviour
+public class PoisonTowerMechanics : TowerMechanics
 {
-    [SerializeField] private TargetFollower targetFollower;
-
-    [SerializeField] private GameObject currentTarget;
-    [SerializeField] private CircleCollider2D circleCollider2D;
-
-    [Header("Weapon Properties")]
-    [SerializeField] private float damage;
-    [SerializeField] private float range;
-    [SerializeField, Tooltip("Round Per Second")] private float fireRate;
-
-    private float fireRateTimerMax = 5;
-    private float fireRateTimer = 0;
-    private void Start()
+    protected override void PerformAction()
     {
-        fireRateTimerMax = 1 / fireRate;
-        circleCollider2D.radius = range;
+        Fire();
     }
-    private void Update()
+    protected override void Update()
     {
         currentTarget = targetFollower.currentTarget;
         if (currentTarget != null && targetFollower.TargetInRange())
         {
-            Fire();
+            PerformAction();
         }
     }
 
-    private void Fire()
+    protected override void Fire()
     {
         fireRateTimer -= Time.deltaTime;
         if (fireRateTimer < 0)

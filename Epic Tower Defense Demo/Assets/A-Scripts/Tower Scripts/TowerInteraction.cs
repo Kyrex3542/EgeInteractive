@@ -54,7 +54,10 @@ public class TowerInteraction : MonoBehaviour
     }
     public void UpgradeTower()
     {
-
+        if (interactWithTower != null)
+        {
+            placeTower.UpgradeTower(selectedTower);
+        }
     }
     private bool IsPointerOverUIObject()
     {

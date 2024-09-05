@@ -2,40 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreezeTowerMechanics : MonoBehaviour
+public class FreezeTowerMechanics : TowerMechanics
 {
-    [SerializeField] private TargetFollower targetFollower;
 
-    [SerializeField] private CircleCollider2D circleCollider2D;
-
-    [Header("Weapon Properties")]
-    [SerializeField] private float slowDuration;
-    [Range(0f, 1f)]
-    [SerializeField] private float slowPercentage;
-    [SerializeField] private float range;
-    [SerializeField, Tooltip("Stun Per Second")] private float stunRate;
-
-    private float stunRateTimerMax = 5;
-    private float slowRateTimer = 0;
-    private void Start()
+    [SerializeField] private float slowDuration = 1;
+    [SerializeField] private float slowPercentage = 1;
+    protected override void PerformAction()
     {
-        stunRateTimerMax = 1 / stunRate;
-        circleCollider2D.radius = range;
-        targetFollower.canTurnToEnemy = false;
+        Slow();
     }
-    private void Update()
+    protected override void Update()
     {
 
         if (targetFollower.Targets().Count > 0)
         {
-            Slow();
+            PerformAction();
         }
     }
 
     private void Slow()
     {
-        slowRateTimer -= Time.deltaTime;
-        if (slowRateTimer < 0)
+        fireRateTimer -= Time.deltaTime;
+        if (fireRateTimer < 0)
         {
             List<GameObject> targets = targetFollower.Targets();
             foreach (GameObject target in targets)
@@ -43,7 +31,7 @@ public class FreezeTowerMechanics : MonoBehaviour
                 PathFinder pathFinder = target.GetComponent<PathFinder>();
                 pathFinder.StunMe(slowDuration, slowPercentage);
             }
-            slowRateTimer = stunRateTimerMax;
+            fireRateTimer = fireRateTimerMax;
         }
     }
 }
