@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,19 +11,23 @@ public class ProjectileBehavior : MonoBehaviour
     public float rocketAreaOfEffectRadius;
     public float teslaChainRange;
     public int teslaMaxChain;
-    public float boneDamageMultiplier = 2f; // For bone type projectile
-    public float distanceDamageMultiplier = 0.1f; // Damage increase per unit distance for sniper
+    public float boneDamageMultiplier = 2f; 
+    public float distanceDamageMultiplier = 0.1f; 
     private Vector2 firstDir;
     private bool hasHitEnemy = false;
+    //For Tesla
+    private List<Transform> teslaHitTargets = new List<Transform>();
+    private int currentChainCount = 0;
+    private float closestEnemy=Mathf.Infinity;
 
-    private Vector3 firstPos; // For sniper damage calculation
+    private Vector3 firstPos; 
     public enum Type
     {
         None,
         railgun,    //Düþmana çarptýðýnda delip geçecek
         rocket,     //çarptýðýnda belirli bir alana hasar vuracak
         tesla,      //leveline göre belirli sayýda düþmana sekecek
-        bone,       //Zýrha iki kat vuracak
+        bone,       //Zırha iki kat vuracak
         sniper      //Gidilen mesafeye baðlý damage artacak
     }
     public Type type;
@@ -129,39 +134,73 @@ public class ProjectileBehavior : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    private void ChainLightning(Transform firstTarget)
-    {
-        //Yapım aşamasında
-        Hit(firstTarget.gameObject, damage);
-        List<Transform> hitTargets = new List<Transform>();
-        hitTargets.Add(firstTarget);
-        int currentChains = 0;
-        while (currentChains < teslaMaxChain)
+    private void ChainLightning(Transform _teslaTarget)
+    {/*
+        closestEnemy = Mathf.Infinity;
+        Transform tempEnemyHolder = _teslaTarget;
+        Hit(_teslaTarget.gameObject, damage);
+        currentChainCount++;
+        Collider2D[] collider2D = Physics2D.OverlapCircleAll(_teslaTarget.position, teslaChainRange);
+        foreach (Collider2D hit2 in collider2D)
         {
-
-            Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(firstTarget.position, teslaChainRange);
-            bool chainFound = false;
-            foreach (Collider2D hit2d in collider2Ds)
+            if (_teslaTarget!=hit2.transform && hit2.CompareTag("Enemy"))
             {
-                
-                    if (hit2d.TryGetComponent<HealthManager>(out HealthManager healthManager) && !hitTargets.Contains(hit2d.transform))
-                    {
-                    target = hit2d.transform;
-                    if (Vector2.Distance(transform.position, target.position) < 0.01f)
-                    {
-                        healthManager.TakeDamage(damage);
-                        hitTargets.Add(hit2d.transform);
-                        firstTarget = hit2d.transform;
-                        currentChains++;
-                        chainFound = true;
-                        break;
-                    }
-                    }
-                
+                float distanceToOtherEnemy = Vector2.Distance(_teslaTarget.position, hit2.transform.position);
+                if (distanceToOtherEnemy < closestEnemy)
+                {
+                    closestEnemy = distanceToOtherEnemy;
+                    tempEnemyHolder = hit2.transform;
+                }
             }
-            if (!chainFound) break;
         }
-        if (currentChains >= teslaMaxChain || target == null) Destroy(gameObject);
+
+        if (tempEnemyHolder != _teslaTarget)
+        {
+            target = tempEnemyHolder;
+            if (currentChainCount >= teslaMaxChain) 
+            {
+                Destroy(gameObject); 
+            }
+
+        }
+        else
+        {
+            
+            Destroy(gameObject);
+        }
+        */
+        
+        closestEnemy = Mathf.Infinity;
+        Transform tempEnemyHolder=_teslaTarget;
+        Hit(_teslaTarget.gameObject, damage);
+        teslaHitTargets.Add(_teslaTarget);
+        currentChainCount++;
+        Debug.Log(currentChainCount);
+        Collider2D[] collider2D = Physics2D.OverlapCircleAll(transform.position, teslaChainRange);
+        if (currentChainCount >= teslaMaxChain||target==null){
+            Destroy(gameObject);
+        }
+        foreach(Collider2D hit2 in collider2D)
+        {
+            if (!teslaHitTargets.Contains(hit2.transform) && hit2.CompareTag("Enemy"))
+            {
+                float distanceToOtherEnemy=Vector2.Distance(transform.position, hit2.transform.position);
+                if (distanceToOtherEnemy < closestEnemy)
+                {
+                    closestEnemy = distanceToOtherEnemy;
+                    tempEnemyHolder = hit2.transform;           
+                }
+            }
+        }
+        if (tempEnemyHolder != _teslaTarget)
+        {
+            target = tempEnemyHolder;
+        }
+        if (closestEnemy == Mathf.Infinity)
+        {
+            Destroy(gameObject);
+        }
+        
     }
     private void Hit(GameObject gameObject,float _damage)
     {

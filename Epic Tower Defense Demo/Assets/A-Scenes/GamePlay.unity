@@ -7022,9 +7022,9 @@ MonoBehaviour:
   boneTower: {fileID: 4725074244122290048, guid: ebf87ed586f96b94390583c8b142c7a8, type: 3}
   buldozerTower: {fileID: 7312691593005940632, guid: 7e4d3a70901b62f4587e82d90113acb4, type: 3}
   freezeTower: {fileID: 4897867235498745478, guid: b104cc961747b404da5b5c0e064e1f41, type: 3}
-  alienTower: {fileID: 0}
-  fireTower: {fileID: 0}
-  bloodTower: {fileID: 0}
+  alienTower: {fileID: 4516307407418660824, guid: 14de463edd80bae4994786baa713fb66, type: 3}
+  fireTower: {fileID: 959746917217772483, guid: 58d8675c59683cc41884dafc50dc1746, type: 3}
+  bloodTower: {fileID: 2013015985125052418, guid: 71c8e36ca4089b74fafbdeb77cb06766, type: 3}
 --- !u!114 &8716502267934656846
 MonoBehaviour:
   m_ObjectHideFlags: 0

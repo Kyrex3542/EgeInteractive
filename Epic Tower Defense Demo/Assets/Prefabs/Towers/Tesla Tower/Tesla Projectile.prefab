@@ -106,7 +106,7 @@ MonoBehaviour:
   damage: 2
   rocketAreaOfEffectRadius: 0
   teslaChainRange: 33
-  teslaMaxChain: 5
+  teslaMaxChain: 50
   boneDamageMultiplier: 2
   distanceDamageMultiplier: 0.1
   type: 3

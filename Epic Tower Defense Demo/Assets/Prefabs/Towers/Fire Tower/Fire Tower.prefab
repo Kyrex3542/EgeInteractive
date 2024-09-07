@@ -189,9 +189,10 @@ MonoBehaviour:
   projectile: {fileID: 7488792569249329204, guid: 6a71cf7a302a71a4aa4df8938f170236, type: 3}
   projectilePushForce: 0
   circleCollider2D: {fileID: 7032764859016997395}
-  damage: 1
+  damage: 10
   range: 4
-  fireRate: 1
+  fireRate: 10
+  coneAngle: 103.9
 --- !u!114 &1999981412855509862
 MonoBehaviour:
   m_ObjectHideFlags: 0
