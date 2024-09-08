@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class TowerMechanics : MonoBehaviour
 {
+    public bool isTowerActive=false;
+    public int towerIndex;
     [SerializeField] protected TargetFollower targetFollower;
     [SerializeField] protected GameObject currentTarget;
     [SerializeField] protected Transform firePoint;
@@ -21,6 +23,7 @@ public abstract class TowerMechanics : MonoBehaviour
 
     protected virtual void Start()
     {
+        
         fireRateTimerMax = 1 / fireRate;
         circleCollider2D.radius = range;
         fireRateTimer = fireRateTimerMax;
