@@ -249,6 +249,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 5200576145903147364, guid: 837c68e562b735943812fdcb33a7cb54, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200576145903147364, guid: 837c68e562b735943812fdcb33a7cb54, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8598639514959450519, guid: 837c68e562b735943812fdcb33a7cb54, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

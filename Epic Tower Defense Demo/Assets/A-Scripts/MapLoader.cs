@@ -10,6 +10,8 @@ public class MapLoader : MonoBehaviour
     public Tilemap activeMapShadow;
     public Transform[] spawnPoint;
     public Transform targetPoint;
+
+
     [Header("Episode Settings")]
     public List<EpisodeSettings> EpisodeSettingList = new List<EpisodeSettings>();
     [System.Serializable]
@@ -23,23 +25,20 @@ public class MapLoader : MonoBehaviour
         [SerializeField] public List<Tilemap> tileMapShadows;
         [SerializeField] public List<Transform> targetPoints;
     }
+
+
     [Header("Dont Change")]
     [SerializeField] private GameObject tileMapGrid;
-    [SerializeField] private int mapNumber = 0;
+    [SerializeField] public int mapNumber = 0;
     [SerializeField] private GameObject[] pathsParent;
+
+
     private void Awake()
     {
         mapNumber = PlayerPrefs.GetInt(Player.MAPNUMBERPLAYERPREFS, 0);
         SetMapVariables();
     }
-    public GameObject[] GetPathsParent()
-    {
-        return pathsParent;
-    }
-    public Transform[] GetSpawnLocs()
-    {
-        return spawnPoint;
-    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -47,6 +46,7 @@ public class MapLoader : MonoBehaviour
             SetMapVariables();
         }
     }
+
     private void SetMapVariables()
     {
         EpisodeSettings episodeSettings = EpisodeSettingList[mapNumber];
@@ -69,6 +69,20 @@ public class MapLoader : MonoBehaviour
                 targetPoint = Instantiate(targetPoint, targetPoint.position, targetPoint.rotation);
             }
         }
+    }
+
+    public GameObject[] GetPathsParent()
+    {
+        return pathsParent;
+    }
+    public Transform[] GetSpawnLocs()
+    {
+        return spawnPoint;
+    }
+
+    public int GetMapNumber()
+    {
+        return mapNumber;
     }
 }
 
