@@ -200,6 +200,7 @@ public class PlaceTower : MonoBehaviour
     private void PlaceTowerAtPosition(GameObject towerPrefab)
     {
         GameObject createdTower= Instantiate(towerPrefab, GetSelectTile(), Quaternion.identity);
+        createdTower.GetComponent<InteractWithTower>().manager = uiManager;
         busyTiles.Add(new TowerData(selectedCellPosition, createdTower));
         sliderTowerMenu.SetActive(false);
     }

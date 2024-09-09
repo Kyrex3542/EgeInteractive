@@ -85,24 +85,13 @@ public class SceneChanger : MonoBehaviour
         Credits.SetActive(true);
     }
 
-    public void LevelOne()
+    public void LoadLevel(int mapNumber)
     {
         SceneManager.LoadScene("GamePlay");
-        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 0);
+        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, mapNumber);
         PlayerPrefs.Save();
     }
-    public void LevelTwo()
-    {
-        SceneManager.LoadScene("GamePlay");
-        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 1);
-        PlayerPrefs.Save();
-    }
-    public void LevelThree()
-    {
-        SceneManager.LoadScene("GamePlay");
-        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, 2);
-        PlayerPrefs.Save();
-    }
+
     
     public void buttonSound()
     {

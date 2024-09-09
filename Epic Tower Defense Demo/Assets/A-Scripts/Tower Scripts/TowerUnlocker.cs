@@ -20,7 +20,11 @@ public class TowerUnlocker : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < towerCostText.Length; i++) 
+        UpdateCostUI();
+    }
+    public void UpdateCostUI()
+    {
+        for (int i = 0; i < towerCostText.Length; i++)
         {
             towerCostText[i].text = towerGeneralData[i].towerPrice.ToString();
         }

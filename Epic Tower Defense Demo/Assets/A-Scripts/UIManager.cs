@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject interactionMenu;
     [SerializeField] private TextMeshProUGUI upgradeCost;
     [SerializeField] private TextMeshProUGUI sellValue;
+
+    public Button upgradeBtn;
     public void Start()
     {
         settingsMenu.SetActive(false);

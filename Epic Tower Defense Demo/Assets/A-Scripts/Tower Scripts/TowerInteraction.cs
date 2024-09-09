@@ -30,7 +30,6 @@ public class TowerInteraction : MonoBehaviour
         {
             if (data.Position == cellPosition)
             {
-        Debug.Log("q");
                 Show_InteractionMenu(data);
                 selectedTower = data;
                 break;
@@ -54,7 +53,7 @@ public class TowerInteraction : MonoBehaviour
     }
     public void UpgradeTower()
     {
-        if (interactWithTower != null)
+        if (interactWithTower != null&&interactWithTower.upgradeLevel<interactWithTower.upgradeTiers.Count)
         {
             placeTower.UpgradeTower(selectedTower);
         }

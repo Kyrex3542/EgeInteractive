@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2996184574048735000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3018028814072446541}
+  - component: {fileID: 6131699010330634423}
+  - component: {fileID: 8938733225492842328}
+  - component: {fileID: 4839672262683425285}
+  - component: {fileID: 7245358883869734154}
+  - component: {fileID: 7179181347006747462}
+  - component: {fileID: 7999502908984391564}
+  m_Layer: 0
+  m_Name: GameManager 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3018028814072446541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6131699010330634423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff805f63a86d4f04f9408e6b4f0595d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeMap: {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
+  activeMapShadow: {fileID: 1239605446796701680, guid: b83cc39047b6f0c429240717da7d41b9, type: 3}
+  spawnPoint:
+  - {fileID: 7662423399279793818, guid: 2098c2a13cafe93439b8e898ec25fb8e, type: 3}
+  targetPoint: {fileID: 3567337285957585293, guid: 0812048e710fc3140a818f883c564fd5, type: 3}
+  EpisodeSettingList:
+  - pathsParentList:
+    - {fileID: 794881193114613400, guid: c75afd235aad4834ebab41cea55b43ab, type: 3}
+    spawnPoints:
+    - {fileID: 9209740602962069755, guid: 416cd7ee4a5dfb341a7ff57d2df54f12, type: 3}
+    tileMaps:
+    - {fileID: 2923219903688358895, guid: ab15212ad20a07846ab604752fa9479b, type: 3}
+    tileMapShadows:
+    - {fileID: 5954000644612106003, guid: 7707d74d203b8b34fa5378fca368c414, type: 3}
+    targetPoints:
+    - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
+  - pathsParentList:
+    - {fileID: 794881193114613400, guid: c75afd235aad4834ebab41cea55b43ab, type: 3}
+    spawnPoints:
+    - {fileID: 9209740602962069755, guid: 416cd7ee4a5dfb341a7ff57d2df54f12, type: 3}
+    tileMaps:
+    - {fileID: 2923219903688358895, guid: ab15212ad20a07846ab604752fa9479b, type: 3}
+    tileMapShadows:
+    - {fileID: 5954000644612106003, guid: 7707d74d203b8b34fa5378fca368c414, type: 3}
+    targetPoints:
+    - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
+  - pathsParentList:
+    - {fileID: 794881193114613400, guid: c75afd235aad4834ebab41cea55b43ab, type: 3}
+    spawnPoints:
+    - {fileID: 9209740602962069755, guid: 416cd7ee4a5dfb341a7ff57d2df54f12, type: 3}
+    tileMaps:
+    - {fileID: 2923219903688358895, guid: ab15212ad20a07846ab604752fa9479b, type: 3}
+    tileMapShadows:
+    - {fileID: 5954000644612106003, guid: 7707d74d203b8b34fa5378fca368c414, type: 3}
+    targetPoints:
+    - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
+  - pathsParentList:
+    - {fileID: 794881193114613400, guid: c75afd235aad4834ebab41cea55b43ab, type: 3}
+    spawnPoints:
+    - {fileID: 9209740602962069755, guid: 416cd7ee4a5dfb341a7ff57d2df54f12, type: 3}
+    tileMaps:
+    - {fileID: 2923219903688358895, guid: ab15212ad20a07846ab604752fa9479b, type: 3}
+    tileMapShadows:
+    - {fileID: 5954000644612106003, guid: 7707d74d203b8b34fa5378fca368c414, type: 3}
+    targetPoints:
+    - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
+  - pathsParentList:
+    - {fileID: 794881193114613400, guid: c75afd235aad4834ebab41cea55b43ab, type: 3}
+    spawnPoints:
+    - {fileID: 9209740602962069755, guid: 416cd7ee4a5dfb341a7ff57d2df54f12, type: 3}
+    tileMaps:
+    - {fileID: 2923219903688358895, guid: ab15212ad20a07846ab604752fa9479b, type: 3}
+    tileMapShadows:
+    - {fileID: 5954000644612106003, guid: 7707d74d203b8b34fa5378fca368c414, type: 3}
+    targetPoints:
+    - {fileID: 4714653325168775369, guid: b1e937dcff87656429b6ae87f81d25ac, type: 3}
+  tileMapGrid: {fileID: 0}
+  mapNumber: 0
+  pathsParent:
+  - {fileID: 0}
+--- !u!114 &8938733225492842328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2156f96cb1fdf0a4abb04792da355879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 4839672262683425285}
+--- !u!114 &4839672262683425285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3def64d1fc26fdd4faf703781b679339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldText: {fileID: 0}
+  settingsMenu: {fileID: 0}
+  interactionMenu: {fileID: 0}
+  upgradeCost: {fileID: 0}
+  sellValue: {fileID: 0}
+  upgradeBtn: {fileID: 0}
+--- !u!114 &7245358883869734154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4913a460ecdfb0d489fc6a0b5adb5f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantTouchThis: []
+  sliderTowerMenu: {fileID: 0}
+  uiManager: {fileID: 4839672262683425285}
+  mapLoader: {fileID: 6131699010330634423}
+  activeMap: {fileID: 0}
+  activeMapShadow: {fileID: 0}
+  tower: {fileID: 4101675498614280942, guid: cdee75eaa2078c5428dbc7655c73d659, type: 3}
+  archerTower: {fileID: 1789975573193599388, guid: 1b494c55a7b29a5479ad89a5befd0d3a, type: 3}
+  cannonTower: {fileID: 1004734304526420822, guid: 1ca4efe45120544439fccb8517ac5b9b, type: 3}
+  rocketTower: {fileID: 4242855533510078343, guid: 1de4ad2ea11c0db47be9d0664333db80, type: 3}
+  minigunTower: {fileID: 7873643585315567802, guid: fe6a903ecf069ad4f9b9de60b91546d1, type: 3}
+  sniperTower: {fileID: 8009779535448186442, guid: 608fda8dca02fc24c9b0db3df7818e7f, type: 3}
+  shotgunTower: {fileID: 4775419808755640865, guid: 0b427f0565ebbca4aa7323a1ebb1130f, type: 3}
+  railgunTower: {fileID: 7872765151655576344, guid: 96fa893b8cbac884bbce0b8fbdbd8f86, type: 3}
+  blacksmithTower: {fileID: 3551244517478997924, guid: e9229c0058962a4489e08005e3b445bd, type: 3}
+  stunTower: {fileID: 4020389039123940361, guid: fd0c38325d68e2e4497db4a01ae54674, type: 3}
+  hellTower: {fileID: 2134569034284371794, guid: d865a2f33eab09e489cd0c15d3898d5a, type: 3}
+  teslaTower: {fileID: 8844968620168807669, guid: b28b411bf490a384aa025ad76c598157, type: 3}
+  poisonTower: {fileID: 8385162660742782674, guid: 80b39a16c36f3044a94e5b51ef2d19f9, type: 3}
+  boneTower: {fileID: 4725074244122290048, guid: ebf87ed586f96b94390583c8b142c7a8, type: 3}
+  buldozerTower: {fileID: 7312691593005940632, guid: 7e4d3a70901b62f4587e82d90113acb4, type: 3}
+  freezeTower: {fileID: 4897867235498745478, guid: b104cc961747b404da5b5c0e064e1f41, type: 3}
+  alienTower: {fileID: 4516307407418660824, guid: 14de463edd80bae4994786baa713fb66, type: 3}
+  fireTower: {fileID: 959746917217772483, guid: 58d8675c59683cc41884dafc50dc1746, type: 3}
+  bloodTower: {fileID: 2013015985125052418, guid: 71c8e36ca4089b74fafbdeb77cb06766, type: 3}
+--- !u!114 &7179181347006747462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0182a2183acab438f5461a08176e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeTower: {fileID: 7245358883869734154}
+  UImanager: {fileID: 4839672262683425285}
+--- !u!114 &7999502908984391564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996184574048735000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d415ab667a39f7a46ae2cdbcf3b164f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerSliderMenuContents:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

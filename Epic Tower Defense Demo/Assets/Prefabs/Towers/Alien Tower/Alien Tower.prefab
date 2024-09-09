@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9ed291ac0f96b449fe7f7e13a0b281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 5761114678581732778}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 2928354719664085510}
@@ -261,15 +263,32 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: 4748769699705352962}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  upgradeTiers:
+  - damage: 0
+    range: 0
+    fireRate: 0
+    sellValue: 0
+    upgradeValue: 0
+  - damage: 0
+    range: 0
+    fireRate: 0
+    sellValue: 0
+    upgradeValue: 0
+  - damage: 0
+    range: 0
+    fireRate: 0
+    sellValue: 0
+    upgradeValue: 0
+  - damage: 0
+    range: 0
+    fireRate: 0
+    sellValue: 0
+    upgradeValue: 0
+  - damage: 0
+    range: 0
+    fireRate: 0
+    sellValue: 0
+    upgradeValue: 0
 --- !u!1 &6362839222712225295
 GameObject:
   m_ObjectHideFlags: 0

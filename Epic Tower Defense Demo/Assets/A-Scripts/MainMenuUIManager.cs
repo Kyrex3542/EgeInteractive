@@ -5,14 +5,18 @@ using TMPro;
 
 public class MainMenuUIManager : MonoBehaviour
 {
-    [SerializeField] TowerGeneralData towerGeneralData;
+    [SerializeField] private TowerUnlocker towerUnlocker;
 
-    
+    [SerializeField] private TextMeshProUGUI playerDiamond;
 
 
-
-    private void UpdateCostUI()
+    private void Start()
     {
-       
+        UpdateMainMenuUI();
+    }
+    private void UpdateMainMenuUI()
+    {
+        playerDiamond.text = PlayerPrefs.GetInt(Player.DIAMONDPLAYERPREFS, 0).ToString();
+       towerUnlocker.UpdateCostUI();
     }
 }
