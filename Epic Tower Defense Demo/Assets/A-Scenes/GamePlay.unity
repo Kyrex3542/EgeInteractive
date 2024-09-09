@@ -507,11 +507,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[1]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].FirstAppearNumberOfEnemy.Array.data[1]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: WaveSettingsList.Array.data[0].FirstAppearNumberOfEnemy.Array.data[2]
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3265468364880319870, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6924,9 +6932,9 @@ MonoBehaviour:
   targetPoint: {fileID: 3567337285957585293, guid: 0812048e710fc3140a818f883c564fd5, type: 3}
   PathLocationList:
   - pathsParentList:
-    - {fileID: 4294966545442958142, guid: bcd82653c5f0e7649b24f9da1a436bab, type: 3}
+    - {fileID: 8221676985611668318, guid: 4cb7c048956c33f4fa5a121064d9db9b, type: 3}
     spawnPoints:
-    - {fileID: 7998651717285874752, guid: a435c6be8d117364cb337a6431a054ec, type: 3}
+    - {fileID: 6145289214054279762, guid: 07cd89870538de24f92e3b73cf395343, type: 3}
   tileMaps:
   - {fileID: 1548129196352243560, guid: ceee7b7c0c19e9a48afdc7535cbe0fc4, type: 3}
   tileMapShadows:
