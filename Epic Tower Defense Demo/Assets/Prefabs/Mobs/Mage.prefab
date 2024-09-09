@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1940235212510755297}
   - component: {fileID: 3028751444355513415}
   - component: {fileID: 1862786222679218709}
+  - component: {fileID: 1870495633834324596}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Enemy
@@ -137,6 +138,7 @@ MonoBehaviour:
   path: []
   target: {fileID: 0}
   moveSpeed: 2
+  pathIndex: 0
 --- !u!58 &1940235212510755297
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -219,6 +221,22 @@ MonoBehaviour:
   ShieldAmount: 0
   GoldReward: 30
   Delay: 1
+--- !u!114 &1870495633834324596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202814966781123438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884ec59e68cfc0c438fce4f482f70758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowerRate: 3
+  FollowerSpawnTimeRate: 0.4
+  AdditionalSpawnTimeRate: 1
+  Follower: {fileID: 1239556052444139117, guid: d7110686f67410847bf250c29f88df9f, type: 3}
 --- !u!1001 &273882035908295936
 PrefabInstance:
   m_ObjectHideFlags: 0

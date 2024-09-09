@@ -15,7 +15,7 @@ public class PathFinder : MonoBehaviour
     private float modifiedMoveSpeed;
     private float timerMax;
     private float timer;
-    private int pathIndex = 0;
+    public int pathIndex = 0;
     private float RotationSpeed = 15f;
 
     private float totalDistanceToBase;
