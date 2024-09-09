@@ -34,6 +34,7 @@ public class ProjectileBehavior : MonoBehaviour
     private void Start()
     {
         firstPos = transform.position;
+        firstDir = (target.position - transform.position).normalized;
 
     }
     private void Update()
@@ -50,7 +51,7 @@ public class ProjectileBehavior : MonoBehaviour
     }
     private void MoveToTarget()
     {
-        if (type == Type.railgun && hasHitEnemy)
+        if (type == Type.railgun && hasHitEnemy && firstDir!=Vector2.zero)
         {
             transform.position += (Vector3)firstDir * moveSpeed * Time.deltaTime;
 
@@ -59,18 +60,13 @@ public class ProjectileBehavior : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             float targetAngle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle + -90f));
-            if (type == Type.railgun)
-            {
-                firstDir = (target.position - transform.position).normalized;
-            }
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle + -90f));        
         }
         else
         {
-            if (type != Type.railgun)
-            {
+            
                 Destroy(gameObject);
-            }
+            
         }
 
     }
@@ -81,11 +77,11 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
         {
+                    hasHitEnemy = true;
             switch (type)
             {
                 case Type.railgun:
                     healthManager.TakeDamage(damage);
-                    hasHitEnemy = true;
                     break;
                 case Type.rocket:
                     Explode();
