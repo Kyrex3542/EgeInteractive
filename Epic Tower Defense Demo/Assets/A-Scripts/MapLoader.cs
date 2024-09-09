@@ -10,18 +10,19 @@ public class MapLoader : MonoBehaviour
     public Tilemap activeMapShadow;
     public Transform[] spawnPoint;
     public Transform targetPoint;
-    [Header("Path Locations & Spawn Point")]
-    public List<PathLocations> PathLocationList = new List<PathLocations>();
+    [Header("Episode Settings")]
+    public List<EpisodeSettings> EpisodeSettingList = new List<EpisodeSettings>();
     [System.Serializable]
-    public class PathLocations
+    public class EpisodeSettings
     {
+        [Header("Path Locations & Spawn Points")]
         public GameObject[] pathsParentList;
         public Transform[] spawnPoints;
+        [Header("Map List")]
+        [SerializeField] public List<Tilemap> tileMaps;
+        [SerializeField] public List<Tilemap> tileMapShadows;
+        [SerializeField] public List<Transform> targetPoints;
     }
-    [Header("Map List")]
-    [SerializeField] private List<Tilemap> tileMaps;
-    [SerializeField] private List<Tilemap> tileMapShadows;
-    [SerializeField] private List<Transform> targetPoints;
     [Header("Dont Change")]
     [SerializeField] private GameObject tileMapGrid;
     [SerializeField] private int mapNumber = 0;
@@ -48,19 +49,19 @@ public class MapLoader : MonoBehaviour
     }
     private void SetMapVariables()
     {
-        PathLocations pathLocations = PathLocationList[mapNumber];
-        if (mapNumber < tileMaps.Count && mapNumber < tileMapShadows.Count)
+        EpisodeSettings episodeSettings = EpisodeSettingList[mapNumber];
+        if (mapNumber < episodeSettings.tileMaps.Count && mapNumber < episodeSettings.tileMapShadows.Count)
         {
-            activeMap = tileMaps[mapNumber];
-            activeMapShadow = tileMapShadows[mapNumber];
-            pathsParent = pathLocations.pathsParentList;
-            spawnPoint = pathLocations.spawnPoints;
-            targetPoint = targetPoints[mapNumber];
+            activeMap = episodeSettings.tileMaps[mapNumber];
+            activeMapShadow = episodeSettings.tileMapShadows[mapNumber];
+            pathsParent = episodeSettings.pathsParentList;
+            spawnPoint = episodeSettings.spawnPoints;
+            targetPoint = episodeSettings.targetPoints[mapNumber];
             if (activeMap != null && activeMapShadow != null)
             {
                 activeMap = Instantiate(activeMap, Vector3.zero, Quaternion.identity, tileMapGrid.transform);
                 activeMapShadow = Instantiate(activeMapShadow, new Vector3(0, 0, 0.1f), Quaternion.identity, tileMapGrid.transform);
-                for (int i = 0; i < pathLocations.pathsParentList.Length; i++)
+                for (int i = 0; i < episodeSettings.pathsParentList.Length; i++)
                 {
                     pathsParent[i] = Instantiate(pathsParent[i], new Vector3(0, 0, 0.1f), Quaternion.identity);
                     Instantiate(spawnPoint[i], spawnPoint[i].position, spawnPoint[i].rotation);
