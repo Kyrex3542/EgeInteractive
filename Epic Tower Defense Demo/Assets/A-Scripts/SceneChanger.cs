@@ -5,96 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public GameObject MainMenu;
-    public GameObject Play;
-    public GameObject Envanter;
-    public GameObject Ayarlar;
-    public GameObject Market;
-    public GameObject Madalyalar;
-    public GameObject Credits;
-    public AudioSource butonsesi;
-
-    public void Mainmenu()
-    {
-        MainMenu.SetActive(true);
-        Play.SetActive(false);
-        Envanter.SetActive(false);
-        Ayarlar.SetActive(false);
-        Market.SetActive(false);
-        Madalyalar.SetActive(false);
-        Credits.SetActive(false);
-    }
-    public void Playmenu()
-    {
-        MainMenu.SetActive(false);
-        Play.SetActive(true);
-        Envanter.SetActive(false);
-        Ayarlar.SetActive(false);
-        Market.SetActive(false);
-        Madalyalar.SetActive(false);
-        Credits.SetActive(false);
-    }
-    public void Envantermenu()
-    {
-        MainMenu.SetActive(false);
-        Play.SetActive(false);
-        Envanter.SetActive(true);
-        Ayarlar.SetActive(false);
-        Market.SetActive(false);
-        Madalyalar.SetActive(false);
-        Credits.SetActive(false);
-    }
-    public void Ayarlarmenu()
-    {
-        MainMenu.SetActive(false);
-        Play.SetActive(false);
-        Envanter.SetActive(false);
-        Ayarlar.SetActive(true);
-        Market.SetActive(false);
-        Madalyalar.SetActive(false);
-        Credits.SetActive(false);
-    }
-    public void Marketmenu()
-    {
-        MainMenu.SetActive(false);
-        Play.SetActive(false);
-        Envanter.SetActive(false);
-        Ayarlar.SetActive(false);
-        Market.SetActive(true);
-        Madalyalar.SetActive(false);
-        Credits.SetActive(false);
-    }
-    public void Madalyalarmenu()
-    {
-        MainMenu.SetActive(false);
-        Play.SetActive(false);
-        Envanter.SetActive(false);
-        Ayarlar.SetActive(false);
-        Market.SetActive(false);
-        Madalyalar.SetActive(true);
-        Credits.SetActive(false);
-    }
-    public void Creditsmenu()
-    {
-        MainMenu.SetActive(false);
-        Play.SetActive(false);
-        Envanter.SetActive(false);
-        Ayarlar.SetActive(false);
-        Market.SetActive(false);
-        Madalyalar.SetActive(false);
-        Credits.SetActive(true);
-    }
-
+    #region Variables
+    public GameObject MainMenu; public GameObject Play; public GameObject Envanter; public GameObject Ayarlar;
+    public GameObject Market; public GameObject Madalyalar; public GameObject Credits; public GameObject Levels;
+    public GameObject EventLevels; public GameObject Events; public AudioSource butonsesi; public GameObject currentmenu;
+    #endregion
+    #region Awake
+    private void Awake()
+    {currentmenu= MainMenu;}
+    #endregion
+    #region Scene Changer
+    public void Mainmenu(){ currentmenu.SetActive(false); currentmenu = MainMenu; currentmenu.SetActive(true);}
+    public void Playmenu(){ currentmenu.SetActive(false); currentmenu = Play; currentmenu.SetActive(true);}
+    public void Envantermenu() { currentmenu.SetActive(false); currentmenu = Envanter; currentmenu.SetActive(true);}
+    public void Ayarlarmenu() { currentmenu.SetActive(false); currentmenu = Ayarlar; currentmenu.SetActive(true);}
+    public void Marketmenu() { currentmenu.SetActive(false); currentmenu = Market; currentmenu.SetActive(true);}
+    public void Madalyalarmenu() { currentmenu.SetActive(false); currentmenu = Madalyalar; currentmenu.SetActive(true);}
+    public void Creditsmenu() { currentmenu.SetActive(false); currentmenu = Credits; currentmenu.SetActive(true);}
+    public void Eventsmenu() { currentmenu.SetActive(false); currentmenu = Events; currentmenu.SetActive(true);}
+    public void Eventlevelsmenu() { currentmenu.SetActive(false); currentmenu = EventLevels; currentmenu.SetActive(true);}
+    public void Levelsmenu() { currentmenu.SetActive(false); currentmenu = Levels; currentmenu.SetActive(true);}
+    #endregion
+    #region Map Loader
     public void LoadLevel(int mapNumber)
-    {
-        SceneManager.LoadScene("GamePlay");
-        PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, mapNumber);
-        PlayerPrefs.Save();
-    }
-
-    
+    {SceneManager.LoadScene("GamePlay"); PlayerPrefs.SetInt(Player.MAPNUMBERPLAYERPREFS, mapNumber); PlayerPrefs.Save();}
+    #endregion
+    #region Sound
     public void buttonSound()
-    {
-        butonsesi.Play();
-    }
+    {butonsesi.Play();}
+    #endregion
 }
