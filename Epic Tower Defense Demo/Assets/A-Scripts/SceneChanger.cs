@@ -12,77 +12,78 @@ public class SceneChanger : MonoBehaviour
     public GameObject Market;
     public GameObject Madalyalar;
     public GameObject Credits;
-    public GameObject EventLevels;
-    public GameObject Levels;
-    public GameObject activescene;
-    public GameObject Events;
     public AudioSource butonsesi;
-    private void Awake()
-    {
-        activescene = MainMenu.gameObject;
-        activescene.gameObject.SetActive(true);
-    }
-    public void LevelsMenu()
-    {
-        activescene.SetActive(false);
-        activescene = Levels;
-        activescene.SetActive(true);
-    }
-    public void eventsmenu()
-    {
-        activescene.SetActive(false);
-        activescene = Events;
-        activescene.SetActive(true);
-    }
-    public void eventlevelsmenu()
-    {
-        activescene.SetActive(false);
-        activescene = EventLevels;
-        activescene.SetActive(true);
-    }
+
     public void Mainmenu()
     {
-        activescene.SetActive(false);
-       activescene = MainMenu;
-        activescene.SetActive(true);
+        MainMenu.SetActive(true);
+        Play.SetActive(false);
+        Envanter.SetActive(false);
+        Ayarlar.SetActive(false);
+        Market.SetActive(false);
+        Madalyalar.SetActive(false);
+        Credits.SetActive(false);
     }
     public void Playmenu()
     {
-        activescene.SetActive(false);
-        activescene = Play;
-        activescene.SetActive(true);
+        MainMenu.SetActive(false);
+        Play.SetActive(true);
+        Envanter.SetActive(false);
+        Ayarlar.SetActive(false);
+        Market.SetActive(false);
+        Madalyalar.SetActive(false);
+        Credits.SetActive(false);
     }
     public void Envantermenu()
     {
-        activescene.SetActive(false);
-        activescene = Envanter;
-        activescene.SetActive(true);
+        MainMenu.SetActive(false);
+        Play.SetActive(false);
+        Envanter.SetActive(true);
+        Ayarlar.SetActive(false);
+        Market.SetActive(false);
+        Madalyalar.SetActive(false);
+        Credits.SetActive(false);
     }
     public void Ayarlarmenu()
     {
-        activescene.SetActive(false);
-        activescene = Ayarlar;
-        activescene.SetActive(true);
+        MainMenu.SetActive(false);
+        Play.SetActive(false);
+        Envanter.SetActive(false);
+        Ayarlar.SetActive(true);
+        Market.SetActive(false);
+        Madalyalar.SetActive(false);
+        Credits.SetActive(false);
     }
     public void Marketmenu()
     {
-        activescene.SetActive(false);
-        activescene = Market;
-        activescene.SetActive(true);
+        MainMenu.SetActive(false);
+        Play.SetActive(false);
+        Envanter.SetActive(false);
+        Ayarlar.SetActive(false);
+        Market.SetActive(true);
+        Madalyalar.SetActive(false);
+        Credits.SetActive(false);
     }
     public void Madalyalarmenu()
     {
-        activescene.SetActive(false);
-        activescene = Madalyalar;
-        activescene.SetActive(true);
+        MainMenu.SetActive(false);
+        Play.SetActive(false);
+        Envanter.SetActive(false);
+        Ayarlar.SetActive(false);
+        Market.SetActive(false);
+        Madalyalar.SetActive(true);
+        Credits.SetActive(false);
     }
     public void Creditsmenu()
     {
-        activescene.SetActive(false);
-        activescene = Credits;
-        activescene.SetActive(true);
+        MainMenu.SetActive(false);
+        Play.SetActive(false);
+        Envanter.SetActive(false);
+        Ayarlar.SetActive(false);
+        Market.SetActive(false);
+        Madalyalar.SetActive(false);
+        Credits.SetActive(true);
     }
-    
 
     public void LoadLevel(int mapNumber)
     {
