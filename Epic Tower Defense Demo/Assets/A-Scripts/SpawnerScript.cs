@@ -6,7 +6,6 @@ using UnityEngine;
 public class SpawnerScript : MonoBehaviour
 {
     public Transform[] spawnPoint;
-    public Transform targetPoint;
     [SerializeField] private Transform[] paths;
     [SerializeField] private MapLoader mapLoader;
     private GameObject[] pathsParent;
@@ -18,7 +17,6 @@ public class SpawnerScript : MonoBehaviour
         {
             spawnPoint[i] = mapLoader.spawnPoint[i];
         }
-        targetPoint = mapLoader.targetPoint;
     }
 
     public int Spawner(GameObject EnemyPrefab)
