@@ -33,7 +33,7 @@ public abstract class TowerMechanics : MonoBehaviour
     {
         fireRateTimer -= Time.deltaTime;
         currentTarget = targetFollower.currentTarget;
-        if (currentTarget != null && targetFollower.TargetInRange())
+        if (currentTarget != null && (targetFollower.TargetInRange()||ObstacleTarget.instance.GetTargetObstacle()!=null))
         {
             PerformAction();
         }

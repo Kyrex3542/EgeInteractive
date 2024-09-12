@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: -7448534897335150828}
   - component: {fileID: 6179709025624332612}
   - component: {fileID: -6403072628400481528}
+  - component: {fileID: 1201629895599289473}
   m_Layer: 0
   m_Name: Minigun Tower
   m_TagString: Untagged
@@ -300,6 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaf233615e44fc4db3cfd54d2910ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: -7448534897335150828}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 210308456590194032}
@@ -325,12 +328,18 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: 6179709025624332612}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
+--- !u!114 &1201629895599289473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873643585315567802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

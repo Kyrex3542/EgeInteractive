@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 1876334206123139279}
   - component: {fileID: 1244838696175132195}
   - component: {fileID: 6965150972876641823}
+  - component: {fileID: 9146774773946028783}
   m_Layer: 0
   m_Name: Sniper Tower
   m_TagString: Untagged
@@ -296,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7745f9a436ddd4aac07848a2f7f5c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 1325550864087377090}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 4993449091411990856}
@@ -320,12 +323,18 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: 1244838696175132195}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
+--- !u!114 &9146774773946028783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009779535448186442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

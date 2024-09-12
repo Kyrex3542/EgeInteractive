@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5037674546177474759}
   - component: {fileID: 1311809604560459733}
   - component: {fileID: -7585712586677848428}
+  - component: {fileID: -1410500341483428139}
   m_Layer: 0
   m_Name: Bone Tower
   m_TagString: Untagged
@@ -183,6 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6410bec19bf50146a6d8231f1293c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 5037674546177474759}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 3409971611103727628}
@@ -207,15 +210,21 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: 1311809604560459733}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
+--- !u!114 &-1410500341483428139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725074244122290048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9153968837376578829
 GameObject:
   m_ObjectHideFlags: 0

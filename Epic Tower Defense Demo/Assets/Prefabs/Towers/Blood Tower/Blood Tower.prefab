@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 53823968149067852}
   - component: {fileID: -3011263981789276039}
   - component: {fileID: 8871693299425906202}
+  - component: {fileID: 5648612493757768661}
   m_Layer: 0
   m_Name: Blood Tower
   m_TagString: Untagged
@@ -152,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4fcd4b39730ef4a8064f976efab292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 53823968149067852}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 5570029515408162967}
@@ -176,15 +179,21 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: -3011263981789276039}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
+--- !u!114 &5648612493757768661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013015985125052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2381949667599034269
 GameObject:
   m_ObjectHideFlags: 0

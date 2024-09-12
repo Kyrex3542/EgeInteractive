@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 7697569212997269251}
   - component: {fileID: 7919581646564022117}
   - component: {fileID: -947428234212987058}
+  - component: {fileID: -5504152130175272239}
   m_Layer: 0
   m_Name: Cannon Tower
   m_TagString: Untagged
@@ -237,6 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f48f60878c3da1469846a89bc760965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 7697569212997269251}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 2255111916202138796}
@@ -246,7 +249,6 @@ MonoBehaviour:
   damage: 5
   range: 5
   fireRate: 1
-  projectileMoveSpeed: 0
 --- !u!114 &-947428234212987058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +263,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellValue: 0
   upgradeValue: 0
+  tower: {fileID: 0}
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
+--- !u!114 &-5504152130175272239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004734304526420822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8254684849048280637
 GameObject:
   m_ObjectHideFlags: 0

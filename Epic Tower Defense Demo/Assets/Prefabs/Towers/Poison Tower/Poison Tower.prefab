@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 3884265603477595107}
   - component: {fileID: -379272847337985790}
   - component: {fileID: -7702602631068125829}
+  - component: {fileID: 3286195928350220394}
   m_Layer: 0
   m_Name: Poison Tower
   m_TagString: Untagged
@@ -236,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3336e59e1d87a48449a04708a9cd6620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 3884265603477595107}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 0}
@@ -260,12 +263,18 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: -379272847337985790}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
+--- !u!114 &3286195928350220394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385162660742782674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

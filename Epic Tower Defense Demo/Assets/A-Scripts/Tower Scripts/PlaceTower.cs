@@ -60,13 +60,13 @@ public class PlaceTower : MonoBehaviour
                     {
                         ShowSliderTowerMenu();
                         uiManager.Hide_InteractionMenu();
-                        isMenusActive = true;
+                        isMenusActive = !isMenusActive;
                     }
                     else
                     {
                         uiManager.Hide_InteractionMenu();
                         sliderTowerMenu.SetActive(false);
-                        isMenusActive=false;
+                        isMenusActive=!isMenusActive;
                     }
                     
                 }

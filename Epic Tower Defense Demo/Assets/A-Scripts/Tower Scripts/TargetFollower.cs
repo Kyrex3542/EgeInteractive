@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,13 +10,16 @@ public class TargetFollower : MonoBehaviour
     private List<GameObject> targets = new List<GameObject>();
     public float towerrotationSpeed = 15f;
     public bool canTurnToEnemy = true;
+    private ObstacleTarget obstacleTarget;
 
 
-
-
+    private void Start()
+    {
+        obstacleTarget = GetComponent<ObstacleTarget>();
+    }
     private void LookAt()
     {
-        if (targets.Count > 0&&canTurnToEnemy)
+        if (targets.Count > 0&&canTurnToEnemy||obstacleTarget.GetTargetObstacle()!=null)
         {
             float targetAngle = LookAngle();
             towerHead.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(towerHead.transform.eulerAngles.z, targetAngle -90, towerrotationSpeed * Time.deltaTime)));
@@ -30,14 +33,27 @@ public class TargetFollower : MonoBehaviour
     }
     private void Update()
     {
+        GameObject selectedObstacle = obstacleTarget.GetTargetObstacle();
 
-        FindClosestEnemy();
-        if (!TargetInRange()) return;
+        if (selectedObstacle != null)
+        {
+            Debug.Log(4);
+            currentTarget = selectedObstacle;
+        }
+        else
+        {
+            Debug.Log(3);
+            FindClosestEnemy();
+            if (currentTarget == null || !TargetInRange()) return;
+        }
+
         LookAt();
+
     }
     public bool TargetInRange()
     {
-        if(targets.Count <= 0)
+        //Colliderin alanına bakılarak menzilde olup olmadığına karar verilecek ve ona göre ağac a saldırı izni verilecek
+        if(targets.Count <= 0/*||obstacleTarget.GetDistanceToObstacle(transform)<range*/)
         {
             return false;
         }
@@ -55,7 +71,7 @@ public class TargetFollower : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            targets.Add(collision.gameObject);//Birden fazla obje menzile girdi�inde onlar� listeye at�yor
+            targets.Add(collision.gameObject);//Birden fazla obje menzile girdiðinde onlarý listeye atýyor
         }
     }
     private void OnTriggerExit2D(Collider2D other)

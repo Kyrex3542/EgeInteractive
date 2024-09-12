@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7483813635140932476}
   - component: {fileID: 3261900643785103180}
   - component: {fileID: 3699210638700691016}
+  - component: {fileID: -7816987052755797568}
   m_Layer: 0
   m_Name: Hell Tower
   m_TagString: Untagged
@@ -153,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad0a8067e0d2084f972054ac9897619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTowerActive: 0
+  towerIndex: 0
   targetFollower: {fileID: 3317229432570955572}
   currentTarget: {fileID: 0}
   firePoint: {fileID: 1154095815201486649}
@@ -181,15 +184,9 @@ MonoBehaviour:
   sellValue: 0
   upgradeValue: 0
   tower: {fileID: 7483813635140932476}
-  damage2: 0
-  range2: 0
-  fireRate2: 0
-  sellValue2: 0
-  upgradeValue2: 0
-  damage3: 0
-  range3: 0
-  fireRate3: 0
-  sellValue3: 0
+  manager: {fileID: 0}
+  upgradeTiers: []
+  upgradeLevel: -1
 --- !u!120 &3699210638700691016
 LineRenderer:
   serializedVersion: 2
@@ -294,6 +291,18 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-7816987052755797568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134569034284371794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6540947170256951371
 GameObject:
   m_ObjectHideFlags: 0
