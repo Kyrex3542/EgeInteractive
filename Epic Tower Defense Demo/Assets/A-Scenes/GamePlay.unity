@@ -3210,7 +3210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2142313473783638172, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2142313473783638172, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3249,6 +3249,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
+--- !u!4 &961864471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3265468364880319870, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+  m_PrefabInstance: {fileID: 62345452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &987276880
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,6 +7427,10 @@ PrefabInstance:
       propertyPath: tileMapGrid
       value: 
       objectReference: {fileID: 1920672275}
+    - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
+      propertyPath: spawnPoint.Array.data[0]
+      value: 
+      objectReference: {fileID: 961864471}
     - target: {fileID: 7245358883869734154, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: sliderTowerMenu
       value: 

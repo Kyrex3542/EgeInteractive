@@ -36,9 +36,9 @@ public class ObstacleTarget : MonoBehaviour
         
         return targetObstacle;
     }
-    public float GetDistanceToObstacle(Transform towerPos)
+    public float GetDistanceToObstacle(Transform currentTarget)
     {
-        float distance = Vector2.Distance(towerPos.position, transform.position);
+        float distance = Vector2.Distance(transform.position, currentTarget.position);
         return distance;
     }
 }
