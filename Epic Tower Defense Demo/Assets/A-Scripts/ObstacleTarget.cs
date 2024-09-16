@@ -6,6 +6,8 @@ using UnityEngine;
 public class ObstacleTarget : MonoBehaviour
 {
     private GameObject targetObstacle;
+    [SerializeField] private GameObject obstaclePointer;
+
     public static ObstacleTarget instance { get; private set; }
     private void Start()
     {
@@ -20,12 +22,17 @@ public class ObstacleTarget : MonoBehaviour
             {
                 if (hit2D.transform.gameObject != targetObstacle)
                 {
-                    Debug.Log("1");
                     targetObstacle = hit2D.transform.gameObject;
+
+                    Vector2 pos = targetObstacle.transform.position;
+                    pos.y += 1;
+                    obstaclePointer.SetActive(true);
+                    obstaclePointer.transform.position = pos;
+
                 }
                 else
                 {
-                    Debug.Log("2");
+                    obstaclePointer.SetActive(false);
                     targetObstacle = null;
                 }
             }

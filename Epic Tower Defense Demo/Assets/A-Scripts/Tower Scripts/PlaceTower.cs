@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 
 public class PlaceTower : MonoBehaviour
 {
-    [SerializeField] private Transform[] cantTouchThis;
     [SerializeField] private GameObject sliderTowerMenu;
     [SerializeField]private UIManager uiManager;
 
@@ -37,6 +36,12 @@ public class PlaceTower : MonoBehaviour
     [SerializeField] private GameObject alienTower;
     [SerializeField] private GameObject fireTower;
     [SerializeField] private GameObject bloodTower;
+
+
+
+    [SerializeField] private ObstacleTarget obstacleTarget;
+    [SerializeField] private GameObject gridPointer;
+
     private List<TowerData> busyTiles;
     private Vector3Int selectedCellPosition;
     private bool isMenusActive = false;
@@ -54,7 +59,7 @@ public class PlaceTower : MonoBehaviour
         {
             if (CanPlaceTower())
             {
-                if (!IsPointerOverUIObject())
+                if (!IsPointerOverUIObject()&&obstacleTarget.GetTargetObstacle()==null)
                 {
                     if (!isMenusActive) 
                     {
@@ -65,6 +70,7 @@ public class PlaceTower : MonoBehaviour
                     else
                     {
                         uiManager.Hide_InteractionMenu();
+                        gridPointer.SetActive(false);
                         sliderTowerMenu.SetActive(false);
                         isMenusActive=!isMenusActive;
                     }
@@ -81,10 +87,23 @@ public class PlaceTower : MonoBehaviour
         sliderTowerMenu.SetActive(true);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 100;
-        sliderTowerMenu.transform.position = mousePos;
+        gridPointer.SetActive(true);
+        
 
         selectedCellPosition = activeMap.WorldToCell(mousePos);
         cellCenterWorlPos = activeMap.GetCellCenterWorld(selectedCellPosition);
+        gridPointer.transform.position = cellCenterWorlPos;
+        mousePos = cellCenterWorlPos;
+        if (mousePos.y > -1)
+        {
+            mousePos.y -= 2;
+        }
+        else
+        {
+            mousePos.y += 2;
+        }
+        mousePos.x+=.6f;
+        sliderTowerMenu.transform.position = mousePos;
     }
     private bool IsPointerOverUIObject()
     {
