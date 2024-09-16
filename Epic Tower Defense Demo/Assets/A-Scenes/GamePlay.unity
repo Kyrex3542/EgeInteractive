@@ -3226,7 +3226,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 137210665718976030, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 137210665718976030, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
       propertyPath: m_TagString
@@ -3276,8 +3276,17 @@ PrefabInstance:
       propertyPath: ShieldBar
       value: 
       objectReference: {fileID: 1581077113}
+    - target: {fileID: 8671984123502852290, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951682555035500784, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1747000662, guid: 12459c6ff5d828c42860312db31759cc, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8552629728572283827, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0308639985c5a44971ad9c8a6bd2b7, type: 3}
