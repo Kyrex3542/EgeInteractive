@@ -873,6 +873,50 @@ PrefabInstance:
       propertyPath: WaveSettingsList.Array.data[4].FirstAppearNumberOfEnemy.Array.data[2]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].WaveNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].TotalEnemyNumber
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].EnemyPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].NumberOfMobs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnRateTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].EnemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8202814966781123438, guid: 405eaf68625708f4ab669d2b68c82ec8, type: 3}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].NumberOfMobs.Array.data[0]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnDelayTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnDelayTimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].FirstAppearNumberOfEnemy.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3265468364880319870, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.6
@@ -7230,6 +7274,7 @@ GameObject:
   - component: {fileID: 2055441838}
   - component: {fileID: 2055441837}
   - component: {fileID: 2055441840}
+  - component: {fileID: 2055441841}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7355,6 +7400,23 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &2055441841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055441836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c280388c13f4f49a05804177c00f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyKilledCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  TotalCoinsEarned: 0
+  TotalCoinsUsed: 0
+  TotalWaveCountSurvived: 0
+  TotalHoursPlayed: 0
 --- !u!1 &2059338768
 GameObject:
   m_ObjectHideFlags: 0

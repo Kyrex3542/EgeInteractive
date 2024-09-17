@@ -221,6 +221,7 @@ MonoBehaviour:
   ShieldAmount: 0
   GoldReward: 30
   Delay: 1
+  MobNumber: 2
 --- !u!114 &1870495633834324596
 MonoBehaviour:
   m_ObjectHideFlags: 0

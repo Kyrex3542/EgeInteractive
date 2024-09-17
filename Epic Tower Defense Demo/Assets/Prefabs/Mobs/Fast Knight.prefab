@@ -278,6 +278,7 @@ MonoBehaviour:
   path: []
   target: {fileID: 0}
   moveSpeed: 6
+  pathIndex: 0
 --- !u!58 &4178068904991203955
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -360,6 +361,7 @@ MonoBehaviour:
   ShieldAmount: 0
   GoldReward: 15
   Delay: 1
+  MobNumber: 4
 --- !u!1 &8332464431199632851
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,3 +647,4 @@ MonoBehaviour:
   ShieldAmount: 100
   GoldReward: 0
   Delay: 1
+  MobNumber: 0

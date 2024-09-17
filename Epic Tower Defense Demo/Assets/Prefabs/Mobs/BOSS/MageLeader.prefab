@@ -212,7 +212,7 @@ MonoBehaviour:
   path: []
   target: {fileID: 0}
   moveSpeed: 5
-  RotationSpeed: 15
+  pathIndex: 0
 --- !u!58 &3627818312883517117
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -289,8 +289,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 2410734354947066029}
   ShieldBar: {fileID: 6500539405304764752}
+  maxHealth: 0
+  maxShield: 0
   HealthAmount: 100
   ShieldAmount: 100
+  GoldReward: 0
+  Delay: 1
+  MobNumber: 13
 --- !u!1 &3283984016269857496
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,17 +7,31 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
+    [Header("Bar Images")]
     public Image HealthBar;
     public Image ShieldBar;
+
+    [Header("Max Shield & Health Amount")]
     public float maxHealth;
     public float maxShield;
+
+    [Header("Normal Shield & Health Amount")]
     public float HealthAmount;
     public float ShieldAmount;
+
+    [Header("Extra")]
     public int GoldReward = 0;
     public float Delay = 1f;
 
+    [Header("Don't Touch")]
+    [SerializeField] private int MobNumber;
+    //Ýstatistiklere girmek için moblarýn numarasý.
+
+    private PlayerStatistics PlayerStatistics;
+
     private void Start()
     {
+        PlayerStatistics = FindFirstObjectByType<PlayerStatistics>();
         HealthBar.fillAmount = HealthAmount / maxHealth;
         ShieldBar.fillAmount = ShieldAmount / maxShield;
     }
@@ -42,6 +56,8 @@ public class HealthManager : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, -90f, 15f * Time.deltaTime)));
         if (Delay <= 0)
         {
+            PlayerStatistics.EnemyCount(MobNumber);
+            PlayerStatistics.CoinEarned(GoldReward);
             Player.Instance.GainGold(GoldReward);
             Destroy(gameObject);
         }

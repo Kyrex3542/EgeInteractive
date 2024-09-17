@@ -115,7 +115,7 @@ MonoBehaviour:
   path: []
   target: {fileID: 0}
   moveSpeed: 5
-  RotationSpeed: 15
+  pathIndex: 0
 --- !u!114 &3099703747017534653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +130,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 924341495814017928}
   ShieldBar: {fileID: 4560876427941312173}
+  maxHealth: 0
+  maxShield: 0
   HealthAmount: 100
   ShieldAmount: 100
+  GoldReward: 0
+  Delay: 1
+  MobNumber: 17
 --- !u!1 &999909565001854918
 GameObject:
   m_ObjectHideFlags: 0

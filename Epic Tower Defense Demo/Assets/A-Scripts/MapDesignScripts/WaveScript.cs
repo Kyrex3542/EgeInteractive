@@ -12,10 +12,12 @@ public class WaveScript : MonoBehaviour
 
     private int WaveCounter = 1;
     private int MobCounter = 0;
-    private float SpawnTimer;
     private int MobCountHolder;
     private int MapNumber;
     private float SmootherOfSpawn = 0.6f;
+    private float SpawnTimer;
+    private PlayerStatistics PlayerStatistics;
+
     public SpawnerScript SpawnerScriptCaller;
 
     [System.Serializable]
@@ -41,6 +43,7 @@ public class WaveScript : MonoBehaviour
 
     void Start()
     {
+        PlayerStatistics = FindFirstObjectByType<PlayerStatistics>();
         SpawnerScriptCaller = GetComponent<SpawnerScript>();
         mapLoader = FindFirstObjectByType<MapLoader>();
         MapNumber = mapLoader.GetMapNumber();
@@ -48,6 +51,7 @@ public class WaveScript : MonoBehaviour
 
     public void Update()
     {
+        PlayerStatistics.HourPlayed(Time.deltaTime);
         if (WaveCounter <= EpisodesSettings[MapNumber].WaveSettingsList.Count)
         {
             WaveCaller();
@@ -67,6 +71,7 @@ public class WaveScript : MonoBehaviour
         }
         else
         {
+            PlayerStatistics.WaveSurvived();
             WaveCounter++;
             MobCounter = 0;
         }
