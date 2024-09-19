@@ -52,14 +52,14 @@ public class PlaceTower : MonoBehaviour
         busyTiles = new List<TowerData>();
 
     }
-    void Update()
+    void LateUpdate()
     {
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (CanPlaceTower())
+            if ( CanPlaceTower())
             {
-                if (!IsPointerOverUIObject()&&obstacleTarget.GetTargetObstacle()==null)
+                if (!IsPointerOverUIObject() && obstacleTarget.GetTargetObstacle() == null)
                 {
                     if (!isMenusActive) 
                     {

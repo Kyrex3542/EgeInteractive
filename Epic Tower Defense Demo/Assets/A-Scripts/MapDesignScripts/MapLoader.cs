@@ -20,6 +20,7 @@ public class MapLoader : MonoBehaviour
         [Header("Path Locations & Spawn Points")]
         public GameObject[] pathsParentList;
         public Transform[] spawnPoints;
+        public GameObject[] obstacleSpawnPointsParentList;
         [Header("Map List")]
         [SerializeField] public List<Tilemap> tileMaps;
         [SerializeField] public List<Tilemap> tileMapShadows;
@@ -31,6 +32,7 @@ public class MapLoader : MonoBehaviour
     [SerializeField] private GameObject tileMapGrid;
     [SerializeField] public int mapNumber = 0;
     [SerializeField] private GameObject[] pathsParent;
+    [SerializeField] private GameObject[] obstacleSpawnPointsParent;
 
 
     private void Awake()
@@ -56,6 +58,7 @@ public class MapLoader : MonoBehaviour
             activeMapShadow = episodeSettings.tileMapShadows[mapNumber];
             pathsParent = episodeSettings.pathsParentList;
             spawnPoint = episodeSettings.spawnPoints;
+            obstacleSpawnPointsParent = episodeSettings.obstacleSpawnPointsParentList;
             targetPoint = episodeSettings.targetPoints[mapNumber];
             if (activeMap != null && activeMapShadow != null)
             {
@@ -65,6 +68,10 @@ public class MapLoader : MonoBehaviour
                 {
                     pathsParent[i] = Instantiate(pathsParent[i], new Vector3(0, 0, 0.1f), Quaternion.identity);
                     Instantiate(spawnPoint[i], spawnPoint[i].position, spawnPoint[i].rotation);
+                }
+                for(int i = 0; i < obstacleSpawnPointsParent[mapNumber].transform.childCount; i++)
+                {
+                    Instantiate(obstacleSpawnPointsParent[mapNumber].transform.GetChild(i), obstacleSpawnPointsParent[mapNumber].transform.GetChild(i).position, Quaternion.identity);
                 }
                 targetPoint = Instantiate(targetPoint, targetPoint.position, targetPoint.rotation);
             }
