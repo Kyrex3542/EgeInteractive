@@ -11,13 +11,17 @@ public class TargetFollower : MonoBehaviour
     private List<GameObject> targets = new List<GameObject>();
     public float towerrotationSpeed = 15f;
     public bool canTurnToEnemy = true;
-    private ObstacleTarget obstacleTarget;
     private CircleCollider2D circleCollider;
-
+    private GameObject selectedObstacle;
     private void Start()
     {
-        obstacleTarget = GetComponent<ObstacleTarget>();
         circleCollider = GetComponent<CircleCollider2D>();
+        ObstacleTarget.instance.OnObstacleTargetSelected += ObstacleTarget_OnObstacleTargetSelected;
+    }
+
+    private void ObstacleTarget_OnObstacleTargetSelected(object sender, System.EventArgs e)
+    {
+        selectedObstacle = ObstacleTarget.instance.GetTargetObstacle();
     }
 
     private void Update()
@@ -28,9 +32,7 @@ public class TargetFollower : MonoBehaviour
 
     private void UpdateCurrentTarget()
     {
-        GameObject selectedObstacle = obstacleTarget.GetTargetObstacle();
-
-        if (selectedObstacle != null)
+        if (selectedObstacle != null && !TargetInRange())
         {
             currentTarget = selectedObstacle;
         }
@@ -39,15 +41,15 @@ public class TargetFollower : MonoBehaviour
             FindClosestEnemy();
         }
 
-        if (currentTarget == null || !TargetInRange())
+        /*if (currentTarget == null && !TargetInRange())
         {
             currentTarget = null;
-        }
+        }*/
     }
 
     private void LookAtTarget()
     {
-        if (currentTarget == null || (!canTurnToEnemy && obstacleTarget.GetTargetObstacle() == null))
+        if (currentTarget == null || (!canTurnToEnemy && ObstacleTarget.instance.GetTargetObstacle() == null))
         {
             return;
         }
@@ -66,7 +68,7 @@ public class TargetFollower : MonoBehaviour
     {
         if (currentTarget == null) return false;
 
-        float distanceToTarget = obstacleTarget.GetDistanceToObstacle(currentTarget.transform);
+        float distanceToTarget = ObstacleTarget.instance.GetDistanceToObstacle(currentTarget.transform);
         return distanceToTarget < circleCollider.radius;
     }
 

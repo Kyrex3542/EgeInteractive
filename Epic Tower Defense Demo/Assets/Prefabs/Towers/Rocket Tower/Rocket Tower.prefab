@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 8894535871856472406}
   - component: {fileID: 7106766669446467434}
   - component: {fileID: 9120280343736781932}
-  - component: {fileID: 6829939912132950769}
   m_Layer: 0
   m_Name: Rocket Tower
   m_TagString: Untagged
@@ -298,16 +297,3 @@ MonoBehaviour:
   manager: {fileID: 0}
   upgradeTiers: []
   upgradeLevel: -1
---- !u!114 &6829939912132950769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4242855533510078343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePointer: {fileID: 0}

@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 3884265603477595107}
   - component: {fileID: -379272847337985790}
   - component: {fileID: -7702602631068125829}
-  - component: {fileID: 3286195928350220394}
   m_Layer: 0
   m_Name: Poison Tower
   m_TagString: Untagged
@@ -266,16 +265,3 @@ MonoBehaviour:
   manager: {fileID: 0}
   upgradeTiers: []
   upgradeLevel: -1
---- !u!114 &3286195928350220394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8385162660742782674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePointer: {fileID: 0}

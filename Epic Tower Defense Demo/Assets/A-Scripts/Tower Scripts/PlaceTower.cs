@@ -57,9 +57,10 @@ public class PlaceTower : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            obstacleTarget.SetTargetObstacle();
             if ( CanPlaceTower())
             {
-                if (!IsPointerOverUIObject() && obstacleTarget.GetTargetObstacle() == null)
+                if (!IsPointerOverUIObject() && !obstacleTarget.isObstacleSelected())
                 {
                     if (!isMenusActive) 
                     {

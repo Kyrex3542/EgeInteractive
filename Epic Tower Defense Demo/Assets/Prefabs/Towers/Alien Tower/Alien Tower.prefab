@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 5761114678581732778}
   - component: {fileID: 4748769699705352962}
   - component: {fileID: 5741424000679217878}
-  - component: {fileID: 5743004674895282626}
   m_Layer: 0
   m_Name: Alien Tower
   m_TagString: Untagged
@@ -292,19 +291,6 @@ MonoBehaviour:
     sellValue: 0
     upgradeValue: 0
   upgradeLevel: -1
---- !u!114 &5743004674895282626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4516307407418660824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePointer: {fileID: 0}
 --- !u!1 &6362839222712225295
 GameObject:
   m_ObjectHideFlags: 0

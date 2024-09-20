@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 1876334206123139279}
   - component: {fileID: 1244838696175132195}
   - component: {fileID: 6965150972876641823}
-  - component: {fileID: 9146774773946028783}
   m_Layer: 0
   m_Name: Sniper Tower
   m_TagString: Untagged
@@ -326,16 +325,3 @@ MonoBehaviour:
   manager: {fileID: 0}
   upgradeTiers: []
   upgradeLevel: -1
---- !u!114 &9146774773946028783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8009779535448186442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ef1577943c5ad43b008491a5e82df4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePointer: {fileID: 0}
