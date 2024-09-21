@@ -11,16 +11,16 @@ public class ProjectileBehavior : MonoBehaviour
     public float rocketAreaOfEffectRadius;
     public float teslaChainRange;
     public int teslaMaxChain;
-    public float boneDamageMultiplier = 2f; 
-    public float distanceDamageMultiplier = 0.1f; 
+    public float boneDamageMultiplier = 2f;
+    public float distanceDamageMultiplier = 0.1f;
     private Vector2 firstDir;
     private bool hasHitEnemy = false;
     //For Tesla
     private List<Transform> teslaHitTargets = new List<Transform>();
     private int currentChainCount = 0;
-    private float closestEnemy=Mathf.Infinity;
+    private float closestEnemy = Mathf.Infinity;
 
-    private Vector3 firstPos; 
+    private Vector3 firstPos;
     public enum Type
     {
         None,
@@ -51,7 +51,7 @@ public class ProjectileBehavior : MonoBehaviour
     }
     private void MoveToTarget()
     {
-        if (type == Type.railgun && hasHitEnemy && firstDir!=Vector2.zero)
+        if (type == Type.railgun && hasHitEnemy && firstDir != Vector2.zero)
         {
             transform.position += (Vector3)firstDir * moveSpeed * Time.deltaTime;
 
@@ -60,13 +60,13 @@ public class ProjectileBehavior : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             float targetAngle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle + -90f));        
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle + -90f));
         }
         else
         {
-            
-                Destroy(gameObject);
-            
+
+            Destroy(gameObject);
+
         }
 
     }
@@ -77,7 +77,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
         {
-                    hasHitEnemy = true;
+            hasHitEnemy = true;
             switch (type)
             {
                 case Type.railgun:
@@ -165,26 +165,27 @@ public class ProjectileBehavior : MonoBehaviour
             Destroy(gameObject);
         }
         */
-        
+
         closestEnemy = Mathf.Infinity;
-        Transform tempEnemyHolder=_teslaTarget;
+        Transform tempEnemyHolder = _teslaTarget;
         Hit(_teslaTarget.gameObject, damage);
         teslaHitTargets.Add(_teslaTarget);
         currentChainCount++;
         Debug.Log(currentChainCount);
         Collider2D[] collider2D = Physics2D.OverlapCircleAll(transform.position, teslaChainRange);
-        if (currentChainCount >= teslaMaxChain||target==null){
+        if (currentChainCount >= teslaMaxChain || target == null)
+        {
             Destroy(gameObject);
         }
-        foreach(Collider2D hit2 in collider2D)
+        foreach (Collider2D hit2 in collider2D)
         {
             if (!teslaHitTargets.Contains(hit2.transform) && hit2.CompareTag("Enemy"))
             {
-                float distanceToOtherEnemy=Vector2.Distance(transform.position, hit2.transform.position);
+                float distanceToOtherEnemy = Vector2.Distance(transform.position, hit2.transform.position);
                 if (distanceToOtherEnemy < closestEnemy)
                 {
                     closestEnemy = distanceToOtherEnemy;
-                    tempEnemyHolder = hit2.transform;           
+                    tempEnemyHolder = hit2.transform;
                 }
             }
         }
@@ -196,9 +197,9 @@ public class ProjectileBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
     }
-    private void Hit(GameObject gameObject,float _damage)
+    private void Hit(GameObject gameObject, float _damage)
     {
         if (gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
         {

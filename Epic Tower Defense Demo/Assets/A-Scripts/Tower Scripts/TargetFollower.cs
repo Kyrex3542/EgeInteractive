@@ -66,10 +66,20 @@ public class TargetFollower : MonoBehaviour
 
     public bool TargetInRange()
     {
-        if (currentTarget == null) return false;
+        if (currentTarget == null || ObstacleTarget.instance.GetTargetObstacle() == null)
+        {
+            return false;
+        }
 
         float distanceToTarget = ObstacleTarget.instance.GetDistanceToObstacle(currentTarget.transform);
-        return distanceToTarget < circleCollider.radius;
+        if (!(distanceToTarget < circleCollider.radius))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private void FindClosestEnemy()

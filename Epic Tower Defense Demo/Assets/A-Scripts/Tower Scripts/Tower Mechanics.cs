@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class TowerMechanics : MonoBehaviour
 {
-    public bool isTowerActive=false;
+    public bool isTowerActive = false;
     public int towerIndex;
     [SerializeField] protected TargetFollower targetFollower;
     [SerializeField] protected GameObject currentTarget;
@@ -23,7 +23,7 @@ public abstract class TowerMechanics : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+
         fireRateTimerMax = 1 / fireRate;
         circleCollider2D.radius = range;
         fireRateTimer = fireRateTimerMax;
@@ -33,7 +33,7 @@ public abstract class TowerMechanics : MonoBehaviour
     {
         fireRateTimer -= Time.deltaTime;
         currentTarget = targetFollower.currentTarget;
-        if (currentTarget != null && (targetFollower.TargetInRange()||ObstacleTarget.instance.GetTargetObstacle()!=null))
+        if (currentTarget != null || targetFollower.TargetInRange())
         {
             PerformAction();
         }
@@ -70,6 +70,6 @@ public abstract class TowerMechanics : MonoBehaviour
             circleCollider2D.radius = range;
         }
         Debug.Log("Succesful Upgrade");
-        Debug.Log("Damage :"+damage+" Range: "+range + " Fire Rate: "+fireRate);
+        Debug.Log("Damage :" + damage + " Range: " + range + " Fire Rate: " + fireRate);
     }
 }
