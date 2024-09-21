@@ -21,23 +21,32 @@ public abstract class TowerMechanics : MonoBehaviour
     protected float fireRateTimerMax;
     protected float fireRateTimer;
 
+    private bool isObstacleSelected = false;
+
     protected virtual void Start()
     {
         
         fireRateTimerMax = 1 / fireRate;
         circleCollider2D.radius = range;
         fireRateTimer = fireRateTimerMax;
+        ObstacleTarget.instance.OnObstacleTargetSelected += ObstacleTarget_OnObstacleTargetSelected;
+    }
+
+    private void ObstacleTarget_OnObstacleTargetSelected(object sender, System.EventArgs e)
+    {
+        isObstacleSelected = ObstacleTarget.instance.GetTargetObstacle();
     }
 
     protected virtual void Update()
     {
         fireRateTimer -= Time.deltaTime;
         currentTarget = targetFollower.currentTarget;
-        if (currentTarget != null && (targetFollower.TargetInRange()||ObstacleTarget.instance.GetTargetObstacle()!=null))
+        if (currentTarget != null && (targetFollower.TargetInRange()||isObstacleSelected))
         {
             PerformAction();
         }
     }
+
 
     protected abstract void PerformAction();
 
