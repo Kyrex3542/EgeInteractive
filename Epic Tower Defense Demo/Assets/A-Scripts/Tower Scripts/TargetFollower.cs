@@ -17,11 +17,17 @@ public class TargetFollower : MonoBehaviour
     {
         circleCollider = GetComponent<CircleCollider2D>();
         ObstacleTarget.instance.OnObstacleTargetSelected += ObstacleTarget_OnObstacleTargetSelected;
+        ObstacleTarget.instance.OnObstacleTargetDeSelected += ObstacleTarget_OnObstacleTargetDeSelected;
     }
 
-    private void ObstacleTarget_OnObstacleTargetSelected(object sender, System.EventArgs e)
+    private void ObstacleTarget_OnObstacleTargetDeSelected(object sender, ObstacleTarget.obstacleGameObjectEventArgs e)
     {
-        selectedObstacle = ObstacleTarget.instance.GetTargetObstacle();
+        targets.Remove(e.obstacle);
+    }
+
+    private void ObstacleTarget_OnObstacleTargetSelected(object sender, ObstacleTarget.obstacleGameObjectEventArgs e)
+    {
+        targets.Add(e.obstacle);
     }
 
     private void Update()
@@ -31,25 +37,13 @@ public class TargetFollower : MonoBehaviour
     }
 
     private void UpdateCurrentTarget()
-    {
-        if (selectedObstacle != null && !TargetInRange())
-        {
-            currentTarget = selectedObstacle;
-        }
-        else
-        {
+    {      
             FindClosestEnemy();
-        }
-
-        /*if (currentTarget == null && !TargetInRange())
-        {
-            currentTarget = null;
-        }*/
     }
 
     private void LookAtTarget()
     {
-        if (currentTarget == null || (!canTurnToEnemy && ObstacleTarget.instance.GetTargetObstacle() == null))
+        if (currentTarget == null)
         {
             return;
         }
@@ -66,7 +60,7 @@ public class TargetFollower : MonoBehaviour
 
     public bool TargetInRange()
     {
-        if (currentTarget == null || ObstacleTarget.instance.GetTargetObstacle() == null)
+        if (currentTarget == null)
         {
             return false;
         }
@@ -92,12 +86,19 @@ public class TargetFollower : MonoBehaviour
         foreach (GameObject target in targets)
         {
             if (target == null) continue;
-
-            float remainingDistance = target.GetComponent<PathFinder>().GetRemainingDistanceToBase();
-            if (remainingDistance < closestDistance)
+            if (target.CompareTag("Obstacle"))
             {
-                closestDistance = remainingDistance;
                 closestTarget = target;
+
+            }
+            else
+            {
+                float remainingDistance = target.GetComponent<PathFinder>().GetRemainingDistanceToBase();
+                if (remainingDistance < closestDistance)
+                {
+                    closestDistance = remainingDistance;
+                    closestTarget = target;
+                }
             }
         }
 

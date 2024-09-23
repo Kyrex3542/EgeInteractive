@@ -39,7 +39,9 @@ public class HealthManager : MonoBehaviour
     {
         if (HealthAmount <= 0)
         {
-            MobIsDying();
+            Destroy(gameObject);
+
+           // MobIsDying();
         }
         if (ShieldAmount <= 0)
         {
@@ -56,6 +58,7 @@ public class HealthManager : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, -90f, 15f * Time.deltaTime)));
         if (Delay <= 0)
         {
+
             PlayerStatistics.EnemyCount(MobNumber);
             PlayerStatistics.CoinEarned(GoldReward);
             Player.Instance.GainGold(GoldReward);

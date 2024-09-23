@@ -10,7 +10,12 @@ public class ObstacleTarget : MonoBehaviour
     private GameObject targetObstacle;
     [SerializeField] private GameObject obstaclePointer;
     public bool obstacleSelected = false;
-    public event EventHandler OnObstacleTargetSelected;
+    public event EventHandler<obstacleGameObjectEventArgs> OnObstacleTargetSelected;
+    public event EventHandler<obstacleGameObjectEventArgs> OnObstacleTargetDeSelected;
+    public class obstacleGameObjectEventArgs : EventArgs
+    {
+        public GameObject obstacle;
+    }
     public static ObstacleTarget instance { get; private set; }
     private void Start()
     {
@@ -30,13 +35,14 @@ public class ObstacleTarget : MonoBehaviour
                 obstaclePointer.SetActive(true);
                 obstaclePointer.transform.position = pos;
                 obstacleSelected = true;
-                OnObstacleTargetSelected?.Invoke(this, EventArgs.Empty);
+                OnObstacleTargetSelected?.Invoke(this, new obstacleGameObjectEventArgs {obstacle =hit2D.transform.gameObject });
             }
             else
             {
                 obstaclePointer.SetActive(false);
                 targetObstacle = null;
-                OnObstacleTargetSelected?.Invoke(this, EventArgs.Empty);
+                OnObstacleTargetDeSelected?.Invoke(this, new obstacleGameObjectEventArgs { obstacle = hit2D.transform.gameObject });
+                //OnObstacleTargetSelected?.Invoke(this, EventArgs.Empty);
             }
         }
         else
@@ -45,10 +51,7 @@ public class ObstacleTarget : MonoBehaviour
         }
 
     }
-    public GameObject GetTargetObstacle()
-    {
-        return targetObstacle;
-    }
+
     public bool isObstacleSelected()
     {
         return obstacleSelected;
@@ -57,5 +60,9 @@ public class ObstacleTarget : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, currentTarget.position);
         return distance;
+    }
+    private void OnDestroy()
+    {
+        obstaclePointer.SetActive(false);
     }
 }

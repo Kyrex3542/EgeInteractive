@@ -112,12 +112,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 4611586608212184500}
   ShieldBar: {fileID: 4611586608212184500}
-  maxHealth: 0
+  maxHealth: 150
   maxShield: 0
   HealthAmount: 100
   ShieldAmount: 0
   GoldReward: 0
   Delay: 1
+  MobNumber: 0
 --- !u!1 &1964687044761587938
 GameObject:
   m_ObjectHideFlags: 0
