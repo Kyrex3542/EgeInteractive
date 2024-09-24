@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -25,7 +25,8 @@ public class HealthManager : MonoBehaviour
 
     [Header("Don't Touch")]
     [SerializeField] private int MobNumber;
-    //�statistiklere girmek i�in moblar�n numaras�.
+    private bool _isMobDying = false;
+    //Ýstatistiklere girmek için moblarýn numarasý.
 
     private PlayerStatistics PlayerStatistics;
 
@@ -39,33 +40,36 @@ public class HealthManager : MonoBehaviour
     {
         if (HealthAmount <= 0)
         {
-            Destroy(gameObject);
-
-           // MobIsDying();
-        }
-        if (ShieldAmount <= 0)
-        {
-            ShieldBar.gameObject.SetActive(false);
+            Delay -= Time.deltaTime;
+            if (Delay <= 0)
+            {
+                MobDied();
+            }
         }
     }
 
     private void MobIsDying()
     {
-        Delay -= Time.deltaTime;
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        gameObject.GetComponent<PathFinder>().enabled = false;
+        if (gameObject.CompareTag("Obstacle"))//Sadece Obstacle de çalışacak
+        {
+            ObstacleTarget.instance.HidePointer();
+        }
+        _isMobDying = true;
+        if(gameObject.TryGetComponent<PathFinder>(out PathFinder pathFinder))
+        {
+            pathFinder.enabled = false;
+        }
         gameObject.GetComponentInChildren<Canvas>().enabled = false;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, -90f, 15f * Time.deltaTime)));
-        if (Delay <= 0)
-        {
-
-            PlayerStatistics.EnemyCount(MobNumber);
-            PlayerStatistics.CoinEarned(GoldReward);
-            Player.Instance.GainGold(GoldReward);
-            Destroy(gameObject);
-        }
     }
-
+    private void MobDied()
+    {
+        
+        PlayerStatistics.EnemyCount(MobNumber);
+        PlayerStatistics.CoinEarned(GoldReward);
+        Player.Instance.GainGold(GoldReward);
+        Destroy(gameObject);
+    }
     public void TakeDamage(float damage)
     {
         if (ShieldAmount <= 0)
@@ -82,5 +86,17 @@ public class HealthManager : MonoBehaviour
                 TakeDamage(damage - ShieldAmount);
             }
         }
+        if (HealthAmount <= 0)
+        {
+            MobIsDying();
+        }
+        if (ShieldAmount <= 0)
+        {
+            ShieldBar.gameObject.SetActive(false);
+        }
+    }
+    public bool isMobDying()
+    {
+        return _isMobDying;
     }
 }

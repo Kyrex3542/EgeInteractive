@@ -24,6 +24,10 @@ public class ObstacleTarget : MonoBehaviour
     public void SetTargetObstacle()
     {
         RaycastHit2D hit2D = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (targetObstacle!= null)
+        {
+            OnObstacleTargetDeSelected?.Invoke(this, new obstacleGameObjectEventArgs { obstacle = targetObstacle });
+        }
         if (hit2D.collider != null && hit2D.transform.CompareTag("Obstacle"))
         {
             if (hit2D.transform.gameObject != targetObstacle)
@@ -51,7 +55,10 @@ public class ObstacleTarget : MonoBehaviour
         }
 
     }
-
+    public void HidePointer()
+    {
+        obstaclePointer.SetActive(false);
+    }
     public bool isObstacleSelected()
     {
         return obstacleSelected;
@@ -60,9 +67,5 @@ public class ObstacleTarget : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, currentTarget.position);
         return distance;
-    }
-    private void OnDestroy()
-    {
-        obstaclePointer.SetActive(false);
     }
 }

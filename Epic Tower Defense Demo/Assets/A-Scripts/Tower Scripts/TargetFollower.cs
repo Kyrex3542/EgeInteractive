@@ -85,11 +85,11 @@ public class TargetFollower : MonoBehaviour
 
         foreach (GameObject target in targets)
         {
-            if (target == null) continue;
+            if (target == null || target.GetComponent<HealthManager>().isMobDying()) continue;
             if (target.CompareTag("Obstacle"))
             {
                 closestTarget = target;
-
+                break;
             }
             else
             {
