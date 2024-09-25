@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EndPointScript : MonoBehaviour
 {
-    private int BaseHealth;
-    private void Start()
+    public int baseHealth;
+    public HealthUI healthUI;
+    public void SetHealthUI()
     {
-        BaseHealth = 10;
+        healthUI.SetMaxHealthUI(baseHealth);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -15,12 +16,12 @@ public class EndPointScript : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
-            BaseHealth -= 1;
-            if (BaseHealth <= 0)
+            baseHealth -= 1;
+            healthUI.UpdateHealthUI(baseHealth);
+            if (baseHealth <= 0)
             {
                 Time.timeScale = 0;
             }
         }
     }
-    
 }

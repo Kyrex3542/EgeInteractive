@@ -12,10 +12,18 @@ public class TowerUnlocker : MonoBehaviour
 
     public void UnlockTower(int towerIndex)
     {
+        if (towerGeneralData[towerIndex].towerPrice<=PlayerPrefs.GetInt(Player.DIAMONDPLAYERPREFS,0))
+        {
+            PlayerPrefs.SetInt(Player.DIAMONDPLAYERPREFS, PlayerPrefs.GetInt(Player.DIAMONDPLAYERPREFS, 0) - towerGeneralData[towerIndex].towerPrice);
+            PlayerPrefs.SetInt("TowerIndex_" + towerIndex, 1);
+            PlayerPrefs.Save();
+            UpdateCostUI();
+        }
+        else
+        {
+            Debug.Log("Not enough Diamond");
+        }
         
-        PlayerPrefs.SetInt(Player.DIAMONDPLAYERPREFS, PlayerPrefs.GetInt(Player.DIAMONDPLAYERPREFS, 0) - towerGeneralData[towerIndex].towerPrice);
-        PlayerPrefs.SetInt("TowerIndex_" + towerIndex, 1);
-        PlayerPrefs.Save();
     }
 
     private void Start()

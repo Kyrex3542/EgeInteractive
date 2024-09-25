@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class MapLoader : MonoBehaviour
 {
+    [Header("Health System")]
+    [SerializeField]private HealthUI healthUI;
+    [SerializeField] private int baseHealth;
     [Header("Active Map")]
     public Tilemap activeMap;
     public Tilemap activeMapShadow;
@@ -74,6 +78,12 @@ public class MapLoader : MonoBehaviour
                     Instantiate(obstacleSpawnPointsParent[mapNumber].transform.GetChild(i), obstacleSpawnPointsParent[mapNumber].transform.GetChild(i).position, Quaternion.identity);
                 }
                 targetPoint = Instantiate(targetPoint, targetPoint.position, targetPoint.rotation);
+                if(targetPoint.TryGetComponent<EndPointScript>(out EndPointScript endPointScript))
+                {
+                    endPointScript.baseHealth = baseHealth;
+                    endPointScript.healthUI = healthUI;
+                    endPointScript.SetHealthUI();
+                }
             }
         }
     }
