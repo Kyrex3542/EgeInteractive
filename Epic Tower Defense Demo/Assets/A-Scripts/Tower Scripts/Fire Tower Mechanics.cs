@@ -14,7 +14,7 @@ public class FireTowerMechanics : TowerMechanics
     {
         fireRateTimer -= Time.deltaTime;
         currentTarget = targetFollower.currentTarget;
-        if (currentTarget != null && targetFollower.TargetInRange())
+        if (currentTarget != null)
         {
             PerformAction();
         }

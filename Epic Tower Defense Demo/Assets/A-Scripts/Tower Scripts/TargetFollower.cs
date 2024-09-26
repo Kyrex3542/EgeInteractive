@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class TargetFollower : MonoBehaviour
 {
@@ -22,24 +23,21 @@ public class TargetFollower : MonoBehaviour
 
     private void ObstacleTarget_OnObstacleTargetDeSelected(object sender, ObstacleTarget.obstacleGameObjectEventArgs e)
     {
-        targets.Remove(e.obstacle);
+        selectedObstacle = null;
     }
 
     private void ObstacleTarget_OnObstacleTargetSelected(object sender, ObstacleTarget.obstacleGameObjectEventArgs e)
     {
-        targets.Add(e.obstacle);
+        selectedObstacle = e.obstacle;
     }
 
     private void Update()
     {
-        UpdateCurrentTarget();
+        FindClosestEnemy();
         LookAtTarget();
     }
 
-    private void UpdateCurrentTarget()
-    {      
-            FindClosestEnemy();
-    }
+
 
     private void LookAtTarget()
     {
@@ -49,7 +47,7 @@ public class TargetFollower : MonoBehaviour
         }
 
         float targetAngle = CalculateAngleToTarget();
-        towerHead.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(towerHead.transform.eulerAngles.z,targetAngle - 90,towerrotationSpeed * Time.deltaTime)));
+        towerHead.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.LerpAngle(towerHead.transform.eulerAngles.z, targetAngle - 90, towerrotationSpeed * Time.deltaTime)));
     }
 
     private float CalculateAngleToTarget()
@@ -58,41 +56,38 @@ public class TargetFollower : MonoBehaviour
         return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     }
 
-    public bool TargetInRange()
+    public bool ObstacleTargetInRange()
     {
-        if (currentTarget == null)
+        if (selectedObstacle == null) return false;
+        float distanceToTarget = Vector2.Distance(selectedObstacle.transform.position, transform.position);
+        if (distanceToTarget < circleCollider.radius)
+        { 
+            return true;
+        }
+        else
         {
             return false;
         }
 
-        float distanceToTarget = ObstacleTarget.instance.GetDistanceToObstacle(currentTarget.transform);
-        if (!(distanceToTarget < circleCollider.radius))
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
     }
 
     private void FindClosestEnemy()
     {
-        if (targets.Count == 0) return;
-
         GameObject closestTarget = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject target in targets)
+        if (ObstacleTargetInRange())
         {
-            if (target == null || target.GetComponent<HealthManager>().isMobDying()) continue;
-            if (target.CompareTag("Obstacle"))
+            currentTarget = selectedObstacle;
+        }
+        else
+        {
+            currentTarget = null;
+            if (targets.Count == 0) return;
+        float closestDistance = Mathf.Infinity;
+        
+            foreach (GameObject target in targets)
             {
-                closestTarget = target;
-                break;
-            }
-            else
-            {
+                if (target == null || target.GetComponent<HealthManager>().isMobDying()) continue;
+
                 float remainingDistance = target.GetComponent<PathFinder>().GetRemainingDistanceToBase();
                 if (remainingDistance < closestDistance)
                 {
@@ -100,9 +95,9 @@ public class TargetFollower : MonoBehaviour
                     closestTarget = target;
                 }
             }
+            currentTarget = closestTarget;
         }
 
-        currentTarget = closestTarget;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

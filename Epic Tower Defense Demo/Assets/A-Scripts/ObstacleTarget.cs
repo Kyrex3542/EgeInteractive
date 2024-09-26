@@ -46,7 +46,6 @@ public class ObstacleTarget : MonoBehaviour
                 obstaclePointer.SetActive(false);
                 targetObstacle = null;
                 OnObstacleTargetDeSelected?.Invoke(this, new obstacleGameObjectEventArgs { obstacle = hit2D.transform.gameObject });
-                //OnObstacleTargetSelected?.Invoke(this, EventArgs.Empty);
             }
         }
         else
@@ -62,10 +61,5 @@ public class ObstacleTarget : MonoBehaviour
     public bool isObstacleSelected()
     {
         return obstacleSelected;
-    }
-    public float GetDistanceToObstacle(Transform currentTarget)
-    {
-        float distance = Vector2.Distance(transform.position, currentTarget.position);
-        return distance;
     }
 }

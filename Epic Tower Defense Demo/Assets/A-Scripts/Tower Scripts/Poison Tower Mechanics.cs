@@ -12,7 +12,7 @@ public class PoisonTowerMechanics : TowerMechanics
     protected override void Update()
     {
         currentTarget = targetFollower.currentTarget;
-        if (currentTarget != null && targetFollower.TargetInRange())
+        if (currentTarget != null)
         {
             PerformAction();
         }

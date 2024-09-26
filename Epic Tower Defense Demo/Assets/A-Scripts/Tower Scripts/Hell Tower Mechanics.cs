@@ -28,7 +28,7 @@ public class HellTowerMechanics : TowerMechanics
             currentDamage= damage;
             enemyHealthManager = currentTarget != null ? currentTarget.GetComponent<HealthManager>() : null;
         }
-        if (currentTarget != null && targetFollower.TargetInRange())
+        if (currentTarget != null)
         {
             lineRenderer.enabled = true;
             PerformAction();
