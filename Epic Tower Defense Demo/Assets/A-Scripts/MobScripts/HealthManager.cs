@@ -33,8 +33,8 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         PlayerStatistics = FindFirstObjectByType<PlayerStatistics>();
-        HealthBar.fillAmount = HealthAmount / maxHealth;
-        ShieldBar.fillAmount = ShieldAmount / maxShield;
+        HealthBar.fillAmount = float.IsNaN(HealthAmount / maxHealth) ? HealthBar.fillAmount : HealthAmount / maxHealth;
+        ShieldBar.fillAmount = float.IsNaN(ShieldAmount / maxShield) ? ShieldBar.fillAmount : ShieldAmount / maxShield;
     }
     void Update()
     {

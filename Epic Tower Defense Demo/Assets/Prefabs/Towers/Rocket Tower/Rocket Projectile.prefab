@@ -169,4 +169,5 @@ MonoBehaviour:
   teslaMaxChain: 0
   boneDamageMultiplier: 2
   distanceDamageMultiplier: 0.1
+  canHitAnyOne: 1
   type: 2

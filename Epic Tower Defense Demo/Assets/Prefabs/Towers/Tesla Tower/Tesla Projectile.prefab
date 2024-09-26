@@ -5084,6 +5084,7 @@ MonoBehaviour:
   teslaMaxChain: 50
   boneDamageMultiplier: 2
   distanceDamageMultiplier: 0.1
+  canHitAnyOne: 1
   type: 3
 --- !u!50 &8206147762621216785
 Rigidbody2D:

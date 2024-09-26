@@ -76,6 +76,12 @@ public class TargetFollower : MonoBehaviour
         GameObject closestTarget = null;
         if (ObstacleTargetInRange())
         {
+            if (selectedObstacle.GetComponent<HealthManager>().isMobDying())
+            {
+                currentTarget = closestTarget;
+                selectedObstacle = null;
+                return;
+            }
             currentTarget = selectedObstacle;
         }
         else

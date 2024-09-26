@@ -19,6 +19,7 @@ public class ProjectileBehavior : MonoBehaviour
     private List<Transform> teslaHitTargets = new List<Transform>();
     private int currentChainCount = 0;
     private float closestEnemy = Mathf.Infinity;
+    [SerializeField] private bool canHitAnyOne = false; //Target fallowerdan gele düşman harici bir düşmana vurabilir ise seçili olmalı ontrigger ile kontrol ettiğimiz için başka healthmanager ler de triggerlayabilir demek
 
     private Vector3 firstPos;
     public enum Type
@@ -75,7 +76,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
+        if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager) && (collision.gameObject == target.gameObject||canHitAnyOne))
         {
             hasHitEnemy = true;
             switch (type)
