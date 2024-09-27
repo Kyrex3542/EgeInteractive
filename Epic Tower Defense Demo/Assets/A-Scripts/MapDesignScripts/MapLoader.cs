@@ -8,6 +8,7 @@ public class MapLoader : MonoBehaviour
 {
     [Header("Health System")]
     [SerializeField]private HealthUI healthUI;
+    [SerializeField]private UIManager UImanager;
     [SerializeField] private int baseHealth;
     [Header("Active Map")]
     public Tilemap activeMap;
@@ -82,6 +83,7 @@ public class MapLoader : MonoBehaviour
                 {
                     endPointScript.baseHealth = baseHealth;
                     endPointScript.healthUI = healthUI;
+                    endPointScript.UImanager = UImanager;
                     endPointScript.SetHealthUI();
                 }
             }

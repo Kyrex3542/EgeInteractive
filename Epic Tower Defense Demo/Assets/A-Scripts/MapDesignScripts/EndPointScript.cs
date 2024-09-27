@@ -6,6 +6,7 @@ public class EndPointScript : MonoBehaviour
 {
     public int baseHealth;
     public HealthUI healthUI;
+    public UIManager UImanager;
     public void SetHealthUI()
     {
         healthUI.SetMaxHealthUI(baseHealth);
@@ -21,6 +22,7 @@ public class EndPointScript : MonoBehaviour
             if (baseHealth <= 0)
             {
                 Time.timeScale = 0;
+                UImanager.Show_EndPanel(false);
             }
         }
     }

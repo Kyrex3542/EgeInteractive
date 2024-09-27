@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public const string DIAMONDPLAYERPREFS = "Gold";
     [SerializeField] private UIManager manager;
     private int playerGold = 0;
+    public int playerGoldStatistic = 0;
+    public int playerkillCountStatistic = 0;
     
 
 
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     public void GainGold(int amount)
     {
         playerGold += amount;
+        playerGoldStatistic = playerGold;
         manager.UpdateGoldUI(playerGold);
     }
     public void GainDiamond(int amount)

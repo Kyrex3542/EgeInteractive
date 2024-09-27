@@ -68,6 +68,7 @@ public class HealthManager : MonoBehaviour
         PlayerStatistics.EnemyCount(MobNumber);
         PlayerStatistics.CoinEarned(GoldReward);
         Player.Instance.GainGold(GoldReward);
+        Player.Instance.playerkillCountStatistic++;
         Destroy(gameObject);
     }
     public void TakeDamage(float damage)
