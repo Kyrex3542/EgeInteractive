@@ -715,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[1]
@@ -882,8 +882,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].WaveNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].WaveNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].TotalEnemyNumber
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].TotalEnemyNumber
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].TotalEnemyNumber
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].TotalEnemyNumber
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].EnemyPrefabs.Array.size
@@ -894,7 +914,43 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].EnemyPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].NumberOfMobs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].EnemyPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].NumberOfMobs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].EnemyPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].NumberOfMobs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnRateTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].SpawnRateTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].SpawnRateTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].SpawnRateTimes.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
@@ -910,16 +966,100 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].EnemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1239556052444139117, guid: d7110686f67410847bf250c29f88df9f, type: 3}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].NumberOfMobs.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].SpawnDelayTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].EnemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 431599521780586191, guid: b58ed947cdbdda7479fb340ee0fdd2d5, type: 3}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].NumberOfMobs.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].SpawnDelayTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].EnemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5234677329341112437, guid: 80dedbbacdb9d6d4f91ec1846f8cd5a2, type: 3}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].NumberOfMobs.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].SpawnDelayTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].SpawnRateTimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].SpawnRateTimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].SpawnRateTimes.Array.data[0]
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnDelayTimes.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].SpawnDelayTimes.Array.data[0]
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].SpawnDelayTimes.Array.data[0]
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].SpawnDelayTimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].FirstAppearNumberOfEnemy.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].FirstAppearNumberOfEnemy.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].FirstAppearNumberOfEnemy.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].FirstAppearNumberOfEnemy.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[0].FirstAppearNumberOfEnemy.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[1].FirstAppearNumberOfEnemy.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
+      propertyPath: EpisodesSettings.Array.data[3].WaveSettingsList.Array.data[2].FirstAppearNumberOfEnemy.Array.data[0]
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3265468364880319870, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: m_LocalPosition.x
