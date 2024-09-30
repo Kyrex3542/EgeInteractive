@@ -96,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -104,7 +104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount
@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount
@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount
@@ -504,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -512,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount
@@ -640,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount
@@ -776,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -784,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount
@@ -912,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: maxShield
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: GoldReward
@@ -920,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: HealthAmount
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7918775990815519827, guid: c7cbefb02fafef74ab07bdd7518481eb, type: 3}
       propertyPath: ShieldAmount

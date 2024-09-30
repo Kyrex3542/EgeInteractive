@@ -312,8 +312,8 @@ MonoBehaviour:
   HealthBar: {fileID: 1515183864613242482}
   ShieldBar: {fileID: 1515183864613242482}
   maxHealth: 150
-  maxShield: 150
-  HealthAmount: 0
+  maxShield: 0
+  HealthAmount: 150
   ShieldAmount: 0
   GoldReward: 25
   Delay: 1
@@ -874,8 +874,8 @@ MonoBehaviour:
   HealthBar: {fileID: 5805661094002692382}
   ShieldBar: {fileID: 5805661094002692382}
   maxHealth: 150
-  maxShield: 150
-  HealthAmount: 0
+  maxShield: 0
+  HealthAmount: 150
   ShieldAmount: 0
   GoldReward: 25
   Delay: 1
@@ -1190,8 +1190,8 @@ MonoBehaviour:
   HealthBar: {fileID: 4160518726970535689}
   ShieldBar: {fileID: 4160518726970535689}
   maxHealth: 150
-  maxShield: 150
-  HealthAmount: 0
+  maxShield: 0
+  HealthAmount: 150
   ShieldAmount: 0
   GoldReward: 25
   Delay: 1
@@ -1319,8 +1319,8 @@ MonoBehaviour:
   HealthBar: {fileID: 35633186182388677}
   ShieldBar: {fileID: 35633186182388677}
   maxHealth: 150
-  maxShield: 150
-  HealthAmount: 0
+  maxShield: 0
+  HealthAmount: 150
   ShieldAmount: 0
   GoldReward: 25
   Delay: 1
@@ -1448,8 +1448,8 @@ MonoBehaviour:
   HealthBar: {fileID: 1923876816703179804}
   ShieldBar: {fileID: 1923876816703179804}
   maxHealth: 150
-  maxShield: 150
-  HealthAmount: 0
+  maxShield: 0
+  HealthAmount: 150
   ShieldAmount: 0
   GoldReward: 25
   Delay: 1
@@ -2637,8 +2637,8 @@ MonoBehaviour:
   HealthBar: {fileID: 7884660970796280437}
   ShieldBar: {fileID: 7884660970796280437}
   maxHealth: 150
-  maxShield: 150
-  HealthAmount: 0
+  maxShield: 0
+  HealthAmount: 150
   ShieldAmount: 0
   GoldReward: 25
   Delay: 1

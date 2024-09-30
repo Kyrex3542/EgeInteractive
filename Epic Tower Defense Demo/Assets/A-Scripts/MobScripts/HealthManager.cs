@@ -64,7 +64,7 @@ public class HealthManager : MonoBehaviour
     }
     private void MobDied()
     {
-        
+
         PlayerStatistics.EnemyCount(MobNumber);
         PlayerStatistics.CoinEarned(GoldReward);
         Player.Instance.GainGold(GoldReward);

@@ -84,7 +84,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 41c28726658ae5d42900ebc381dcf782, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1603429341502220542}
   - component: {fileID: -3474959915931601552}
   - component: {fileID: -6476310756981642504}
+  - component: {fileID: 5422028479283019773}
   m_Layer: 0
   m_Name: Freeze Tower
   m_TagString: Untagged
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 41c28726658ae5d42900ebc381dcf782, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,3 +300,18 @@ MonoBehaviour:
   manager: {fileID: 0}
   upgradeTiers: []
   upgradeLevel: -1
+--- !u!114 &5422028479283019773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897867235498745478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575c8c34253cc7f48a16925f733e6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveTime: 0.75
+  spriteRenderers: []
+  materials: []

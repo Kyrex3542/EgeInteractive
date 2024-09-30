@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 41c28726658ae5d42900ebc381dcf782, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: -7448534897335150828}
   - component: {fileID: 6179709025624332612}
   - component: {fileID: -6403072628400481528}
+  - component: {fileID: 4760508750640789231}
   m_Layer: 0
   m_Name: Minigun Tower
   m_TagString: Untagged
@@ -205,7 +206,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 41c28726658ae5d42900ebc381dcf782, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,3 +331,18 @@ MonoBehaviour:
   manager: {fileID: 0}
   upgradeTiers: []
   upgradeLevel: -1
+--- !u!114 &4760508750640789231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873643585315567802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575c8c34253cc7f48a16925f733e6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveTime: 0.75
+  spriteRenderers: []
+  materials: []

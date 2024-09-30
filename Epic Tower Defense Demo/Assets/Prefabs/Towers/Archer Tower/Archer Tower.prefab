@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8933974055470660134}
   - component: {fileID: -375543426053987580}
   - component: {fileID: -7358157566971204384}
+  - component: {fileID: 8638937584924094267}
   m_Layer: 0
   m_Name: Archer Tower
   m_TagString: Untagged
@@ -58,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 456b83001e613ab46a15b4cc7e0d5695, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,6 +193,21 @@ MonoBehaviour:
     sellValue: 0
     upgradeValue: 0
   upgradeLevel: -1
+--- !u!114 &8638937584924094267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789975573193599388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575c8c34253cc7f48a16925f733e6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveTime: 0.75
+  spriteRenderers: []
+  materials: []
 --- !u!1 &2057122361097770246
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +391,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 456b83001e613ab46a15b4cc7e0d5695, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

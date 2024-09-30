@@ -9109,7 +9109,7 @@ PrefabInstance:
       objectReference: {fileID: 961864471}
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.data[0].tileMaps.Array.size
@@ -9130,7 +9130,7 @@ PrefabInstance:
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.data[0].tileMaps.Array.data[0]
       value: 
-      objectReference: {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
+      objectReference: {fileID: 270071462049022468, guid: 48d39973e9d46f447893c8e84cf047d8, type: 3}
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.data[1].spawnPoints.Array.size
       value: 1
@@ -9226,7 +9226,7 @@ PrefabInstance:
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.data[0].tileMapShadows.Array.data[0]
       value: 
-      objectReference: {fileID: 1239605446796701680, guid: b83cc39047b6f0c429240717da7d41b9, type: 3}
+      objectReference: {fileID: 475506184248392428, guid: fdf00d835f498d648847d654a291342a, type: 3}
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.data[1].tileMapShadows.Array.data[0]
       value: 
