@@ -27,9 +27,9 @@ public class MapLoader : MonoBehaviour
         public Transform[] spawnPoints;
         public GameObject[] obstacleSpawnPointsParentList;
         [Header("Map List")]
-        [SerializeField] public List<Tilemap> tileMaps;
-        [SerializeField] public List<Tilemap> tileMapShadows;
-        [SerializeField] public List<Transform> targetPoints;
+        [SerializeField] public Tilemap tileMaps;
+        [SerializeField] public Tilemap tileMapShadows;
+        [SerializeField] public Transform targetPoints;
     }
 
 
@@ -58,12 +58,12 @@ public class MapLoader : MonoBehaviour
     {
         EpisodeSettings episodeSettings = EpisodeSettingList[mapNumber];
         
-            activeMap = episodeSettings.tileMaps[0];
-            activeMapShadow = episodeSettings.tileMapShadows[0];
+            activeMap = episodeSettings.tileMaps;
+            activeMapShadow = episodeSettings.tileMapShadows;
             pathsParent = episodeSettings.pathsParentList;
             spawnPoint = episodeSettings.spawnPoints;
             obstacleSpawnPointsParent = episodeSettings.obstacleSpawnPointsParentList[0];
-            targetPoint = episodeSettings.targetPoints[0];
+            targetPoint = episodeSettings.targetPoints;
             if (activeMap != null && activeMapShadow != null)
             {
                 activeMap = Instantiate(activeMap, Vector3.zero, Quaternion.identity, tileMapGrid.transform);

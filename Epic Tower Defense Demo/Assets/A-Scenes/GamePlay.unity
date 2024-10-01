@@ -9112,6 +9112,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
+      propertyPath: EpisodeSettingList.Array.data[0].tileMaps
+      value: 
+      objectReference: {fileID: 145669065939402534, guid: 9f3483eb1ea76b449be2961edd706e7d, type: 3}
+    - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
+      propertyPath: EpisodeSettingList.Array.data[0].targetPoints
+      value: 
+      objectReference: {fileID: 3567337285957585293, guid: 0812048e710fc3140a818f883c564fd5, type: 3}
+    - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
+      propertyPath: EpisodeSettingList.Array.data[0].tileMapShadows
+      value: 
+      objectReference: {fileID: 1239605446796701680, guid: b83cc39047b6f0c429240717da7d41b9, type: 3}
+    - target: {fileID: 6131699010330634423, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: EpisodeSettingList.Array.data[0].tileMaps.Array.size
       value: 1
       objectReference: {fileID: 0}
