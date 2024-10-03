@@ -32,7 +32,7 @@ public class TowerAppearVisual : MonoBehaviour
             {
                 materials[i].SetFloat(_dissolveAmount, lerpedDissolve);
             }
-            Debug.Log(lerpedDissolve);
+            //Debug.Log(lerpedDissolve);
             yield return null;
         }
     }

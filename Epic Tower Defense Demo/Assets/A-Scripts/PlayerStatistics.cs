@@ -1,6 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class PlayerStatistics : MonoBehaviour
 {
@@ -10,6 +12,25 @@ public class PlayerStatistics : MonoBehaviour
     public int TotalWaveCountSurvived;
     public float TotalHoursPlayed;
 
+    private void Awake()
+    {
+        string json = File.ReadAllText(Application.dataPath + "/SaveFile.json");
+        JsonUtility.FromJsonOverwrite(json, this);
+    }
+    private void Update()
+    {
+        string Json = JsonUtility.ToJson(this);
+        File.WriteAllText(Application.dataPath + "/SaveFile.json", Json);
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            //EnemyKilledCount = [0,0,0,0,0,0,0];
+            TotalCoinsEarned = 0;
+            TotalCoinsUsed = 0;
+            TotalWaveCountSurvived = 0;
+            TotalHoursPlayed = 0;
+
+        }
+    }
     public void EnemyCount(int Index)
     {
         EnemyKilledCount[Index]++;
@@ -34,6 +55,7 @@ public class PlayerStatistics : MonoBehaviour
     {
         TotalHoursPlayed += TimePlayed;
     }
+
 }
 
 /*

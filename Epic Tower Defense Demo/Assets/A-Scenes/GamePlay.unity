@@ -959,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 8202814966781123438, guid: 405eaf68625708f4ab669d2b68c82ec8, type: 3}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].NumberOfMobs.Array.data[0]
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3100355094173227048, guid: 531d3150b28de9f42a388bc5fa54cf33, type: 3}
       propertyPath: EpisodesSettings.Array.data[0].WaveSettingsList.Array.data[0].SpawnDelayTimes.Array.size
