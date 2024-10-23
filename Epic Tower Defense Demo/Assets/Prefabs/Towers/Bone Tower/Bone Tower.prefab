@@ -196,9 +196,9 @@ MonoBehaviour:
   projectile: {fileID: 7898559243927047887, guid: c2ec053670821414489ac958a0c7fd9e, type: 3}
   projectilePushForce: 22
   circleCollider2D: {fileID: 2667323721644370494}
-  damage: 0
-  range: 0
-  fireRate: 0
+  damage: 10
+  range: 3
+  fireRate: 1
 --- !u!114 &-7585712586677848428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,11 +211,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba65fdb8906a434a82f7bdc4d0737a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellValue: 0
-  upgradeValue: 0
+  buyValue: 100
+  sellValue: 100
+  upgradeValue: 100
   tower: {fileID: 1311809604560459733}
   manager: {fileID: 0}
-  upgradeTiers: []
+  upgradeTiers:
+  - damage: 6
+    range: 4
+    fireRate: 2
+    sellValue: 100
+    upgradeValue: 150
+  - damage: 10
+    range: 5
+    fireRate: 3
+    sellValue: 150
+    upgradeValue: 150
   upgradeLevel: -1
 --- !u!114 &8717281835481738233
 MonoBehaviour:

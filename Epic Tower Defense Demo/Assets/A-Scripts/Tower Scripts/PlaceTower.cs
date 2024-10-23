@@ -41,6 +41,7 @@ public class PlaceTower : MonoBehaviour
 
     [SerializeField] private ObstacleTarget obstacleTarget;
     [SerializeField] private GameObject gridPointer;
+    [SerializeField] private CheckTower checkTower;
 
     private List<TowerData> busyTiles;
     private Vector3Int selectedCellPosition;
@@ -57,10 +58,11 @@ public class PlaceTower : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            obstacleTarget.SetTargetObstacle();
-            if ( CanPlaceTower())
+            if (!IsPointerOverUIObject() && CanPlaceTower())
             {
-                if (!IsPointerOverUIObject() && !obstacleTarget.isObstacleSelected())
+                obstacleTarget.SetTargetObstacle();
+
+                if ( !obstacleTarget.isObstacleSelected())
                 {
                     if (!isMenusActive) 
                     {
@@ -89,7 +91,8 @@ public class PlaceTower : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 100;
         gridPointer.SetActive(true);
-        
+
+        checkTower.CheckTowerPrices();
 
         selectedCellPosition = activeMap.WorldToCell(mousePos);
         cellCenterWorlPos = activeMap.GetCellCenterWorld(selectedCellPosition);
@@ -146,7 +149,9 @@ public class PlaceTower : MonoBehaviour
     #region PlaceTower
     public void PlaceArcherTower()
     {
-        PlaceTowerAtPosition(archerTower);
+        
+            PlaceTowerAtPosition(archerTower);
+        
     }
     public void PlaceRocketTower()
     {
@@ -219,10 +224,14 @@ public class PlaceTower : MonoBehaviour
     #endregion
     private void PlaceTowerAtPosition(GameObject towerPrefab)
     {
-        GameObject createdTower= Instantiate(towerPrefab, GetSelectTile(), Quaternion.identity);
-        createdTower.GetComponent<InteractWithTower>().manager = uiManager;
-        busyTiles.Add(new TowerData(selectedCellPosition, createdTower));
-        sliderTowerMenu.SetActive(false);
+        if (towerPrefab.GetComponent<InteractWithTower>().buyValue <= Player.Instance.playerGold)
+        {
+            GameObject createdTower = Instantiate(towerPrefab, GetSelectTile(), Quaternion.identity);
+            createdTower.GetComponent<InteractWithTower>().manager = uiManager;
+            busyTiles.Add(new TowerData(selectedCellPosition, createdTower));
+            sliderTowerMenu.SetActive(false);
+        }
+            
     }
     public List<TowerData> GetBusyTileData()
     {

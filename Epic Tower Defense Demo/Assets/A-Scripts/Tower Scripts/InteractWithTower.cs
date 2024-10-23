@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class InteractWithTower : MonoBehaviour
 {
+    public int buyValue;
     public int sellValue;
     public int upgradeValue;
     [SerializeField] private TowerMechanics tower;

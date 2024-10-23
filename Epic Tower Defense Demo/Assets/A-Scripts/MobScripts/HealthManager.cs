@@ -91,7 +91,7 @@ public class HealthManager : MonoBehaviour
         {
             MobIsDying();
         }
-        if (ShieldAmount <= 0)
+        if (ShieldAmount <= 0&&ShieldBar!=HealthBar)
         {
             ShieldBar.gameObject.SetActive(false);
         }
