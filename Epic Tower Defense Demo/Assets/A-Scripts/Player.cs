@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public const string MAPNUMBERPLAYERPREFS = "MapNumber";
     public const string DIAMONDPLAYERPREFS = "Gold";
     [SerializeField] private UIManager manager;
-    private int playerGold = 0;
+    public int playerGold = 0;
     public int playerGoldStatistic = 0;
     public int playerkillCountStatistic = 0;
     
