@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,20 +27,29 @@ public class CheckTower : MonoBehaviour
     }
     public void CheckTowerPrices()
     {
-       /* for (int i = 0; i < towerSliderMenuContents.Count; i++)
+
+        //butonlarda interact with tower yok buyValue çekmenin başka yolunu bul
+        for (int i = 0; i < towerSliderMenuContents.Count; i++)
         {
             if (towerSliderMenuContents[i].activeSelf)
             {
-                if (towerSliderMenuContents[i].GetComponent<InteractWithTower>().buyValue <= Player.Instance.playerGold)
+                if (towerSliderMenuContents[i].TryGetComponent<InteractWithTower>(out InteractWithTower interactWithTower))
                 {
-                    towerSliderMenuContents[i].GetComponent<Button>().image.color = Color.red;
+                    if (interactWithTower.buyValue <= Player.Instance.playerGold)
+                    {
+                        Debug.Log(1);
+                        towerSliderMenuContents[i].GetComponent<Button>().image.color = Color.red;
+                    }
+                    else
+                    {
+                        Debug.Log(21);
+                        towerSliderMenuContents[i].GetComponent<Button>().image.color = Color.white;
+                    }
                 }
-                else
-                {
-                    towerSliderMenuContents[i].GetComponent<Button>().image.color = Color.white;
-                }
+
+
             }
-            
-        }*/
+
+        }
     }
 }

@@ -18078,6 +18078,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6484234802495431914, guid: 475dfcfadbaea9b4ab4614ea4bd36bfd, type: 3}
     - target: {fileID: 7245358883869734154, guid: 705249c85c750af4bad254122df00dab, type: 3}
+      propertyPath: checkTower
+      value: 
+      objectReference: {fileID: 8716502267934656852}
+    - target: {fileID: 7245358883869734154, guid: 705249c85c750af4bad254122df00dab, type: 3}
       propertyPath: gridPointer
       value: 
       objectReference: {fileID: 1467189344}
@@ -18233,6 +18237,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUIParent: {fileID: 1905882338}
   healthUI: {fileID: 1714419761}
+--- !u!114 &8716502267934656852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7999502908984391564, guid: 705249c85c750af4bad254122df00dab, type: 3}
+  m_PrefabInstance: {fileID: 4805700052104576817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690233790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d415ab667a39f7a46ae2cdbcf3b164f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
